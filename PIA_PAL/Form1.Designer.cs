@@ -67,6 +67,7 @@
             this.btnPrimeraVez.Text = "Primera vez";
             this.btnPrimeraVez.TextColor = System.Drawing.Color.Black;
             this.btnPrimeraVez.UseVisualStyleBackColor = false;
+            this.btnPrimeraVez.Click += new System.EventHandler(this.btnPrimeraVez_Click);
             // 
             // btnYa
             // 
@@ -86,6 +87,7 @@
             this.btnYa.Text = "Ya lo hice";
             this.btnYa.TextColor = System.Drawing.Color.Black;
             this.btnYa.UseVisualStyleBackColor = false;
+            this.btnYa.Click += new System.EventHandler(this.btnYa_Click);
             // 
             // pictureBox4
             // 
@@ -111,6 +113,7 @@
             this.Controls.Add(this.pictureBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

@@ -12,5 +12,17 @@ namespace PIA_PAL
         {
             this.Close();
         }
+
+        private void btnPrimeraVez_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnYa_Click(object sender, EventArgs e)
+        {
+            Resultados resultados = new Resultados();
+            resultados.Show();
+            this.Hide();
+        }
     }
 }
