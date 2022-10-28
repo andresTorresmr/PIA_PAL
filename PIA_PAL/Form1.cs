@@ -13,9 +13,12 @@ namespace PIA_PAL
             this.Close();
         }
 
+
         private void btnPrimeraVez_Click(object sender, EventArgs e)
         {
-
+            Formulario formulario = new Formulario();
+            formulario.Show();
+            this.Hide();
         }
 
         private void btnYa_Click(object sender, EventArgs e)

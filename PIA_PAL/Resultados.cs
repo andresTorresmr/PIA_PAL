@@ -26,5 +26,12 @@ namespace PIA_PAL
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 inicio = new Form1();
+            inicio.Show();
+            this.Close();
+        }
     }
 }

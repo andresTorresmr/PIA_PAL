@@ -43,11 +43,13 @@
             this.progressBarPia2 = new PIA_PAL.herramientas.ProgressBarPia();
             this.label3 = new System.Windows.Forms.Label();
             this.progressBarPia1 = new PIA_PAL.herramientas.ProgressBarPia();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBoxPia1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // roundedPictureBoxPia1
@@ -88,6 +90,7 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray;
             this.splitContainer1.Panel2.BackgroundImage = global::PIA_PAL.Properties.Resources.fondo_rojo;
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label7);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.progressBarPia3);
@@ -303,6 +306,19 @@
             this.progressBarPia1.TabIndex = 0;
             this.progressBarPia1.Value = 50;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Location = new System.Drawing.Point(790, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 28);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Resultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -321,6 +337,7 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,5 +359,6 @@
         private herramientas.ProgressBarPia progressBarPia4;
         private Label label4;
         private herramientas.ProgressBarPia progressBarPia2;
+        private PictureBox pictureBox1;
     }
 }
