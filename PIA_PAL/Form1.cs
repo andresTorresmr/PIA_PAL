@@ -23,7 +23,7 @@ namespace PIA_PAL
 
         private void btnYa_Click(object sender, EventArgs e)
         {
-            Resultados resultados = new Resultados();
+            Datos resultados = new Datos();
             resultados.Show();
             this.Hide();
         }
