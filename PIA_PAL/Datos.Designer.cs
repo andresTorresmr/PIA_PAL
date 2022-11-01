@@ -90,7 +90,7 @@
             this.nacimiento.Name = "nacimiento";
             this.nacimiento.Size = new System.Drawing.Size(250, 35);
             this.nacimiento.SkinColor = System.Drawing.Color.DarkRed;
-            this.nacimiento.TabIndex = 4;
+            this.nacimiento.TabIndex = 5;
             this.nacimiento.TextColor = System.Drawing.Color.White;
             // 
             // label1
@@ -151,7 +151,7 @@
             this.botonPia1.Location = new System.Drawing.Point(638, 398);
             this.botonPia1.Name = "botonPia1";
             this.botonPia1.Size = new System.Drawing.Size(150, 40);
-            this.botonPia1.TabIndex = 9;
+            this.botonPia1.TabIndex = 6;
             this.botonPia1.Text = "Ingresar";
             this.botonPia1.TextColor = System.Drawing.Color.White;
             this.botonPia1.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@
             this.Nombre2.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.Nombre2.PlaceholderText = "";
             this.Nombre2.Size = new System.Drawing.Size(250, 30);
-            this.Nombre2.TabIndex = 10;
+            this.Nombre2.TabIndex = 2;
             this.Nombre2.Texts = "";
             this.Nombre2.UnderlinedStyle = false;
             // 
@@ -182,6 +182,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::PIA_PAL.Properties.Resources.elefante;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Enabled = false;
             this.pictureBox2.Location = new System.Drawing.Point(540, 56);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(447, 336);
@@ -215,9 +216,10 @@
             this.ApellidoM.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.ApellidoM.PlaceholderText = "";
             this.ApellidoM.Size = new System.Drawing.Size(250, 30);
-            this.ApellidoM.TabIndex = 11;
+            this.ApellidoM.TabIndex = 4;
             this.ApellidoM.Texts = "";
             this.ApellidoM.UnderlinedStyle = false;
+            this.ApellidoM.Load += new System.EventHandler(this.ApellidoM_Load);
             // 
             // ApellidoP
             // 
@@ -235,7 +237,7 @@
             this.ApellidoP.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.ApellidoP.PlaceholderText = "";
             this.ApellidoP.Size = new System.Drawing.Size(250, 30);
-            this.ApellidoP.TabIndex = 15;
+            this.ApellidoP.TabIndex = 3;
             this.ApellidoP.Texts = "";
             this.ApellidoP.UnderlinedStyle = false;
             // 

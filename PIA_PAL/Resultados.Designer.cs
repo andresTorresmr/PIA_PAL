@@ -34,7 +34,7 @@
             this.botonPia2 = new PIA_PAL.herramientas.BotonPia();
             this.botonPia1 = new PIA_PAL.herramientas.BotonPia();
             this.label2 = new System.Windows.Forms.Label();
-            this.DatoRecibido = new System.Windows.Forms.Label();
+            this.Nombre_usuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -84,8 +84,9 @@
             this.splitContainer1.Panel1.Controls.Add(this.botonPia2);
             this.splitContainer1.Panel1.Controls.Add(this.botonPia1);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.DatoRecibido);
+            this.splitContainer1.Panel1.Controls.Add(this.Nombre_usuario);
             this.splitContainer1.Panel1.Controls.Add(this.roundedPictureBoxPia1);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
@@ -103,8 +104,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.progressBarPia1);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1060, 598);
-            this.splitContainer1.SplitterDistance = 216;
+            this.splitContainer1.Size = new System.Drawing.Size(1062, 597);
+            this.splitContainer1.SplitterDistance = 243;
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
@@ -175,18 +176,18 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Usuario";
             // 
-            // DatoRecibido
+            // Nombre_usuario
             // 
-            this.DatoRecibido.AutoSize = true;
-            this.DatoRecibido.BackColor = System.Drawing.Color.Transparent;
-            this.DatoRecibido.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DatoRecibido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DatoRecibido.Location = new System.Drawing.Point(94, 25);
-            this.DatoRecibido.Name = "DatoRecibido";
-            this.DatoRecibido.Size = new System.Drawing.Size(0, 21);
-            this.DatoRecibido.TabIndex = 1;
-            this.DatoRecibido.Tag = "Nombre";
-            this.DatoRecibido.Click += new System.EventHandler(this.label1_Click);
+            this.Nombre_usuario.AutoSize = true;
+            this.Nombre_usuario.BackColor = System.Drawing.Color.Transparent;
+            this.Nombre_usuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Nombre_usuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Nombre_usuario.Location = new System.Drawing.Point(94, 25);
+            this.Nombre_usuario.Name = "Nombre_usuario";
+            this.Nombre_usuario.Size = new System.Drawing.Size(0, 21);
+            this.Nombre_usuario.TabIndex = 1;
+            this.Nombre_usuario.Tag = "Nombre";
+            this.Nombre_usuario.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -194,9 +195,9 @@
             this.pictureBox1.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(790, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(780, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 28);
+            this.pictureBox1.Size = new System.Drawing.Size(21, 19);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -233,7 +234,7 @@
             this.progressBarPia3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.progressBarPia3.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
             this.progressBarPia3.ForeColor = System.Drawing.Color.Tomato;
-            this.progressBarPia3.Location = new System.Drawing.Point(134, 392);
+            this.progressBarPia3.Location = new System.Drawing.Point(119, 392);
             this.progressBarPia3.Name = "progressBarPia3";
             this.progressBarPia3.ShowMaximun = false;
             this.progressBarPia3.ShowValue = PIA_PAL.herramientas.TextPosition.None;
@@ -265,7 +266,7 @@
             this.progressBarPia4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.progressBarPia4.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
             this.progressBarPia4.ForeColor = System.Drawing.Color.Tomato;
-            this.progressBarPia4.Location = new System.Drawing.Point(134, 328);
+            this.progressBarPia4.Location = new System.Drawing.Point(119, 328);
             this.progressBarPia4.Name = "progressBarPia4";
             this.progressBarPia4.ShowMaximun = false;
             this.progressBarPia4.ShowValue = PIA_PAL.herramientas.TextPosition.None;
@@ -297,7 +298,7 @@
             this.progressBarPia2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.progressBarPia2.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
             this.progressBarPia2.ForeColor = System.Drawing.Color.Tomato;
-            this.progressBarPia2.Location = new System.Drawing.Point(134, 268);
+            this.progressBarPia2.Location = new System.Drawing.Point(119, 268);
             this.progressBarPia2.Name = "progressBarPia2";
             this.progressBarPia2.ShowMaximun = false;
             this.progressBarPia2.ShowValue = PIA_PAL.herramientas.TextPosition.None;
@@ -329,7 +330,7 @@
             this.progressBarPia1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.progressBarPia1.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
             this.progressBarPia1.ForeColor = System.Drawing.Color.Tomato;
-            this.progressBarPia1.Location = new System.Drawing.Point(134, 213);
+            this.progressBarPia1.Location = new System.Drawing.Point(119, 213);
             this.progressBarPia1.Name = "progressBarPia1";
             this.progressBarPia1.ShowMaximun = false;
             this.progressBarPia1.ShowValue = PIA_PAL.herramientas.TextPosition.None;
@@ -352,6 +353,7 @@
             this.Name = "Resultados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resultados";
+            this.Load += new System.EventHandler(this.Resultados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBoxPia1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -378,7 +380,7 @@
         private Label label4;
         private PictureBox pictureBox1;
         private herramientas.BotonPia botonPia3;
-        public Label DatoRecibido;
+        public Label Nombre_usuario;
         private herramientas.ProgressBarPia progressBarPia1;
         private herramientas.ProgressBarPia progressBarPia3;
         private herramientas.ProgressBarPia progressBarPia4;
