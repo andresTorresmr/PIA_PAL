@@ -64,7 +64,7 @@
             this.btnPrimeraVez.Name = "btnPrimeraVez";
             this.btnPrimeraVez.Size = new System.Drawing.Size(150, 40);
             this.btnPrimeraVez.TabIndex = 1;
-            this.btnPrimeraVez.Text = "Primera vez";
+            this.btnPrimeraVez.Text = "Por primera vez";
             this.btnPrimeraVez.TextColor = System.Drawing.Color.Black;
             this.btnPrimeraVez.UseVisualStyleBackColor = false;
             this.btnPrimeraVez.Click += new System.EventHandler(this.btnPrimeraVez_Click);
@@ -84,7 +84,7 @@
             this.btnYa.Name = "btnYa";
             this.btnYa.Size = new System.Drawing.Size(150, 40);
             this.btnYa.TabIndex = 2;
-            this.btnYa.Text = "Ya lo hice";
+            this.btnYa.Text = "Examen ya realizado";
             this.btnYa.TextColor = System.Drawing.Color.Black;
             this.btnYa.UseVisualStyleBackColor = false;
             this.btnYa.Click += new System.EventHandler(this.btnYa_Click);

@@ -34,7 +34,7 @@
             this.botonPia2 = new PIA_PAL.herramientas.BotonPia();
             this.botonPia1 = new PIA_PAL.herramientas.BotonPia();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.DatoRecibido = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.botonPia2);
             this.splitContainer1.Panel1.Controls.Add(this.botonPia1);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.DatoRecibido);
             this.splitContainer1.Panel1.Controls.Add(this.roundedPictureBoxPia1);
             // 
             // splitContainer1.Panel2
@@ -175,17 +175,18 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Usuario";
             // 
-            // label1
+            // DatoRecibido
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(94, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Andrés Torres";
+            this.DatoRecibido.AutoSize = true;
+            this.DatoRecibido.BackColor = System.Drawing.Color.Transparent;
+            this.DatoRecibido.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DatoRecibido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DatoRecibido.Location = new System.Drawing.Point(94, 25);
+            this.DatoRecibido.Name = "DatoRecibido";
+            this.DatoRecibido.Size = new System.Drawing.Size(0, 21);
+            this.DatoRecibido.TabIndex = 1;
+            this.DatoRecibido.Tag = "Nombre";
+            this.DatoRecibido.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -370,17 +371,17 @@
         private herramientas.BotonPia botonPia2;
         private herramientas.BotonPia botonPia1;
         private Label label2;
-        private Label label1;
         private Label label3;
-        private herramientas.ProgressBarPia progressBarPia1;
         private Label label7;
         private Label label5;
-        private herramientas.ProgressBarPia progressBarPia3;
         private Label label6;
-        private herramientas.ProgressBarPia progressBarPia4;
         private Label label4;
-        private herramientas.ProgressBarPia progressBarPia2;
         private PictureBox pictureBox1;
         private herramientas.BotonPia botonPia3;
+        public Label DatoRecibido;
+        private herramientas.ProgressBarPia progressBarPia1;
+        private herramientas.ProgressBarPia progressBarPia3;
+        private herramientas.ProgressBarPia progressBarPia4;
+        private herramientas.ProgressBarPia progressBarPia2;
     }
 }

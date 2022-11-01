@@ -23,5 +23,21 @@ namespace PIA_PAL
             inicio.Show();
             this.Close();
         }
+
+        private void botonPia1_Click(object sender, EventArgs e)
+        {
+            Form1 inicio = new Form1();
+            inicio.Show();
+            this.Close();
+
+        }
+
+        private void btnYa_Click(object sender, EventArgs e)
+        {
+            //siguiente cuestionario
+            //Pagina2 preguntas2 = new Pagina2();
+            //preguntas2.Show();
+            //this.hide();
+        }
     }
 }

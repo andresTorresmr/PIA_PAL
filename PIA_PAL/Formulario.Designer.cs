@@ -30,6 +30,8 @@
         {
             this.roundedPictureBoxPia1 = new PIA_PAL.herramientas.RoundedPictureBoxPia();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnYa = new PIA_PAL.herramientas.BotonPia();
+            this.botonPia1 = new PIA_PAL.herramientas.BotonPia();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBoxPia1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +67,46 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnYa
+            // 
+            this.btnYa.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnYa.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.btnYa.BorderColor = System.Drawing.Color.Transparent;
+            this.btnYa.BorderRadius = 20;
+            this.btnYa.BorderSize = 0;
+            this.btnYa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnYa.FlatAppearance.BorderSize = 0;
+            this.btnYa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYa.ForeColor = System.Drawing.Color.Black;
+            this.btnYa.Location = new System.Drawing.Point(610, 374);
+            this.btnYa.Name = "btnYa";
+            this.btnYa.Size = new System.Drawing.Size(150, 40);
+            this.btnYa.TabIndex = 3;
+            this.btnYa.Text = "Siguiente";
+            this.btnYa.TextColor = System.Drawing.Color.Black;
+            this.btnYa.UseVisualStyleBackColor = false;
+            this.btnYa.Click += new System.EventHandler(this.btnYa_Click);
+            // 
+            // botonPia1
+            // 
+            this.botonPia1.BackColor = System.Drawing.Color.Gainsboro;
+            this.botonPia1.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.botonPia1.BorderColor = System.Drawing.Color.Transparent;
+            this.botonPia1.BorderRadius = 20;
+            this.botonPia1.BorderSize = 0;
+            this.botonPia1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonPia1.FlatAppearance.BorderSize = 0;
+            this.botonPia1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPia1.ForeColor = System.Drawing.Color.Black;
+            this.botonPia1.Location = new System.Drawing.Point(35, 374);
+            this.botonPia1.Name = "botonPia1";
+            this.botonPia1.Size = new System.Drawing.Size(150, 40);
+            this.botonPia1.TabIndex = 4;
+            this.botonPia1.Text = "Volver";
+            this.botonPia1.TextColor = System.Drawing.Color.Black;
+            this.botonPia1.UseVisualStyleBackColor = false;
+            this.botonPia1.Click += new System.EventHandler(this.botonPia1_Click);
+            // 
             // Formulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -72,6 +114,8 @@
             this.BackgroundImage = global::PIA_PAL.Properties.Resources.fondo_rojo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.botonPia1);
+            this.Controls.Add(this.btnYa);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.roundedPictureBoxPia1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -88,5 +132,7 @@
 
         private herramientas.RoundedPictureBoxPia roundedPictureBoxPia1;
         private PictureBox pictureBox1;
+        private herramientas.BotonPia btnYa;
+        private herramientas.BotonPia botonPia1;
     }
 }

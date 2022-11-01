@@ -17,21 +17,26 @@ namespace PIA_PAL
             InitializeComponent();
         }
 
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        public void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
 
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        public void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void pictureBox1_Click(object sender, EventArgs e)
         {
             Form1 inicio = new Form1();
             inicio.Show();
             this.Close();
+        }
+
+        public void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
