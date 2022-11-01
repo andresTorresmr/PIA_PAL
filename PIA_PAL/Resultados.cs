@@ -184,6 +184,7 @@ namespace PIA_PAL
             foreach (SearchResult item in searchResults)
             {
                 Nombre_usuario.Text = item.Nombre1 + " " + item.ApellidoP;
+
                 //MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + " . Existen " + count + " elementos en el archivo json.");
 
             }
