@@ -30,10 +30,12 @@
         {
             this.roundedPictureBoxPia1 = new PIA_PAL.herramientas.RoundedPictureBoxPia();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.botonPia3 = new PIA_PAL.herramientas.BotonPia();
             this.botonPia2 = new PIA_PAL.herramientas.BotonPia();
             this.botonPia1 = new PIA_PAL.herramientas.BotonPia();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.progressBarPia3 = new PIA_PAL.herramientas.ProgressBarPia();
@@ -43,7 +45,6 @@
             this.progressBarPia2 = new PIA_PAL.herramientas.ProgressBarPia();
             this.label3 = new System.Windows.Forms.Label();
             this.progressBarPia1 = new PIA_PAL.herramientas.ProgressBarPia();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBoxPia1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -79,6 +80,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.DarkRed;
+            this.splitContainer1.Panel1.Controls.Add(this.botonPia3);
             this.splitContainer1.Panel1.Controls.Add(this.botonPia2);
             this.splitContainer1.Panel1.Controls.Add(this.botonPia1);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
@@ -106,6 +108,25 @@
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
+            // botonPia3
+            // 
+            this.botonPia3.BackColor = System.Drawing.Color.Maroon;
+            this.botonPia3.BackgroundColor = System.Drawing.Color.Maroon;
+            this.botonPia3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botonPia3.BorderRadius = 0;
+            this.botonPia3.BorderSize = 0;
+            this.botonPia3.FlatAppearance.BorderSize = 0;
+            this.botonPia3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPia3.ForeColor = System.Drawing.Color.White;
+            this.botonPia3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonPia3.Location = new System.Drawing.Point(0, 177);
+            this.botonPia3.Name = "botonPia3";
+            this.botonPia3.Size = new System.Drawing.Size(212, 38);
+            this.botonPia3.TabIndex = 4;
+            this.botonPia3.Text = "Mis Resultados";
+            this.botonPia3.TextColor = System.Drawing.Color.White;
+            this.botonPia3.UseVisualStyleBackColor = false;
+            // 
             // botonPia2
             // 
             this.botonPia2.BackColor = System.Drawing.Color.Maroon;
@@ -117,7 +138,7 @@
             this.botonPia2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonPia2.ForeColor = System.Drawing.Color.White;
             this.botonPia2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonPia2.Location = new System.Drawing.Point(0, 181);
+            this.botonPia2.Location = new System.Drawing.Point(0, 213);
             this.botonPia2.Name = "botonPia2";
             this.botonPia2.Size = new System.Drawing.Size(212, 38);
             this.botonPia2.TabIndex = 3;
@@ -165,6 +186,19 @@
             this.label1.Size = new System.Drawing.Size(111, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Andrés Torres";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Location = new System.Drawing.Point(790, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 28);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label7
             // 
@@ -306,19 +340,6 @@
             this.progressBarPia1.TabIndex = 0;
             this.progressBarPia1.Value = 50;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(790, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 28);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // Resultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -360,5 +381,6 @@
         private Label label4;
         private herramientas.ProgressBarPia progressBarPia2;
         private PictureBox pictureBox1;
+        private herramientas.BotonPia botonPia3;
     }
 }

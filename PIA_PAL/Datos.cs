@@ -192,7 +192,7 @@ namespace PIA_PAL
 
                 }
             }
-            if(registrado = true)
+            if(registrado == true)
             {
                 Resultados forms = new Resultados();
                 forms.Show();
