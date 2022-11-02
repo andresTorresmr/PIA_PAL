@@ -53,6 +53,12 @@ namespace PIA_PAL
             public string ApellidoM { get; set; }
         }
 
+        public class Evaluaciones
+        {
+            public string carrera { get; set; }
+            public string total { get; set; }
+        }
+
         private void Resultados_Load(object sender, EventArgs e)
         {
             Nombre_usuario.Text = Variables.ID;
@@ -71,15 +77,15 @@ namespace PIA_PAL
                                         },
                                         {
                                             'carrera' : 'LNI',
-                                            'total' : '25'
+                                            'total' : '100'
                                         },
                                         {
                                             'carrera' : 'CP',
-                                            'total' : '25'
+                                            'total' : '100'
                                         },
                                         {
                                             'carrera' : 'LA',
-                                            'total' : '25'
+                                            'total' : '20'
                                         }
                                     ]
                                 }
@@ -98,15 +104,15 @@ namespace PIA_PAL
                                         },
                                         {
                                             'carrera' : 'LNI',
-                                            'total' : '25'
+                                            'total' : '100'
                                         },
                                         {
                                             'carrera' : 'CP',
-                                            'total' : '25'
+                                            'total' : '100'
                                         },
                                         {
                                             'carrera' : 'LA',
-                                            'total' : '25'
+                                            'total' : '20'
                                         }
                                     ]
                                 }
@@ -167,27 +173,64 @@ namespace PIA_PAL
                             ]
                         }";
 
-            JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
+        JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
             JObject EVdata = JObject.Parse(json);
             //get JSON result objects into a list
             IList<JToken> results = EVdata[Variables.ID].Children().ToList();
+            IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"].Children().ToList();
 
             // serialize JSON results into .NET objects
             IList<SearchResult> searchResults = new List<SearchResult>();
+            IList<Evaluaciones> Evaluaciones = new List<Evaluaciones>();
             foreach (JToken result in results)
             {
                 SearchResult searchResult = JsonConvert.DeserializeObject<SearchResult>(result.ToString());
                 searchResults.Add(searchResult);
             }
 
+            foreach (JToken eval in evaluacion)
+            {
+                Evaluaciones examen = JsonConvert.DeserializeObject<Evaluaciones>(eval.ToString());
+                Evaluaciones.Add(examen);
+            }
+
             // List the properties of the searchResults IList
             foreach (SearchResult item in searchResults)
             {
                 Nombre_usuario.Text = item.Nombre1 + " " + item.ApellidoP;
+                foreach (Evaluaciones carrera in Evaluaciones)
+                {
 
+                    if(carrera.carrera == "LTI")
+                    {
+                        PBLTI.Value = Convert.ToInt16(carrera.total);
+                    }
+
+                    if (carrera.carrera == "LNI")
+                    {
+                        PBLNI.Value = Convert.ToInt16(carrera.total);
+                    }
+
+                    if (carrera.carrera == "CP")
+                    {
+                        PBCP.Value = Convert.ToInt16(carrera.total);
+                    }
+
+                    if (carrera.carrera == "LA")
+                    {
+                        PBLA.Value = Convert.ToInt16(carrera.total);
+                    }
+
+                    //MessageBox.Show("Funciona" + carrera.carrera + " " + carrera.total);
+                }
                 //MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + " . Existen " + count + " elementos en el archivo json.");
 
             }
+        }
+
+        private void botonPia1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

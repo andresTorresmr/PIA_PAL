@@ -38,13 +38,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.progressBarPia3 = new PIA_PAL.herramientas.ProgressBarPia();
+            this.PBLNI = new PIA_PAL.herramientas.ProgressBarPia();
             this.label6 = new System.Windows.Forms.Label();
-            this.progressBarPia4 = new PIA_PAL.herramientas.ProgressBarPia();
+            this.PBLTI = new PIA_PAL.herramientas.ProgressBarPia();
             this.label4 = new System.Windows.Forms.Label();
-            this.progressBarPia2 = new PIA_PAL.herramientas.ProgressBarPia();
+            this.PBLA = new PIA_PAL.herramientas.ProgressBarPia();
             this.label3 = new System.Windows.Forms.Label();
-            this.progressBarPia1 = new PIA_PAL.herramientas.ProgressBarPia();
+            this.PBCP = new PIA_PAL.herramientas.ProgressBarPia();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBoxPia1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -96,13 +96,13 @@
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label7);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Panel2.Controls.Add(this.progressBarPia3);
+            this.splitContainer1.Panel2.Controls.Add(this.PBLNI);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.progressBarPia4);
+            this.splitContainer1.Panel2.Controls.Add(this.PBLTI);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.progressBarPia2);
+            this.splitContainer1.Panel2.Controls.Add(this.PBLA);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.progressBarPia1);
+            this.splitContainer1.Panel2.Controls.Add(this.PBCP);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1062, 597);
             this.splitContainer1.SplitterDistance = 243;
@@ -165,6 +165,7 @@
             this.botonPia1.Text = "Hacer de nuevo";
             this.botonPia1.TextColor = System.Drawing.Color.White;
             this.botonPia1.UseVisualStyleBackColor = false;
+            this.botonPia1.Click += new System.EventHandler(this.botonPia1_Click);
             // 
             // label2
             // 
@@ -226,25 +227,25 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "LNI";
             // 
-            // progressBarPia3
+            // PBLNI
             // 
-            this.progressBarPia3.BackColor = System.Drawing.Color.Yellow;
-            this.progressBarPia3.ChannelColor = System.Drawing.Color.Transparent;
-            this.progressBarPia3.ChannelHeight = 30;
-            this.progressBarPia3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.progressBarPia3.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.progressBarPia3.ForeColor = System.Drawing.Color.Tomato;
-            this.progressBarPia3.Location = new System.Drawing.Point(119, 392);
-            this.progressBarPia3.Name = "progressBarPia3";
-            this.progressBarPia3.ShowMaximun = false;
-            this.progressBarPia3.ShowValue = PIA_PAL.herramientas.TextPosition.None;
-            this.progressBarPia3.Size = new System.Drawing.Size(660, 23);
-            this.progressBarPia3.SliderColor = System.Drawing.Color.DeepSkyBlue;
-            this.progressBarPia3.SliderHeight = 70;
-            this.progressBarPia3.SymbolAfter = "";
-            this.progressBarPia3.SymbolBefore = "";
-            this.progressBarPia3.TabIndex = 6;
-            this.progressBarPia3.Value = 50;
+            this.PBLNI.BackColor = System.Drawing.Color.Yellow;
+            this.PBLNI.ChannelColor = System.Drawing.Color.Transparent;
+            this.PBLNI.ChannelHeight = 30;
+            this.PBLNI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PBLNI.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.PBLNI.ForeColor = System.Drawing.Color.Tomato;
+            this.PBLNI.Location = new System.Drawing.Point(119, 392);
+            this.PBLNI.Name = "PBLNI";
+            this.PBLNI.ShowMaximun = false;
+            this.PBLNI.ShowValue = PIA_PAL.herramientas.TextPosition.None;
+            this.PBLNI.Size = new System.Drawing.Size(660, 23);
+            this.PBLNI.SliderColor = System.Drawing.Color.DeepSkyBlue;
+            this.PBLNI.SliderHeight = 70;
+            this.PBLNI.SymbolAfter = "";
+            this.PBLNI.SymbolBefore = "";
+            this.PBLNI.TabIndex = 6;
+            this.PBLNI.Value = 50;
             // 
             // label6
             // 
@@ -258,25 +259,25 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "LTI";
             // 
-            // progressBarPia4
+            // PBLTI
             // 
-            this.progressBarPia4.BackColor = System.Drawing.Color.Yellow;
-            this.progressBarPia4.ChannelColor = System.Drawing.Color.Transparent;
-            this.progressBarPia4.ChannelHeight = 30;
-            this.progressBarPia4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.progressBarPia4.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.progressBarPia4.ForeColor = System.Drawing.Color.Tomato;
-            this.progressBarPia4.Location = new System.Drawing.Point(119, 328);
-            this.progressBarPia4.Name = "progressBarPia4";
-            this.progressBarPia4.ShowMaximun = false;
-            this.progressBarPia4.ShowValue = PIA_PAL.herramientas.TextPosition.None;
-            this.progressBarPia4.Size = new System.Drawing.Size(660, 23);
-            this.progressBarPia4.SliderColor = System.Drawing.Color.DeepSkyBlue;
-            this.progressBarPia4.SliderHeight = 70;
-            this.progressBarPia4.SymbolAfter = "";
-            this.progressBarPia4.SymbolBefore = "";
-            this.progressBarPia4.TabIndex = 4;
-            this.progressBarPia4.Value = 50;
+            this.PBLTI.BackColor = System.Drawing.Color.Yellow;
+            this.PBLTI.ChannelColor = System.Drawing.Color.Transparent;
+            this.PBLTI.ChannelHeight = 30;
+            this.PBLTI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PBLTI.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.PBLTI.ForeColor = System.Drawing.Color.Tomato;
+            this.PBLTI.Location = new System.Drawing.Point(119, 328);
+            this.PBLTI.Name = "PBLTI";
+            this.PBLTI.ShowMaximun = false;
+            this.PBLTI.ShowValue = PIA_PAL.herramientas.TextPosition.None;
+            this.PBLTI.Size = new System.Drawing.Size(660, 23);
+            this.PBLTI.SliderColor = System.Drawing.Color.DeepSkyBlue;
+            this.PBLTI.SliderHeight = 70;
+            this.PBLTI.SymbolAfter = "";
+            this.PBLTI.SymbolBefore = "";
+            this.PBLTI.TabIndex = 4;
+            this.PBLTI.Value = 50;
             // 
             // label4
             // 
@@ -290,25 +291,25 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "LA";
             // 
-            // progressBarPia2
+            // PBLA
             // 
-            this.progressBarPia2.BackColor = System.Drawing.Color.Yellow;
-            this.progressBarPia2.ChannelColor = System.Drawing.Color.Transparent;
-            this.progressBarPia2.ChannelHeight = 30;
-            this.progressBarPia2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.progressBarPia2.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.progressBarPia2.ForeColor = System.Drawing.Color.Tomato;
-            this.progressBarPia2.Location = new System.Drawing.Point(119, 268);
-            this.progressBarPia2.Name = "progressBarPia2";
-            this.progressBarPia2.ShowMaximun = false;
-            this.progressBarPia2.ShowValue = PIA_PAL.herramientas.TextPosition.None;
-            this.progressBarPia2.Size = new System.Drawing.Size(660, 23);
-            this.progressBarPia2.SliderColor = System.Drawing.Color.DeepSkyBlue;
-            this.progressBarPia2.SliderHeight = 70;
-            this.progressBarPia2.SymbolAfter = "";
-            this.progressBarPia2.SymbolBefore = "";
-            this.progressBarPia2.TabIndex = 2;
-            this.progressBarPia2.Value = 50;
+            this.PBLA.BackColor = System.Drawing.Color.Yellow;
+            this.PBLA.ChannelColor = System.Drawing.Color.Transparent;
+            this.PBLA.ChannelHeight = 30;
+            this.PBLA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PBLA.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.PBLA.ForeColor = System.Drawing.Color.Tomato;
+            this.PBLA.Location = new System.Drawing.Point(119, 268);
+            this.PBLA.Name = "PBLA";
+            this.PBLA.ShowMaximun = false;
+            this.PBLA.ShowValue = PIA_PAL.herramientas.TextPosition.None;
+            this.PBLA.Size = new System.Drawing.Size(660, 23);
+            this.PBLA.SliderColor = System.Drawing.Color.DeepSkyBlue;
+            this.PBLA.SliderHeight = 70;
+            this.PBLA.SymbolAfter = "";
+            this.PBLA.SymbolBefore = "";
+            this.PBLA.TabIndex = 2;
+            this.PBLA.Value = 50;
             // 
             // label3
             // 
@@ -322,25 +323,25 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "CP";
             // 
-            // progressBarPia1
+            // PBCP
             // 
-            this.progressBarPia1.BackColor = System.Drawing.Color.Yellow;
-            this.progressBarPia1.ChannelColor = System.Drawing.Color.Transparent;
-            this.progressBarPia1.ChannelHeight = 30;
-            this.progressBarPia1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.progressBarPia1.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.progressBarPia1.ForeColor = System.Drawing.Color.Tomato;
-            this.progressBarPia1.Location = new System.Drawing.Point(119, 213);
-            this.progressBarPia1.Name = "progressBarPia1";
-            this.progressBarPia1.ShowMaximun = false;
-            this.progressBarPia1.ShowValue = PIA_PAL.herramientas.TextPosition.None;
-            this.progressBarPia1.Size = new System.Drawing.Size(660, 23);
-            this.progressBarPia1.SliderColor = System.Drawing.Color.DeepSkyBlue;
-            this.progressBarPia1.SliderHeight = 70;
-            this.progressBarPia1.SymbolAfter = "";
-            this.progressBarPia1.SymbolBefore = "";
-            this.progressBarPia1.TabIndex = 0;
-            this.progressBarPia1.Value = 50;
+            this.PBCP.BackColor = System.Drawing.Color.Yellow;
+            this.PBCP.ChannelColor = System.Drawing.Color.Transparent;
+            this.PBCP.ChannelHeight = 30;
+            this.PBCP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PBCP.ForeBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.PBCP.ForeColor = System.Drawing.Color.Tomato;
+            this.PBCP.Location = new System.Drawing.Point(119, 213);
+            this.PBCP.Name = "PBCP";
+            this.PBCP.ShowMaximun = false;
+            this.PBCP.ShowValue = PIA_PAL.herramientas.TextPosition.None;
+            this.PBCP.Size = new System.Drawing.Size(660, 23);
+            this.PBCP.SliderColor = System.Drawing.Color.DeepSkyBlue;
+            this.PBCP.SliderHeight = 70;
+            this.PBCP.SymbolAfter = "";
+            this.PBCP.SymbolBefore = "";
+            this.PBCP.TabIndex = 0;
+            this.PBCP.Value = 50;
             // 
             // Resultados
             // 
@@ -381,9 +382,9 @@
         private PictureBox pictureBox1;
         private herramientas.BotonPia botonPia3;
         public Label Nombre_usuario;
-        private herramientas.ProgressBarPia progressBarPia1;
-        private herramientas.ProgressBarPia progressBarPia3;
-        private herramientas.ProgressBarPia progressBarPia4;
-        private herramientas.ProgressBarPia progressBarPia2;
+        private herramientas.ProgressBarPia PBCP;
+        private herramientas.ProgressBarPia PBLNI;
+        private herramientas.ProgressBarPia PBLTI;
+        private herramientas.ProgressBarPia PBLA;
     }
 }
