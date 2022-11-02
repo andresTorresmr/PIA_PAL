@@ -55,42 +55,46 @@ namespace PIA_PAL
 
         public class Evaluaciones
         {
-            public string carrera { get; set; }
-            public string total { get; set; }
+            public string LTI { get; set; }
+            public string LNI { get; set; }
+            public string LA { get; set; }
+            public string CP { get; set; }
+
+
         }
 
         private void Resultados_Load(object sender, EventArgs e)
         {
             Nombre_usuario.Text = Variables.ID;
-            string json = @"{
-                            '1':[
+            string json = @"
+                            {
+                            '0':[
                                 {
                                     'nombre1' : 'ANDRES',
                                     'nombre2' : '',
                                     'apellidop' : 'TORRES',
                                     'apellidom' : 'MONTEMAYOR',
                                     'fecha_nac' : '2001/07/17',
-                                    'resultados' : [
-                                        {
-                                            'carrera' : 'LTI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LNI',
-                                            'total' : '100'
-                                        },
-                                        {
-                                            'carrera' : 'CP',
-                                            'total' : '100'
-                                        },
-                                        {
-                                            'carrera' : 'LA',
-                                            'total' : '20'
+                                    'resultados' :[
+                                       {
+                                                 0:[{
+                                                    'cp':24,
+                                                    'la':60,
+                                                    'lti':6,
+                                                    'lni':10
+                                                  }],
+                                                 1:[{
+                                                    'cp':50,
+                                                    'lai':30,
+                                                    'lti':10,
+                                                    'lni':10
+                                                  }]        
+
                                         }
                                     ]
                                 }
-                            ],
-                            '2':[
+                                ],
+                            '1':[
                                 {
                                     'nombre1' : 'ROMAN',
                                     'nombre2' : '',
@@ -99,25 +103,24 @@ namespace PIA_PAL
                                     'fecha_nac' : '2000/03/18',
                                     'resultados' : [
                                         {
-                                            'carrera' : 'LTI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LNI',
-                                            'total' : '100'
-                                        },
-                                        {
-                                            'carrera' : 'CP',
-                                            'total' : '100'
-                                        },
-                                        {
-                                            'carrera' : 'LA',
-                                            'total' : '20'
+                                                 0:[{
+                                                    'cp':24,
+                                                    'la':60,
+                                                    'lti':6,
+                                                    'lni':10
+                                                  }],
+                                                 1:[{
+                                                    'cp':50,
+                                                    'lai':30,
+                                                    'lti':10,
+                                                    'lni':10
+                                                  }]        
+
                                         }
                                     ]
                                 }
                             ],
-                            '3':[
+                            '2':[
                                 {
                                     'nombre1' : 'JOSE',
                                     'nombre2' : 'LUIS',
@@ -126,25 +129,24 @@ namespace PIA_PAL
                                     'fecha_nac' : '2002/07/02',
                                     'resultados' : [
                                         {
-                                            'carrera' : 'LTI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LNI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'CP',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LA',
-                                            'total' : '25'
+                                                 0:[{
+                                                    'cp':24,
+                                                    'la':60,
+                                                    'lti':6,
+                                                    'lni':10
+                                                  }],
+                                                 1:[{
+                                                    'cp':50,
+                                                    'lai':30,
+                                                    'lti':10,
+                                                    'lni':10
+                                                  }]        
+
                                         }
                                     ]
                                 }
                             ],
-                            '4':[
+                            '3':[
                                 {
                                     'nombre1' : 'DANIELA',
                                     'nombre2' : 'ALEJANDRA',
@@ -153,31 +155,31 @@ namespace PIA_PAL
                                     'fecha_nac' : '2002/11/14',
                                     'resultados' : [
                                         {
-                                            'carrera' : 'LTI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LNI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'CP',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LA',
-                                            'total' : '25'
+                                                 0:[{
+                                                    'cp':24,
+                                                    'la':60,
+                                                    'lti':6,
+                                                    'lni':10
+                                                  }],
+                                                 1:[{
+                                                    'cp':50,
+                                                    'lai':30,
+                                                    'lti':10,
+                                                    'lni':10
+                                                  }]        
+
                                         }
                                     ]
                                 }
                             ]
-                        }";
+                        }
+                            ";
 
-        JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
+            JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
             JObject EVdata = JObject.Parse(json);
             //get JSON result objects into a list
             IList<JToken> results = EVdata[Variables.ID].Children().ToList();
-            IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"].Children().ToList();
+            IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"][0]["0"].Children().ToList();
 
             // serialize JSON results into .NET objects
             IList<SearchResult> searchResults = new List<SearchResult>();
@@ -190,6 +192,8 @@ namespace PIA_PAL
 
             foreach (JToken eval in evaluacion)
             {
+
+                MessageBox.Show(Convert.ToString(eval));
                 Evaluaciones examen = JsonConvert.DeserializeObject<Evaluaciones>(eval.ToString());
                 Evaluaciones.Add(examen);
             }
@@ -198,32 +202,17 @@ namespace PIA_PAL
             foreach (SearchResult item in searchResults)
             {
                 Nombre_usuario.Text = item.Nombre1 + " " + item.ApellidoP;
+                
                 foreach (Evaluaciones carrera in Evaluaciones)
                 {
+                    PBLTI.Value = Convert.ToInt16(carrera.LTI);
+                    PBLNI.Value = Convert.ToInt16(carrera.LNI);
+                    PBLA.Value = Convert.ToInt16(carrera.LA);
+                    PBCP.Value = Convert.ToInt16(carrera.CP);
 
-                    if(carrera.carrera == "LTI")
-                    {
-                        PBLTI.Value = Convert.ToInt16(carrera.total);
-                    }
-
-                    if (carrera.carrera == "LNI")
-                    {
-                        PBLNI.Value = Convert.ToInt16(carrera.total);
-                    }
-
-                    if (carrera.carrera == "CP")
-                    {
-                        PBCP.Value = Convert.ToInt16(carrera.total);
-                    }
-
-                    if (carrera.carrera == "LA")
-                    {
-                        PBLA.Value = Convert.ToInt16(carrera.total);
-                    }
 
                     //MessageBox.Show("Funciona" + carrera.carrera + " " + carrera.total);
                 }
-                //MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + " . Existen " + count + " elementos en el archivo json.");
 
             }
         }
@@ -234,3 +223,4 @@ namespace PIA_PAL
         }
     }
 }
+

@@ -187,7 +187,7 @@ namespace PIA_PAL
                     if(item.Nombre1 == Nombre1.Texts & item.Nombre2 == Nombre2.Texts & item.ApellidoP == ApellidoP.Texts && item.ApellidoM == ApellidoM.Texts)
                     {
                         registrado = true;
-                        Variables.ID = Convert.ToString(i);
+                        Variables.ID = Convert.ToString(i - 1);
                         MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + ".");
                     }
 
@@ -222,6 +222,7 @@ namespace PIA_PAL
                 Resultados forms = new Resultados();
                 forms.Show();
                 this.Close();
+                //MessageBox.Show("bien");
             }
             else
             {
