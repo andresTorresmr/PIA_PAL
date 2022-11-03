@@ -67,138 +67,13 @@ namespace PIA_PAL
         private void Resultados_Load(object sender, EventArgs e)
         {
             Nombre_usuario.Text = Variables.ID;
-            string json = @"
-                            {
-                            '0':[
-                                {
-                                    'nombre1' : 'ANDRES',
-                                    'nombre2' : '',
-                                    'apellidop' : 'TORRES',
-                                    'apellidom' : 'MONTEMAYOR',
-                                    'fecha_nac' : '2001/07/17',
-                                    'resultados' :[
-                                       {
-                                                 0:[{
-                                                    'cp':24,
-                                                    'la':60,
-                                                    'lti':6,
-                                                    'lni':10
-                                                  }],
-                                                 1:[{
-                                                    'cp':50,
-                                                    'lai':30,
-                                                    'lti':10,
-                                                    'lni':10
-                                                  }]        
+            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json");
 
-                                        }
-                                    ]
-                                }
-                                ],
-                            '1':[
-                                {
-                                    'nombre1' : 'ROMAN',
-                                    'nombre2' : '',
-                                    'apellidop' : 'LEYVA',
-                                    'apellidom' : 'GARZA',
-                                    'fecha_nac' : '2000/03/18',
-                                    'resultados' : [
-                                        {
-                                                 0:[{
-                                                    'cp':24,
-                                                    'la':60,
-                                                    'lti':6,
-                                                    'lni':10
-                                                  }],
-                                                 1:[{
-                                                    'cp':50,
-                                                    'lai':30,
-                                                    'lti':10,
-                                                    'lni':10
-                                                  }]        
-
-                                        }
-                                    ]
-                                }
-                            ],
-                            '2':[
-                                {
-                                    'nombre1' : 'JOSE',
-                                    'nombre2' : 'LUIS',
-                                    'apellidop' : 'CARVAJAL',
-                                    'apellidom' : 'CRUZ',
-                                    'fecha_nac' : '2002/07/02',
-                                    'resultados' : [
-                                        {
-                                                 0:[{
-                                                    'cp':24,
-                                                    'la':60,
-                                                    'lti':6,
-                                                    'lni':10
-                                                  }],
-                                                 1:[{
-                                                    'cp':50,
-                                                    'lai':30,
-                                                    'lti':10,
-                                                    'lni':10
-                                                  }]        
-
-                                        }
-                                    ]
-                                }
-                            ],
-                            '3':[
-                                {
-                                    'nombre1' : 'DANIELA',
-                                    'nombre2' : 'ALEJANDRA',
-                                    'apellidop' : 'VIEYRA',
-                                    'apellidom' : 'CABALLERO',
-                                    'fecha_nac' : '2002/11/14',
-                                    'resultados' : [
-                                        {
-                                                 0:[{
-                                                    'cp':24,
-                                                    'la':60,
-                                                    'lti':6,
-                                                    'lni':10
-                                                  }],
-                                                 1:[{
-                                                    'cp':50,
-                                                    'lai':30,
-                                                    'lti':10,
-                                                    'lni':10
-                                                  }],
-                                                 2:[{
-                                                    'cp':50,
-                                                    'lai':30,
-                                                    'lti':10,
-                                                    'lni':10
-                                                  }],
-                                                 3:[{
-                                                    'cp':24,
-                                                    'la':60,
-                                                    'lti':6,
-                                                    'lni':10
-                                                  }],
-                                                 4:[{
-                                                    'cp':50,
-                                                    'lai':30,
-                                                    'lti':10,
-                                                    'lni':10
-                                                  }]
-
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                            ";
-
-            JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
+            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json"));
             JObject EVdata = JObject.Parse(json);
             //get JSON result objects into a list
             IList<JToken> results = EVdata[Variables.ID].Children().ToList();            
-            IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"][0]["1"].Children().ToList();
+            IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"][0].Children().ToList();
             IList<JToken> histexamen = EVdata[Variables.ID][0]["resultados"][0].Children().ToList();
             Variables.counteval = histexamen.Count;
 
@@ -213,7 +88,6 @@ namespace PIA_PAL
 
             foreach (JToken eval in evaluacion)
             {
-
                 MessageBox.Show(Convert.ToString(eval));
                 Evaluaciones examen = JsonConvert.DeserializeObject<Evaluaciones>(eval.ToString());
                 Evaluaciones.Add(examen);
@@ -296,9 +170,6 @@ namespace PIA_PAL
             {
                 btnex1.Visible = false;
             }
-            else
-            {
-            }
         }
 
         private void btnex2_MouseHover(object sender, EventArgs e)
@@ -309,6 +180,30 @@ namespace PIA_PAL
         private void btnex3_MouseHover(object sender, EventArgs e)
         {
             btnCerrarEx3.Visible = true;
+        }
+
+        private void btnCerrarEx2_Click(object sender, EventArgs e)
+        {
+            string message = "¿Seguro que quieres borrar el examen?";
+            string titutlo = "WARNING";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, titutlo, buttons);
+            if (result == DialogResult.Yes)
+            {
+                btnex2.Visible = false;
+            }
+        }
+
+        private void btnCerrarEx3_Click(object sender, EventArgs e)
+        {
+            string message = "¿Seguro que quieres borrar el examen?";
+            string titutlo = "WARNING";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, titutlo, buttons);
+            if (result == DialogResult.Yes)
+            {
+                btnex3.Visible = false;
+            }
         }
     }
 }

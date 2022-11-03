@@ -37,120 +37,12 @@ namespace PIA_PAL
         private void botonPia1_Click(object sender, EventArgs e)
         {
             bool registrado = false;
-            string json = @"{
-                            '1':[
-                                {
-                                    'nombre1' : 'ANDRES',
-                                    'nombre2' : '',
-                                    'apellidop' : 'TORRES',
-                                    'apellidom' : 'MONTEMAYOR',
-                                    'fecha_nac' : '2001/07/17',
-                                    'resultados' : [
-                                        {
-                                            'carrera' : 'LTI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LNI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'CP',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LA',
-                                            'total' : '25'
-                                        }
-                                    ]
-                                }
-                            ],
-                            '2':[
-                                {
-                                    'nombre1' : 'ROMAN',
-                                    'nombre2' : '',
-                                    'apellidop' : 'LEYVA',
-                                    'apellidom' : 'GARZA',
-                                    'fecha_nac' : '2000/03/18',
-                                    'resultados' : [
-                                        {
-                                            'carrera' : 'LTI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LNI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'CP',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LA',
-                                            'total' : '25'
-                                        }
-                                    ]
-                                }
-                            ],
-                            '3':[
-                                {
-                                    'nombre1' : 'JOSE',
-                                    'nombre2' : 'LUIS',
-                                    'apellidop' : 'CARVAJAL',
-                                    'apellidom' : 'CRUZ',
-                                    'fecha_nac' : '2002/07/02',
-                                    'resultados' : [
-                                        {
-                                            'carrera' : 'LTI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LNI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'CP',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LA',
-                                            'total' : '25'
-                                        }
-                                    ]
-                                }
-                            ],
-                            '4':[
-                                {
-                                    'nombre1' : 'DANIELA',
-                                    'nombre2' : 'ALEJANDRA',
-                                    'apellidop' : 'VIEYRA',
-                                    'apellidom' : 'CABALLERO',
-                                    'fecha_nac' : '2002/11/14',
-                                    'resultados' : [
-                                        {
-                                            'carrera' : 'LTI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LNI',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'CP',
-                                            'total' : '25'
-                                        },
-                                        {
-                                            'carrera' : 'LA',
-                                            'total' : '25'
-                                        }
-                                    ]
-                                }
-                            ]
-                        }";
+            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json");
 
-            JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
+            //JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
+            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json"));
             int count = jObj.Count;
-            JObject EVdata = JObject.Parse(json);
+            JObject EVdata = JObject.Parse(File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json"));
             // get JSON result objects into a list
             //IList<JToken> results = EVdata["2"].Children().ToList();
 
@@ -222,7 +114,6 @@ namespace PIA_PAL
                 Resultados forms = new Resultados();
                 forms.Show();
                 this.Close();
-                //MessageBox.Show("bien");
             }
             else
             {

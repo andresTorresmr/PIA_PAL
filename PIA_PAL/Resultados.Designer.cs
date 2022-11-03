@@ -130,6 +130,7 @@
             this.btnCerrarEx3.TabIndex = 9;
             this.btnCerrarEx3.TabStop = false;
             this.btnCerrarEx3.Visible = false;
+            this.btnCerrarEx3.Click += new System.EventHandler(this.btnCerrarEx3_Click);
             this.btnCerrarEx3.MouseLeave += new System.EventHandler(this.btnCerrarEx3_MouseLeave);
             this.btnCerrarEx3.MouseHover += new System.EventHandler(this.btnCerrarEx3_MouseHover);
             // 
@@ -143,6 +144,7 @@
             this.btnCerrarEx2.TabIndex = 8;
             this.btnCerrarEx2.TabStop = false;
             this.btnCerrarEx2.Visible = false;
+            this.btnCerrarEx2.Click += new System.EventHandler(this.btnCerrarEx2_Click);
             this.btnCerrarEx2.MouseLeave += new System.EventHandler(this.btnCerrarEx2_MouseLeave);
             this.btnCerrarEx2.MouseHover += new System.EventHandler(this.btnCerrarEx2_MouseHover);
             // 
