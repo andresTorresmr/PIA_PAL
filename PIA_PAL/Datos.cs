@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PIA_PAL.herramientas;
@@ -37,12 +38,13 @@ namespace PIA_PAL
         private void botonPia1_Click(object sender, EventArgs e)
         {
             bool registrado = false;
-            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json");
+            string json = File.ReadAllText(@"C:\Users\andre\source\repos\PIA_PAL\PIA_PAL\registros\datos.json");
 
             //JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
-            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json"));
+            JObject jObj = JObject.Parse(json);
             int count = jObj.Count;
-            JObject EVdata = JObject.Parse(File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json"));
+            JObject EVdata = JObject.Parse(json);
+            MessageBox.Show(Convert.ToString(EVdata.Count));
             // get JSON result objects into a list
             //IList<JToken> results = EVdata["2"].Children().ToList();
 
@@ -59,10 +61,10 @@ namespace PIA_PAL
             //{
 
             //    MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + " . Existen " + count + " elementos en el archivo json.");
-                
+
             //}
             //PRUEBAS A VER SI JALA
-            for(int i = 1; i <= count; i++)
+            for (int i = 1; i <= count; i++)
             {
                 IList<JToken> datos = EVdata[Convert.ToString(i)].Children().ToList();
                 IList<SearchResult> Resultados = new List<SearchResult>();
@@ -79,7 +81,7 @@ namespace PIA_PAL
                     if(item.Nombre1 == Nombre1.Texts & item.Nombre2 == Nombre2.Texts & item.ApellidoP == ApellidoP.Texts && item.ApellidoM == ApellidoM.Texts)
                     {
                         registrado = true;
-                        Variables.ID = Convert.ToString(i - 1);
+                        Variables.ID = Convert.ToString(i);
                         MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + ".");
                     }
 

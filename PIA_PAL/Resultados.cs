@@ -67,9 +67,9 @@ namespace PIA_PAL
         private void Resultados_Load(object sender, EventArgs e)
         {
             Nombre_usuario.Text = Variables.ID;
-            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json");
+            string json = File.ReadAllText(@"C:\Users\andre\source\repos\PIA_PAL\PIA_PAL\registros\datos.json");
 
-            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\prueba2.json"));
+            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\andre\source\repos\PIA_PAL\PIA_PAL\registros\datos.json"));
             JObject EVdata = JObject.Parse(json);
             //get JSON result objects into a list
             IList<JToken> results = EVdata[Variables.ID].Children().ToList();            
