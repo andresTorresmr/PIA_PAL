@@ -30,8 +30,12 @@
         {
             this.roundedPictureBoxPia1 = new PIA_PAL.herramientas.RoundedPictureBoxPia();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.botonPia3 = new PIA_PAL.herramientas.BotonPia();
-            this.botonPia2 = new PIA_PAL.herramientas.BotonPia();
+            this.btnCerrarEx3 = new System.Windows.Forms.PictureBox();
+            this.btnCerrarEx2 = new System.Windows.Forms.PictureBox();
+            this.btnCerrarEx1 = new System.Windows.Forms.PictureBox();
+            this.btnex1 = new PIA_PAL.herramientas.BotonPia();
+            this.btnex2 = new PIA_PAL.herramientas.BotonPia();
+            this.btnex3 = new PIA_PAL.herramientas.BotonPia();
             this.botonPia1 = new PIA_PAL.herramientas.BotonPia();
             this.label2 = new System.Windows.Forms.Label();
             this.Nombre_usuario = new System.Windows.Forms.Label();
@@ -50,6 +54,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEx3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEx2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,8 +87,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.splitContainer1.Panel1.Controls.Add(this.botonPia3);
-            this.splitContainer1.Panel1.Controls.Add(this.botonPia2);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCerrarEx3);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCerrarEx2);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCerrarEx1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnex1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnex2);
+            this.splitContainer1.Panel1.Controls.Add(this.btnex3);
             this.splitContainer1.Panel1.Controls.Add(this.botonPia1);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.Nombre_usuario);
@@ -109,43 +120,104 @@
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
-            // botonPia3
+            // btnCerrarEx3
             // 
-            this.botonPia3.BackColor = System.Drawing.Color.Maroon;
-            this.botonPia3.BackgroundColor = System.Drawing.Color.Maroon;
-            this.botonPia3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPia3.BorderRadius = 0;
-            this.botonPia3.BorderSize = 0;
-            this.botonPia3.FlatAppearance.BorderSize = 0;
-            this.botonPia3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPia3.ForeColor = System.Drawing.Color.White;
-            this.botonPia3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonPia3.Location = new System.Drawing.Point(0, 177);
-            this.botonPia3.Name = "botonPia3";
-            this.botonPia3.Size = new System.Drawing.Size(212, 38);
-            this.botonPia3.TabIndex = 4;
-            this.botonPia3.Text = "Mis Resultados";
-            this.botonPia3.TextColor = System.Drawing.Color.White;
-            this.botonPia3.UseVisualStyleBackColor = false;
+            this.btnCerrarEx3.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
+            this.btnCerrarEx3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarEx3.Location = new System.Drawing.Point(184, 259);
+            this.btnCerrarEx3.Name = "btnCerrarEx3";
+            this.btnCerrarEx3.Size = new System.Drawing.Size(18, 18);
+            this.btnCerrarEx3.TabIndex = 9;
+            this.btnCerrarEx3.TabStop = false;
+            this.btnCerrarEx3.Visible = false;
+            this.btnCerrarEx3.MouseLeave += new System.EventHandler(this.btnCerrarEx3_MouseLeave);
+            this.btnCerrarEx3.MouseHover += new System.EventHandler(this.btnCerrarEx3_MouseHover);
             // 
-            // botonPia2
+            // btnCerrarEx2
             // 
-            this.botonPia2.BackColor = System.Drawing.Color.Maroon;
-            this.botonPia2.BackgroundColor = System.Drawing.Color.Maroon;
-            this.botonPia2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPia2.BorderRadius = 0;
-            this.botonPia2.BorderSize = 0;
-            this.botonPia2.FlatAppearance.BorderSize = 0;
-            this.botonPia2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPia2.ForeColor = System.Drawing.Color.White;
-            this.botonPia2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonPia2.Location = new System.Drawing.Point(0, 213);
-            this.botonPia2.Name = "botonPia2";
-            this.botonPia2.Size = new System.Drawing.Size(212, 38);
-            this.botonPia2.TabIndex = 3;
-            this.botonPia2.Text = "Otra......";
-            this.botonPia2.TextColor = System.Drawing.Color.White;
-            this.botonPia2.UseVisualStyleBackColor = false;
+            this.btnCerrarEx2.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
+            this.btnCerrarEx2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarEx2.Location = new System.Drawing.Point(184, 220);
+            this.btnCerrarEx2.Name = "btnCerrarEx2";
+            this.btnCerrarEx2.Size = new System.Drawing.Size(18, 18);
+            this.btnCerrarEx2.TabIndex = 8;
+            this.btnCerrarEx2.TabStop = false;
+            this.btnCerrarEx2.Visible = false;
+            this.btnCerrarEx2.MouseLeave += new System.EventHandler(this.btnCerrarEx2_MouseLeave);
+            this.btnCerrarEx2.MouseHover += new System.EventHandler(this.btnCerrarEx2_MouseHover);
+            // 
+            // btnCerrarEx1
+            // 
+            this.btnCerrarEx1.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
+            this.btnCerrarEx1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarEx1.Location = new System.Drawing.Point(184, 187);
+            this.btnCerrarEx1.Name = "btnCerrarEx1";
+            this.btnCerrarEx1.Size = new System.Drawing.Size(18, 18);
+            this.btnCerrarEx1.TabIndex = 7;
+            this.btnCerrarEx1.TabStop = false;
+            this.btnCerrarEx1.Visible = false;
+            this.btnCerrarEx1.Click += new System.EventHandler(this.btnCerrarEx1_Click);
+            this.btnCerrarEx1.MouseLeave += new System.EventHandler(this.btnCerrarEx1_MouseLeave);
+            // 
+            // btnex1
+            // 
+            this.btnex1.BackColor = System.Drawing.Color.Maroon;
+            this.btnex1.BackgroundColor = System.Drawing.Color.Maroon;
+            this.btnex1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnex1.BorderRadius = 0;
+            this.btnex1.BorderSize = 0;
+            this.btnex1.FlatAppearance.BorderSize = 0;
+            this.btnex1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnex1.ForeColor = System.Drawing.Color.White;
+            this.btnex1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnex1.Location = new System.Drawing.Point(0, 176);
+            this.btnex1.Name = "btnex1";
+            this.btnex1.Size = new System.Drawing.Size(212, 38);
+            this.btnex1.TabIndex = 6;
+            this.btnex1.Text = "Examen 1";
+            this.btnex1.TextColor = System.Drawing.Color.White;
+            this.btnex1.UseVisualStyleBackColor = false;
+            this.btnex1.MouseHover += new System.EventHandler(this.btnex1_MouseHover);
+            // 
+            // btnex2
+            // 
+            this.btnex2.BackColor = System.Drawing.Color.Maroon;
+            this.btnex2.BackgroundColor = System.Drawing.Color.Maroon;
+            this.btnex2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnex2.BorderRadius = 0;
+            this.btnex2.BorderSize = 0;
+            this.btnex2.FlatAppearance.BorderSize = 0;
+            this.btnex2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnex2.ForeColor = System.Drawing.Color.White;
+            this.btnex2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnex2.Location = new System.Drawing.Point(0, 211);
+            this.btnex2.Name = "btnex2";
+            this.btnex2.Size = new System.Drawing.Size(212, 38);
+            this.btnex2.TabIndex = 5;
+            this.btnex2.Text = "Examen 2";
+            this.btnex2.TextColor = System.Drawing.Color.White;
+            this.btnex2.UseVisualStyleBackColor = false;
+            this.btnex2.MouseHover += new System.EventHandler(this.btnex2_MouseHover);
+            // 
+            // btnex3
+            // 
+            this.btnex3.BackColor = System.Drawing.Color.Maroon;
+            this.btnex3.BackgroundColor = System.Drawing.Color.Maroon;
+            this.btnex3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnex3.BorderRadius = 0;
+            this.btnex3.BorderSize = 0;
+            this.btnex3.FlatAppearance.BorderSize = 0;
+            this.btnex3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnex3.ForeColor = System.Drawing.Color.White;
+            this.btnex3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnex3.Location = new System.Drawing.Point(0, 248);
+            this.btnex3.Name = "btnex3";
+            this.btnex3.Size = new System.Drawing.Size(212, 38);
+            this.btnex3.TabIndex = 4;
+            this.btnex3.Text = "Examen 3";
+            this.btnex3.TextColor = System.Drawing.Color.White;
+            this.btnex3.UseVisualStyleBackColor = false;
+            this.btnex3.MouseHover += new System.EventHandler(this.btnex3_MouseHover);
             // 
             // botonPia1
             // 
@@ -362,6 +434,9 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEx3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEx2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -371,7 +446,6 @@
 
         private herramientas.RoundedPictureBoxPia roundedPictureBoxPia1;
         private SplitContainer splitContainer1;
-        private herramientas.BotonPia botonPia2;
         private herramientas.BotonPia botonPia1;
         private Label label2;
         private Label label3;
@@ -380,11 +454,16 @@
         private Label label6;
         private Label label4;
         private PictureBox pictureBox1;
-        private herramientas.BotonPia botonPia3;
         public Label Nombre_usuario;
         private herramientas.ProgressBarPia PBCP;
         private herramientas.ProgressBarPia PBLNI;
         private herramientas.ProgressBarPia PBLTI;
         private herramientas.ProgressBarPia PBLA;
+        private PictureBox btnCerrarEx1;
+        private herramientas.BotonPia btnex1;
+        private herramientas.BotonPia btnex2;
+        private herramientas.BotonPia btnex3;
+        private PictureBox btnCerrarEx3;
+        private PictureBox btnCerrarEx2;
     }
 }

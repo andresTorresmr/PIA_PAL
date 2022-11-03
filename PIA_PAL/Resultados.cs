@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace PIA_PAL
 {
@@ -166,7 +167,25 @@ namespace PIA_PAL
                                                     'lai':30,
                                                     'lti':10,
                                                     'lni':10
-                                                  }]        
+                                                  }],
+                                                 2:[{
+                                                    'cp':50,
+                                                    'lai':30,
+                                                    'lti':10,
+                                                    'lni':10
+                                                  }],
+                                                 3:[{
+                                                    'cp':24,
+                                                    'la':60,
+                                                    'lti':6,
+                                                    'lni':10
+                                                  }],
+                                                 4:[{
+                                                    'cp':50,
+                                                    'lai':30,
+                                                    'lti':10,
+                                                    'lni':10
+                                                  }]
 
                                         }
                                     ]
@@ -178,8 +197,10 @@ namespace PIA_PAL
             JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
             JObject EVdata = JObject.Parse(json);
             //get JSON result objects into a list
-            IList<JToken> results = EVdata[Variables.ID].Children().ToList();
-            IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"][0]["0"].Children().ToList();
+            IList<JToken> results = EVdata[Variables.ID].Children().ToList();            
+            IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"][0]["1"].Children().ToList();
+            IList<JToken> histexamen = EVdata[Variables.ID][0]["resultados"][0].Children().ToList();
+            Variables.counteval = histexamen.Count;
 
             // serialize JSON results into .NET objects
             IList<SearchResult> searchResults = new List<SearchResult>();
@@ -220,6 +241,74 @@ namespace PIA_PAL
         private void botonPia1_Click(object sender, EventArgs e)
         {
 
+            if(Variables.counteval < 5)
+            {
+                MessageBox.Show("RECUERDA que solo puedes hacer 3 examenes. Llevas: " + Variables.counteval);
+                Formulario forms = new Formulario();
+                forms.Show();
+                this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Llegaste a tu limite de 3 examenes. Elimina uno" );
+            }
+        }
+
+        private void btnex1_MouseHover(object sender, EventArgs e)
+        {
+            btnCerrarEx1.Visible = true;
+            
+        }
+
+        private void btnCerrarEx1_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrarEx1.Visible = false;
+        }
+
+        private void btnCerrarEx2_MouseHover(object sender, EventArgs e)
+        {
+            btnCerrarEx2.Visible = true;
+        }
+
+        private void btnCerrarEx2_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrarEx2.Visible = false;
+        }
+
+        private void btnCerrarEx3_MouseHover(object sender, EventArgs e)
+        {
+            btnCerrarEx3.Visible = true;
+        }
+
+        private void btnCerrarEx3_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrarEx3.Visible = false;
+        }
+
+        private void btnCerrarEx1_Click(object sender, EventArgs e)
+        {
+            string message = "¿Seguro que quieres borrar el examen?";
+            string titutlo = "WARNING";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, titutlo, buttons);
+            if (result == DialogResult.Yes)
+            {
+                btnex1.Visible = false;
+            }
+            else
+            {
+            }
+        }
+
+        private void btnex2_MouseHover(object sender, EventArgs e)
+        {
+            btnCerrarEx2.Visible = true;
+        }
+
+        private void btnex3_MouseHover(object sender, EventArgs e)
+        {
+            btnCerrarEx3.Visible = true;
         }
     }
 }
