@@ -38,7 +38,7 @@ namespace PIA_PAL
         private void botonPia1_Click(object sender, EventArgs e)
         {
             bool registrado = false;
-            string json = File.ReadAllText(@"C:\Users\andre\source\repos\PIA_PAL\PIA_PAL\registros\datos.json");
+            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json");
 
             //JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
             JObject jObj = JObject.Parse(json);
