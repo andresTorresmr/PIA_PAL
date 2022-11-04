@@ -19,27 +19,24 @@ namespace PIA_PAL
             InitializeComponent();
         }
 
-        public class register
+        public class SearchRegister
         {
             public string nombre1 { get; set; }
             public string nombre2 { get; set; }
             public string apellidop { get; set; }
             public string apellidom { get; set; }
             public string fecha_nac { get; set; }
-            public List<Resultados>
-                resultados
-            { get; set; }
-            public int cp { get; set; }
-            public int la { get; set; }
-            public int lti { get; set; }
-            public int lni { get; set; }
+            public string lti { get; set; }
+            public string lni { get; set; }
+            public string cp { get; set; }
+            public string la { get; set; }
         }
 
         private void botonPia1_Click(object sender, EventArgs e)
         {
             //CONTEO DE REGISTRO DENTRO DEL JSON
             bool registrado = false;
-            string json = File.ReadAllText(@"C:\Users\luis_\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json");
+            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json");
             JObject jObj = JObject.Parse(json);
             int count = jObj.Count;
             JObject EVdata = JObject.Parse(json);
@@ -49,14 +46,70 @@ namespace PIA_PAL
             for (int i = 1; i < count; i++)
             {
                 IList<JToken> registro = EVdata[Convert.ToString(i)].Children().ToList();
-                IList<register> busqueda = new List<register>();
-            }
+                IList<SearchRegister> Busqueda = new List<SearchRegister>();
 
-            foreach (JToken dato_registro in registro)
+                foreach (JToken dato_registro in registro)
+                {
+                    SearchRegister Register = JsonConvert.DeserializeObject<SearchRegister>(dato_registro.ToString());
+                    Busqueda.Add(Register);
+                }
+
+                foreach (SearchRegister item in Busqueda)
+                {
+                    if (item.nombre1 == Nombre1.Texts & item.nombre2 == Nombre2.Texts & item.apellidop == ApellidoP.Texts && item.apellidom == ApellidoM.Texts)
+                    {
+                        registrado = true;
+                        Variables.ID = Convert.ToString(i);
+                    }
+                }
+            }
+            if (registrado == true)
             {
-                register Register = JsonConvert.DeserializeObject<register>(dato_registro.ToString());
+                string message = "Ya te encuentras registrado ¿Deseas consultar tus resultados?";
+                string title = "WARNING";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    Resultados forms = new Resultados();
+                    forms.Show();
+                    this.Close();
+                }
+                else
+                {
+                    string messageElse = "¿Quieres realizar el examen de nuevo?";
+                    string titleElse = "WARNING";
+                    MessageBoxButtons buttonsElse = MessageBoxButtons.YesNo;
+                    DialogResult resultElse = MessageBox.Show(messageElse, titleElse, buttonsElse);
+                    if (resultElse == DialogResult.Yes)
+                    {
+                        Formulario form1Button = new Formulario();
+                        form1Button.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Form1 form1ButtonNo = new Form1();
+                        form1ButtonNo.Show();
+                        this.Close();
+                    }
+                }
             }
+            else
+            {
+                SearchRegister registrobtn = new SearchRegister();
+                registrobtn.nombre1 = Nombre1.Texts;
+                registrobtn.nombre2 = Nombre2.Texts;
+                registrobtn.apellidop = ApellidoP.Texts;
+                registrobtn.apellidom = ApellidoM.Texts;
+                registrobtn.fecha_nac = nacimiento.Text;
+                registrobtn.lti = null;
+                registrobtn.la = null;
+                registrobtn.lni = null;
+                registrobtn.cp = null;
 
+            }
         }
     }
 }
+

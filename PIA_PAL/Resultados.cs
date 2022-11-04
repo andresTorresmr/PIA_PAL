@@ -67,9 +67,9 @@ namespace PIA_PAL
         private void Resultados_Load(object sender, EventArgs e)
         {
             Nombre_usuario.Text = Variables.ID;
-            string json = File.ReadAllText(@"C:\Users\luis_\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json");
+            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json");
 
-            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\luis_\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json"));
+            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json"));
             JObject EVdata = JObject.Parse(json);
             //get JSON result objects into a list
             IList<JToken> results = EVdata[Variables.ID].Children().ToList();            
@@ -204,6 +204,11 @@ namespace PIA_PAL
             {
                 btnex3.Visible = false;
             }
+        }
+
+        private void btnex1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,13 +38,14 @@ namespace PIA_PAL
         private void botonPia1_Click(object sender, EventArgs e)
         {
             bool registrado = false;
-            string json = File.ReadAllText(@"C:\Users\luis_\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json");
+            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json");
 
             //JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
             JObject jObj = JObject.Parse(json);
             int count = jObj.Count;
             JObject EVdata = JObject.Parse(json);
             MessageBox.Show(Convert.ToString(EVdata.Count));
+
             for (int i = 1; i <= count; i++)
             {
                 IList<JToken> datos = EVdata[Convert.ToString(i)].Children().ToList();
@@ -65,35 +66,10 @@ namespace PIA_PAL
                         Variables.ID = Convert.ToString(i);
                         MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + ".");
                     }
-
                 }
             }
             if(registrado == true)
             {
-                // get JSON result objects into a list
-                //IList<JToken> results = EVdata["2"].Children().ToList();
-
-                ////// serialize JSON results into .NET objects
-                //IList<SearchResult> searchResults = new List<SearchResult>();
-                //foreach (JToken result in results)
-                //{
-                //    SearchResult searchResult = JsonConvert.DeserializeObject<SearchResult>(result.ToString());
-                //    searchResults.Add(searchResult);
-                //}
-
-                //// List the properties of the searchResults IList
-                //foreach (SearchResult item in searchResults)
-                //{
-
-                //    MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + " . Existen " + count + " elementos en el archivo json.");
-
-                //}
-
-                //Resultados FHPP = new Resultados();
-                //AddOwnedForm(FHPP);
-                //FHPP.DatoRecibido.Text = ID;
-
-
                 Resultados forms = new Resultados();
                 forms.Show();
                 this.Close();
