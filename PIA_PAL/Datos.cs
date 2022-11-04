@@ -38,32 +38,13 @@ namespace PIA_PAL
         private void botonPia1_Click(object sender, EventArgs e)
         {
             bool registrado = false;
-            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json");
+            string json = File.ReadAllText(@"C:\Users\luis_\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json");
 
             //JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
             JObject jObj = JObject.Parse(json);
             int count = jObj.Count;
             JObject EVdata = JObject.Parse(json);
             MessageBox.Show(Convert.ToString(EVdata.Count));
-            // get JSON result objects into a list
-            //IList<JToken> results = EVdata["2"].Children().ToList();
-
-            //// serialize JSON results into .NET objects
-            //IList<SearchResult> searchResults = new List<SearchResult>();
-            //foreach (JToken result in results)
-            //{
-            //    SearchResult searchResult = JsonConvert.DeserializeObject<SearchResult>(result.ToString());
-            //    searchResults.Add(searchResult);
-            //}
-
-            //// List the properties of the searchResults IList
-            //foreach (SearchResult item in searchResults)
-            //{
-
-            //    MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + " . Existen " + count + " elementos en el archivo json.");
-
-            //}
-            //PRUEBAS A VER SI JALA
             for (int i = 1; i <= count; i++)
             {
                 IList<JToken> datos = EVdata[Convert.ToString(i)].Children().ToList();
@@ -119,7 +100,23 @@ namespace PIA_PAL
             }
             else
             {
-                MessageBox.Show("No se encontró tu registro");
+                string message = "No se encontró tu registro. ¿Quieres registrarte?";
+                string titulo = "WARNING";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, titulo, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    registro register = new registro();
+                    register.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Form1 inicio = new Form1();
+                    inicio.Show();
+                    this.Close();
+                }
+
             }
 
         }
