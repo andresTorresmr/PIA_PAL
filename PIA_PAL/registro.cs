@@ -138,20 +138,17 @@ private void botonPia1_Click(object sender, EventArgs e)
                 registrobtn.apellidop = ApellidoP.Texts;
                 registrobtn.apellidom = ApellidoM.Texts;
                 registrobtn.fecha_nac = nacimiento.Text;
-                registrobtn.lti = 0;
-                registrobtn.la = 0;
-                registrobtn.lni = 0;
-                registrobtn.cp = 0;
+
 
 
 
                 var jsonToWrite = JsonConvert.SerializeObject(registrobtn, Formatting.Indented);
+                var _path = @"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json";
 
-
-                using (var writer = new StreamWriter(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json"))
+                using (StreamWriter file = File.AppendText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json"))
                 {
-                    writer.Write(jsonToWrite);
-                    MessageBox.Show(jsonToWrite);
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(file, registrobtn);
                 }
             }
         }
