@@ -10,6 +10,10 @@ namespace PIA_PAL
     {
         static public string ID;
         static public int counteval;
+        static public int lti = 0;
+        static public int lni = 0;
+        static public int la = 0 ;
+        static public int cp = 0 ;
 
     }
 }
