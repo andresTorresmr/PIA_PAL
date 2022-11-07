@@ -19,14 +19,13 @@ namespace PIA_PAL
 
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
-            string message = "¿Deseas continuar? una vez guardadas tus preguntas no se podrán modificar más.";
-            string titutlo = "WARNING";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, titutlo, buttons);
-            if (result == DialogResult.Yes)
+            if (groupBox1.Enabled == true && groupBox2.Enabled == true && groupBox3.Enabled == true && groupBox4.Enabled == true && groupBox5.Enabled == true)
             {
-
-                if (groupBox1.Enabled == true && groupBox2.Enabled == true && groupBox3.Enabled == true && groupBox4.Enabled == true && groupBox5.Enabled == true )
+                string message = "¿Deseas continuar? Una vez guardadas tus preguntas no se podrán modificar más ni podrás volver a esta ventana.";
+                string titutlo = "WARNING";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, titutlo, buttons);
+                if (result == DialogResult.Yes)
                 {
                     if (rbLti.Checked == false && rbLni.Checked == false && rbLa.Checked == false && rbCp.Checked == false ||
                     rbLti_1.Checked == false && rbLni_1.Checked == false && rbLa_1.Checked == false && rbCp_1.Checked == false ||
@@ -155,19 +154,19 @@ namespace PIA_PAL
                         MessageBox.Show("LNI: " + Variables.lni);
                         MessageBox.Show("LA: " + Variables.la);
                         MessageBox.Show("CP: " + Variables.cp);
+                        preguntas_2 Segunda_pagina = new preguntas_2();
+                        this.Hide();
+                        Segunda_pagina.Show();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("LTI: " + Variables.lti);
-                    MessageBox.Show("LNI: " + Variables.lni);
-                    MessageBox.Show("LA: " + Variables.la);
-                    MessageBox.Show("CP: " + Variables.cp);
-                }
-
-                
-
             }
+            else
+            {
+                preguntas_2 Segunda_pagina = new preguntas_2();
+                this.Hide();
+                Segunda_pagina.Show();
+            }
+
             
         }
     }

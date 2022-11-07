@@ -515,7 +515,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(841, 449);
+            this.ClientSize = new System.Drawing.Size(819, 449);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -523,6 +523,7 @@
             this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.groupBox1);
             this.Name = "preguntas_1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "preguntas_1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

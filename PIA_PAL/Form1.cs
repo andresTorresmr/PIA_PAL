@@ -17,9 +17,17 @@ namespace PIA_PAL
 
         private void btnPrimeraVez_Click(object sender, EventArgs e)
         {
-            preguntas_1 formulario = new preguntas_1();
+
+            Perfil formulario = new Perfil();
             formulario.Show();
             this.Hide();
+
+
+            //preguntas_1 formulario = new preguntas_1();
+            //formulario.Show();
+            //this.Hide();
+
+
             //Formulario formulario = new Formulario();
             //formulario.Show();
             //this.Hide();
@@ -27,9 +35,12 @@ namespace PIA_PAL
 
         private void btnYa_Click(object sender, EventArgs e)
         {
-            Datos resultados = new Datos();
+            Resultados resultados = new Resultados();
             resultados.Show();
             this.Hide();
+            //Datos resultados = new Datos();
+            //resultados.Show();
+            //this.Hide();
         }
     }
 }

@@ -67,12 +67,12 @@ namespace PIA_PAL
         private void Resultados_Load(object sender, EventArgs e)
         {
             Nombre_usuario.Text = Variables.ID;
-            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json");
+            string json = File.ReadAllText(@"C:\Users\andre\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json");
 
-            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json"));
+            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\andre\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json"));
             JObject EVdata = JObject.Parse(json);
             //get JSON result objects into a list
-            IList<JToken> results = EVdata[Variables.ID].Children().ToList();            
+            IList<JToken> results = EVdata[Variables.ID].Children().ToList();
             IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"][0]["0"].Children().ToList();
             IList<JToken> histexamen = EVdata[Variables.ID][0]["resultados"][0].Children().ToList();
             Variables.counteval = histexamen.Count;
@@ -207,6 +207,11 @@ namespace PIA_PAL
         }
 
         private void btnex1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnex2_Click(object sender, EventArgs e)
         {
 
         }

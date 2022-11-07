@@ -200,6 +200,7 @@
             this.btnex2.Text = "Examen 2";
             this.btnex2.TextColor = System.Drawing.Color.White;
             this.btnex2.UseVisualStyleBackColor = false;
+            this.btnex2.Click += new System.EventHandler(this.btnex2_Click);
             this.btnex2.MouseHover += new System.EventHandler(this.btnex2_MouseHover);
             // 
             // btnex3
