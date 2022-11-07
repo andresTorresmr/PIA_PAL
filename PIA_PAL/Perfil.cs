@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Printing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,12 +20,20 @@ namespace PIA_PAL
         //campos
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+        private Form currentChildForm;
+
+        //constructor
         public Perfil()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            //formulario
+            this.Text = String.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
 
@@ -75,10 +84,30 @@ namespace PIA_PAL
             }
         }
 
+        private void OpenChildForm(Form childForm)
+        {
+            if(iconPestanaActual != null)
+            {
+                currentChildForm.Close();
+
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblPestanaActual.Text = childForm.Text;
+        }
+
         private void btn_test_1_Click(object sender, EventArgs e)
         {
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
+
+            //openchildform();
         }
 
         private void btn_test_2_Click(object sender, EventArgs e)
@@ -105,6 +134,18 @@ namespace PIA_PAL
             iconPestanaActual.IconChar = IconChar.Home;
             iconPestanaActual.IconColor = Color.Gainsboro;
             lblPestanaActual.Text = "Inicio";
+        }
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

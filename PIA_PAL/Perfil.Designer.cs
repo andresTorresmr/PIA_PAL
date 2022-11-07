@@ -42,6 +42,7 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblPestanaActual = new System.Windows.Forms.Label();
             this.iconPestanaActual = new FontAwesome.Sharp.IconPictureBox();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_perfil)).BeginInit();
@@ -242,6 +243,7 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1022, 50);
             this.panelTitleBar.TabIndex = 1;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // lblPestanaActual
             // 
@@ -268,11 +270,21 @@
             this.iconPestanaActual.TabIndex = 0;
             this.iconPestanaActual.TabStop = false;
             // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(80)))), ((int)(((byte)(83)))));
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(220, 50);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1022, 578);
+            this.panelDesktop.TabIndex = 2;
+            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 628);
+            this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "Perfil";
@@ -305,5 +317,6 @@
         private Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconPestanaActual;
         private Label lblPestanaActual;
+        private Panel panelDesktop;
     }
 }
