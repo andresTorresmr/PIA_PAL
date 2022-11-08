@@ -86,7 +86,7 @@ namespace PIA_PAL
 
         private void OpenChildForm(Form childForm)
         {
-            if(iconPestanaActual != null)
+            if(currentChildForm != null)
             {
                 currentChildForm.Close();
 
@@ -106,24 +106,26 @@ namespace PIA_PAL
         {
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-
-            //openchildform();
+            OpenChildForm(new Examen1());
         }
 
         private void btn_test_2_Click(object sender, EventArgs e)
         {
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
+            OpenChildForm(new Examen2());
         }
 
         private void btn_test_3_Click(object sender, EventArgs e)
         {
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
+            OpenChildForm(new Examen3());
         }
 
         private void img_perfil_Click(object sender, EventArgs e)
         {
+            currentChildForm.Close();
             Reset();
         }
 
@@ -146,6 +148,11 @@ namespace PIA_PAL
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

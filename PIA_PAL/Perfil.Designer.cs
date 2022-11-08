@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.img_perfil = new PIA_PAL.herramientas.RoundedPictureBoxPia();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblPestanaActual = new System.Windows.Forms.Label();
             this.iconPestanaActual = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
@@ -47,6 +48,7 @@
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_perfil)).BeginInit();
             this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPestanaActual)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,6 +238,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
+            this.panelTitleBar.Controls.Add(this.iconPictureBox1);
             this.panelTitleBar.Controls.Add(this.lblPestanaActual);
             this.panelTitleBar.Controls.Add(this.iconPestanaActual);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -244,6 +247,21 @@
             this.panelTitleBar.Size = new System.Drawing.Size(1022, 50);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 19;
+            this.iconPictureBox1.Location = new System.Drawing.Point(1000, 3);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(19, 19);
+            this.iconPictureBox1.TabIndex = 2;
+            this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // lblPestanaActual
             // 
@@ -296,6 +314,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_perfil)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPestanaActual)).EndInit();
             this.ResumeLayout(false);
 
@@ -318,5 +337,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPestanaActual;
         private Label lblPestanaActual;
         private Panel panelDesktop;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
