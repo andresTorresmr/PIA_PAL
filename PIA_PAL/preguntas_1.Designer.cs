@@ -34,7 +34,7 @@
             this.rbCp = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbLti = new PIA_PAL.herramientas.RadioButtonPia();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_siguiente = new PIA_PAL.herramientas.BotonPia();
+            this.btn_siguiente_1 = new PIA_PAL.herramientas.BotonPia();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbCp_1 = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbLti_1 = new PIA_PAL.herramientas.RadioButtonPia();
@@ -151,24 +151,24 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "¿Con cuál de las siguientes frases te sientes más identificado? ";
             // 
-            // btn_siguiente
+            // btn_siguiente_1
             // 
-            this.btn_siguiente.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_siguiente.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_siguiente.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_siguiente.BorderRadius = 20;
-            this.btn_siguiente.BorderSize = 2;
-            this.btn_siguiente.FlatAppearance.BorderSize = 0;
-            this.btn_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_siguiente.ForeColor = System.Drawing.Color.White;
-            this.btn_siguiente.Location = new System.Drawing.Point(638, 1009);
-            this.btn_siguiente.Name = "btn_siguiente";
-            this.btn_siguiente.Size = new System.Drawing.Size(150, 40);
-            this.btn_siguiente.TabIndex = 4;
-            this.btn_siguiente.Text = "Siguente";
-            this.btn_siguiente.TextColor = System.Drawing.Color.White;
-            this.btn_siguiente.UseVisualStyleBackColor = false;
-            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
+            this.btn_siguiente_1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_siguiente_1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_siguiente_1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_siguiente_1.BorderRadius = 20;
+            this.btn_siguiente_1.BorderSize = 2;
+            this.btn_siguiente_1.FlatAppearance.BorderSize = 0;
+            this.btn_siguiente_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_siguiente_1.ForeColor = System.Drawing.Color.White;
+            this.btn_siguiente_1.Location = new System.Drawing.Point(638, 1009);
+            this.btn_siguiente_1.Name = "btn_siguiente_1";
+            this.btn_siguiente_1.Size = new System.Drawing.Size(150, 40);
+            this.btn_siguiente_1.TabIndex = 4;
+            this.btn_siguiente_1.Text = "Siguente";
+            this.btn_siguiente_1.TextColor = System.Drawing.Color.White;
+            this.btn_siguiente_1.UseVisualStyleBackColor = false;
+            this.btn_siguiente_1.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // groupBox2
             // 
@@ -520,7 +520,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btn_siguiente);
+            this.Controls.Add(this.btn_siguiente_1);
             this.Controls.Add(this.groupBox1);
             this.Name = "preguntas_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -547,7 +547,7 @@
         private herramientas.RadioButtonPia rbCp;
         private herramientas.RadioButtonPia rbLti;
         private Label label1;
-        private herramientas.BotonPia btn_siguiente;
+        private herramientas.BotonPia btn_siguiente_1;
         private GroupBox groupBox2;
         private herramientas.RadioButtonPia rbCp_1;
         private herramientas.RadioButtonPia rbLti_1;

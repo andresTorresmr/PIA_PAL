@@ -18,7 +18,7 @@ namespace PIA_PAL
         private void btnPrimeraVez_Click(object sender, EventArgs e)
         {
 
-            Perfil formulario = new Perfil();
+            Examen_preguntas formulario = new Examen_preguntas();
             formulario.Show();
             this.Hide();
 

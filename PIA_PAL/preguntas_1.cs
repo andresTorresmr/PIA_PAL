@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace PIA_PAL
 {
     public partial class preguntas_1 : Form
     {
+        
         public preguntas_1()
         {
             InitializeComponent();
         }
+        // Delegado
+        public delegate void DelegadoPreg1(string mensaje);
+        //Evento
+        public event DelegadoPreg1 Terminado;
 
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
@@ -154,9 +160,13 @@ namespace PIA_PAL
                         MessageBox.Show("LNI: " + Variables.lni);
                         MessageBox.Show("LA: " + Variables.la);
                         MessageBox.Show("CP: " + Variables.cp);
-                        preguntas_2 Segunda_pagina = new preguntas_2();
-                        this.Hide();
-                        Segunda_pagina.Show();
+
+                        // Al evento Click del Boton invocamos el Evento y pasamos el TEXTO
+                        this.Terminado("1");
+
+                        //preguntas_2 Segunda_pagina = new preguntas_2();
+                        //this.Hide();
+                        //Segunda_pagina.Show();
                     }
                 }
             }
