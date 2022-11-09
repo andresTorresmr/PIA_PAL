@@ -464,15 +464,15 @@
         private Label lblPestanaActual;
         private FontAwesome.Sharp.IconPictureBox iconPestanaActual;
         private Panel panelMenu;
-        private FontAwesome.Sharp.IconButton section_10;
-        private FontAwesome.Sharp.IconButton section_9;
-        private FontAwesome.Sharp.IconButton section_8;
-        private FontAwesome.Sharp.IconButton section_7;
-        private FontAwesome.Sharp.IconButton section_6;
-        private FontAwesome.Sharp.IconButton section_5;
-        private FontAwesome.Sharp.IconButton section_4;
-        private FontAwesome.Sharp.IconButton section_3;
-        private FontAwesome.Sharp.IconButton section_2;
-        private FontAwesome.Sharp.IconButton section_1;
+        public FontAwesome.Sharp.IconButton section_10;
+        public FontAwesome.Sharp.IconButton section_9;
+        public FontAwesome.Sharp.IconButton section_8;
+        public FontAwesome.Sharp.IconButton section_7;
+        public FontAwesome.Sharp.IconButton section_6;
+        public FontAwesome.Sharp.IconButton section_5;
+        public FontAwesome.Sharp.IconButton section_4;
+        public FontAwesome.Sharp.IconButton section_3;
+        public FontAwesome.Sharp.IconButton section_2;
+        public FontAwesome.Sharp.IconButton section_1;
     }
 }

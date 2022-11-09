@@ -23,23 +23,8 @@ namespace PIA_PAL
         //campos
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        private Form currentChildForm;
-        // Instanciamos un objeto de FORM2
-        preguntas_1 seccion_1 = new preguntas_1();
-
-        //Preguntas 1 pruebas xD
-            //Invocamos al Evento
-            //PonerTitulo es un método
-
-//            formulario.MiEvento += new Form2.DelegadoTitulo(PonerTitulo);
-            
-            //Metodo de Form1 que pondrá el titulo al Form
-            void DisableButtonTest(string num)
-            {
-                //this.Text = num;
-                section_1.Enabled = false;
-
-            }
+        public Form currentChildForm;
+  
 
     //constructor
     public Examen_preguntas()
@@ -53,9 +38,8 @@ namespace PIA_PAL
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            seccion_1.Terminado += new preguntas_1.DelegadoPreg1(DisableButtonTest);
         }
-        //http://systemtak.blogspot.com/2009/09/eventos-delegados-en-c.html
+
         //Métodos
         private void ActivateButton(object senderBtn, Color color)
         {
@@ -123,9 +107,21 @@ namespace PIA_PAL
         //Sección 1
         private void section_1_Click(object sender, EventArgs e)
         {
+            //pruebas
+            preguntas_1 preg_1 = new preguntas_1();
+            AddOwnedForm(preg_1);
+            currentChildForm = preg_1;
+            preg_1.TopLevel = false;
+            preg_1.FormBorderStyle = FormBorderStyle.None;
+            preg_1.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_1);
+            panelDesktop.Tag = preg_1;
+            preg_1.BringToFront();
+            preg_1.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_1());
+            //OpenChildForm(new preguntas_1());
+            
         }
 
         //Sección 2

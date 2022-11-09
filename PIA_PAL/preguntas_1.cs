@@ -18,10 +18,7 @@ namespace PIA_PAL
         {
             InitializeComponent();
         }
-        // Delegado
-        public delegate void DelegadoPreg1(string mensaje);
-        //Evento
-        public event DelegadoPreg1 Terminado;
+  
 
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
@@ -161,8 +158,10 @@ namespace PIA_PAL
                         MessageBox.Show("LA: " + Variables.la);
                         MessageBox.Show("CP: " + Variables.cp);
 
-                        // Al evento Click del Boton invocamos el Evento y pasamos el TEXTO
-                        this.Terminado("1");
+                        Examen_preguntas principal = Owner as Examen_preguntas;
+                        principal.section_1.Enabled = false;
+                        principal.currentChildForm.Close();
+
 
                         //preguntas_2 Segunda_pagina = new preguntas_2();
                         //this.Hide();
