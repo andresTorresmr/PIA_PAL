@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.rbMal_15 = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbMal_16 = new PIA_PAL.herramientas.RadioButtonPia();
             this.label5 = new System.Windows.Forms.Label();
             this.rbBien_5 = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbMal_14 = new PIA_PAL.herramientas.RadioButtonPia();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.rbMal_12 = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbMal_13 = new PIA_PAL.herramientas.RadioButtonPia();
             this.label4 = new System.Windows.Forms.Label();
             this.rbBien_4 = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbMal_11 = new PIA_PAL.herramientas.RadioButtonPia();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.rbMal_9 = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbMal_10 = new PIA_PAL.herramientas.RadioButtonPia();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,15 +57,12 @@
             this.rbMal_6 = new PIA_PAL.herramientas.RadioButtonPia();
             this.btn_siguiente_1 = new PIA_PAL.herramientas.BotonPia();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.rbMal_3 = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbMal_4 = new PIA_PAL.herramientas.RadioButtonPia();
             this.label1 = new System.Windows.Forms.Label();
             this.rbMal_1 = new PIA_PAL.herramientas.RadioButtonPia();
             this.rbBien_1 = new PIA_PAL.herramientas.RadioButtonPia();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,10 +85,20 @@
             this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(12, 782);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(708, 182);
+            this.groupBox5.Size = new System.Drawing.Size(674, 182);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Pregunta 15";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(37, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 21);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "en bienes y servicios";
             // 
             // rbMal_15
             // 
@@ -176,10 +186,22 @@
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(12, 589);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(708, 187);
+            this.groupBox4.Size = new System.Drawing.Size(674, 187);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pregunta 14";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(55, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(623, 21);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Saber lo que el cliente quiere comprar y no simplemente los artículos que \t\tconsi" +
+    "deramos ";
             // 
             // rbMal_12
             // 
@@ -267,10 +289,20 @@
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 394);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(708, 189);
+            this.groupBox3.Size = new System.Drawing.Size(674, 189);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pregunta 13";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(37, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(465, 21);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "en donde lo importante son las relaciones entre los componentes ";
             // 
             // rbMal_9
             // 
@@ -356,7 +388,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(708, 166);
+            this.groupBox2.Size = new System.Drawing.Size(674, 166);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pregunta 12";
@@ -443,7 +475,8 @@
             this.btn_siguiente_1.FlatAppearance.BorderSize = 0;
             this.btn_siguiente_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente_1.ForeColor = System.Drawing.Color.White;
-            this.btn_siguiente_1.Location = new System.Drawing.Point(570, 970);
+            this.btn_siguiente_1.Location = new System.Drawing.Point(536, 970);
+            this.btn_siguiente_1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btn_siguiente_1.Name = "btn_siguiente_1";
             this.btn_siguiente_1.Size = new System.Drawing.Size(150, 40);
             this.btn_siguiente_1.TabIndex = 10;
@@ -467,10 +500,20 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(708, 183);
+            this.groupBox1.Size = new System.Drawing.Size(674, 183);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pregunta 11";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(37, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(549, 21);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "de trabajo con el propósito de lograr los objetivos de manera eficiente y eficaz";
             // 
             // rbMal_3
             // 
@@ -542,47 +585,6 @@
             this.rbBien_1.Text = "Administración";
             this.rbBien_1.UnCheckedColor = System.Drawing.Color.White;
             this.rbBien_1.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(37, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(549, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "de trabajo con el propósito de lograr los objetivos de manera eficiente y eficaz";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(37, 40);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(465, 21);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "en donde lo importante son las relaciones entre los componentes ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(66, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(623, 21);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Saber lo que el cliente quiere comprar y no simplemente los artículos que \t\tconsi" +
-    "deramos ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(37, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(152, 21);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "en bienes y servicios";
             // 
             // preguntas_3
             // 

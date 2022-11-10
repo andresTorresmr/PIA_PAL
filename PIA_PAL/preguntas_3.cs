@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,35 +46,35 @@ namespace PIA_PAL
                     {
                         if (rbBien_1.Checked)
                         {
-                            Variables.la += 1;
+                            Variables.la += 5;
 
                         }
                         groupBox1.Enabled = false;
 
                         if (rbBien_2.Checked)
                         {
-                            Variables.la += 1;
+                            Variables.la += 5;
 
                         }
                         groupBox2.Enabled = false;
 
                         if (rbBien_3.Checked)
                         {
-                            Variables.la += 1;
+                            Variables.la += 5;
 
                         }
                         groupBox3.Enabled = false;
 
                         if (rbBien_4.Checked)
                         {
-                            Variables.la += 1;
+                            Variables.la += 5;
 
                         }
                         groupBox4.Enabled = false;
 
                         if (rbBien_5.Checked)
                         {
-                            Variables.la += 1;
+                            Variables.la += 5;
 
                         }
                         groupBox5.Enabled = false;
@@ -85,7 +86,8 @@ namespace PIA_PAL
                         MessageBox.Show("CP: " + Variables.cp);
 
                         Examen_preguntas principal = Owner as Examen_preguntas;
-                        principal.section_2.Enabled = false;
+                        principal.section_3.IconChar = IconChar.CheckCircle;
+                        principal.section_3.Enabled = false;
                         principal.section_4.Visible = true;
                         principal.currentChildForm.Close();
 

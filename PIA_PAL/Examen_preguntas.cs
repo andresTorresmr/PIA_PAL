@@ -331,6 +331,19 @@ namespace PIA_PAL
                 
         }
 
-       
+        private void Examen_preguntas_Load(object sender, EventArgs e)
+        {
+            
+            section_2.Visible = false;
+            section_3.Visible = false;
+            section_4.Visible = false;
+            section_5.Visible = false;
+            section_6.Visible = false;
+            section_7.Visible = false;
+            section_8.Visible = false;
+            section_9.Visible = false;
+            section_10.Visible = false;
+
+        }
     }
 }

@@ -143,14 +143,15 @@
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
+            this.iconPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconPictureBox1.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.X;
             this.iconPictureBox1.IconColor = System.Drawing.Color.Gainsboro;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 19;
+            this.iconPictureBox1.IconSize = 18;
             this.iconPictureBox1.Location = new System.Drawing.Point(1000, 3);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(19, 19);
+            this.iconPictureBox1.Size = new System.Drawing.Size(19, 18);
             this.iconPictureBox1.TabIndex = 2;
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click_1);
@@ -221,7 +222,6 @@
             this.section_10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_10.UseVisualStyleBackColor = true;
-            this.section_10.Visible = false;
             this.section_10.Click += new System.EventHandler(this.section_10_Click);
             // 
             // section_9
@@ -245,7 +245,6 @@
             this.section_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_9.UseVisualStyleBackColor = true;
-            this.section_9.Visible = false;
             this.section_9.Click += new System.EventHandler(this.section_9_Click);
             // 
             // section_8
@@ -269,7 +268,6 @@
             this.section_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_8.UseVisualStyleBackColor = true;
-            this.section_8.Visible = false;
             this.section_8.Click += new System.EventHandler(this.section_8_Click);
             // 
             // section_7
@@ -293,7 +291,6 @@
             this.section_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_7.UseVisualStyleBackColor = true;
-            this.section_7.Visible = false;
             this.section_7.Click += new System.EventHandler(this.section_7_Click);
             // 
             // section_6
@@ -317,7 +314,6 @@
             this.section_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_6.UseVisualStyleBackColor = true;
-            this.section_6.Visible = false;
             this.section_6.Click += new System.EventHandler(this.section_6_Click);
             // 
             // section_5
@@ -341,7 +337,6 @@
             this.section_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_5.UseVisualStyleBackColor = true;
-            this.section_5.Visible = false;
             this.section_5.Click += new System.EventHandler(this.section_5_Click);
             // 
             // section_4
@@ -365,7 +360,6 @@
             this.section_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_4.UseVisualStyleBackColor = true;
-            this.section_4.Visible = false;
             this.section_4.Click += new System.EventHandler(this.section_4_Click);
             // 
             // section_3
@@ -389,7 +383,6 @@
             this.section_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_3.UseVisualStyleBackColor = true;
-            this.section_3.Visible = false;
             this.section_3.Click += new System.EventHandler(this.section_3_Click);
             // 
             // section_2
@@ -413,7 +406,6 @@
             this.section_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.section_2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.section_2.UseVisualStyleBackColor = true;
-            this.section_2.Visible = false;
             this.section_2.Click += new System.EventHandler(this.section_2_Click);
             // 
             // section_1
@@ -450,6 +442,7 @@
             this.Name = "Examen_preguntas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Examen_preguntas";
+            this.Load += new System.EventHandler(this.Examen_preguntas_Load);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_perfil)).EndInit();
