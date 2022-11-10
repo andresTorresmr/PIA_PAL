@@ -69,9 +69,9 @@
             this.pictureBox2.BackgroundImage = global::PIA_PAL.Properties.Resources.elefante;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Enabled = false;
-            this.pictureBox2.Location = new System.Drawing.Point(417, 56);
+            this.pictureBox2.Location = new System.Drawing.Point(473, 56);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(447, 336);
+            this.pictureBox2.Size = new System.Drawing.Size(391, 336);
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 

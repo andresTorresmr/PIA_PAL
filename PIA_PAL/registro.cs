@@ -24,8 +24,8 @@ namespace PIA_PAL
         class DB
         {
             MySqlConnection connection = new
-            MySqlConnection("server = 127.0.0.1;port=3306;username=root;password=;database=ansystec_pal; pooling = false; convert zero datetime=true");
-
+            //MySqlConnection("server = 127.0.0.1;port=3306;username=root;password=;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            MySqlConnection("server = 162.241.62.140;port=3306;username=ansystec_roman;password=Roman2022..;database=ansystec_pal; pooling = false; convert zero datetime=true");
             public void openConnection()
             {
                 if (connection.State == System.Data.ConnectionState.Closed)
@@ -105,6 +105,7 @@ namespace PIA_PAL
             string nombre = Nombre1.Texts;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
+            //creo que aqui está el error pero estoy muy cansado así que solo quiero acabar las preguntas y ya pls, mañana veo esto en clases :D
             MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1", db.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             adapter.SelectCommand = command;
@@ -129,9 +130,13 @@ namespace PIA_PAL
             string apellidom = ApellidoM.Texts;
             string apellidop = ApellidoP.Texts;
 
-            if (fnombre.Equals("nombre_1") || fnombre2.Equals("nombre_2") || apellidop.Equals("apellido_p") || apellidom.Equals("apellido_m"))
+           
+
+            if (fnombre.Equals("nombre_1") && fnombre2.Equals("nombre_2") && apellidop.Equals("apellido_p") && apellidom.Equals("apellido_m"))
             {
+                
                 return true;
+
             }
             else
             {

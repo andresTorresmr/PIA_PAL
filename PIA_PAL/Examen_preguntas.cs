@@ -107,7 +107,6 @@ namespace PIA_PAL
         //Sección 1
         private void section_1_Click(object sender, EventArgs e)
         {
-            //pruebas
             preguntas_1 preg_1 = new preguntas_1();
             AddOwnedForm(preg_1);
             currentChildForm = preg_1;
@@ -127,73 +126,154 @@ namespace PIA_PAL
         //Sección 2
         private void section_2_Click(object sender, EventArgs e)
         {
+            preguntas_2 preg_2 = new preguntas_2();
+            AddOwnedForm(preg_2);
+            currentChildForm = preg_2;
+            preg_2.TopLevel = false;
+            preg_2.FormBorderStyle = FormBorderStyle.None;
+            preg_2.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_2);
+            panelDesktop.Tag = preg_2;
+            preg_2.BringToFront();
+            preg_2.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_2());
         }
 
         //Sección 3
         private void section_3_Click(object sender, EventArgs e)
         {
+            preguntas_3 preg_3 = new preguntas_3();
+            AddOwnedForm(preg_3);
+            currentChildForm = preg_3;
+            preg_3.TopLevel = false;
+            preg_3.FormBorderStyle = FormBorderStyle.None;
+            preg_3.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_3);
+            panelDesktop.Tag = preg_3;
+            preg_3.BringToFront();
+            preg_3.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_3());
         }
 
         //Sección 4
         private void section_4_Click(object sender, EventArgs e)
         {
+            preguntas_4 preg_4 = new preguntas_4();
+            AddOwnedForm(preg_4);
+            currentChildForm = preg_4;
+            preg_4.TopLevel = false;
+            preg_4.FormBorderStyle = FormBorderStyle.None;
+            preg_4.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_4);
+            panelDesktop.Tag = preg_4;
+            preg_4.BringToFront();
+            preg_4.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_4());
         }
 
         //Sección 5
         private void section_5_Click(object sender, EventArgs e)
         {
+            preguntas_5 preg_5 = new preguntas_5();
+            AddOwnedForm(preg_5);
+            currentChildForm = preg_5;
+            preg_5.TopLevel = false;
+            preg_5.FormBorderStyle = FormBorderStyle.None;
+            preg_5.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_5);
+            panelDesktop.Tag = preg_5;
+            preg_5.BringToFront();
+            preg_5.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_5());
         }
 
         //Sección 6
         private void section_6_Click(object sender, EventArgs e)
         {
+            preguntas_6 preg_6 = new preguntas_6();
+            AddOwnedForm(preg_6);
+            currentChildForm = preg_6;
+            preg_6.TopLevel = false;
+            preg_6.FormBorderStyle = FormBorderStyle.None;
+            preg_6.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_6);
+            panelDesktop.Tag = preg_6;
+            preg_6.BringToFront();
+            preg_6.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_6());
         }
 
         //Sección 7
         private void section_7_Click(object sender, EventArgs e)
         {
+            preguntas_7 preg_7 = new preguntas_7();
+            AddOwnedForm(preg_7);
+            currentChildForm = preg_7;
+            preg_7.TopLevel = false;
+            preg_7.FormBorderStyle = FormBorderStyle.None;
+            preg_7.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_7);
+            panelDesktop.Tag = preg_7;
+            preg_7.BringToFront();
+            preg_7.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_7());
         }
 
         //Sección 8
         private void section_8_Click(object sender, EventArgs e)
         {
+            preguntas_8 preg_8 = new preguntas_8();
+            AddOwnedForm(preg_8);
+            currentChildForm = preg_8;
+            preg_8.TopLevel = false;
+            preg_8.FormBorderStyle = FormBorderStyle.None;
+            preg_8.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_8);
+            panelDesktop.Tag = preg_8;
+            preg_8.BringToFront();
+            preg_8.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_8());
         }
 
         //Sección 9
         private void section_9_Click(object sender, EventArgs e)
         {
+            preguntas_9 preg_9 = new preguntas_9();
+            AddOwnedForm(preg_9);
+            currentChildForm = preg_9;
+            preg_9.TopLevel = false;
+            preg_9.FormBorderStyle = FormBorderStyle.None;
+            preg_9.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_9);
+            panelDesktop.Tag = preg_9;
+            preg_9.BringToFront();
+            preg_9.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_9());
         }
 
         //Sección 10
         private void section_10_Click(object sender, EventArgs e)
         {
+            preguntas_10 preg_10 = new preguntas_10();
+            AddOwnedForm(preg_10);
+            currentChildForm = preg_10;
+            preg_10.TopLevel = false;
+            preg_10.FormBorderStyle = FormBorderStyle.None;
+            preg_10.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(preg_10);
+            panelDesktop.Tag = preg_10;
+            preg_10.BringToFront();
+            preg_10.Show();
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
-            OpenChildForm(new preguntas_10());
         }
 
         private void img_perfil_Click(object sender, EventArgs e)
@@ -228,5 +308,17 @@ namespace PIA_PAL
             Application.Exit();
         }
 
+        private void iconPictureBox1_Click_1(object sender, EventArgs e)
+        {
+            string message = "¿Seguro que deseas salir de la aplicación? Al no terminar el exámen se borrarán tus respuestas.";
+            string titutlo = "WARNING";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, titutlo, buttons);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+                
+        }
     }
 }

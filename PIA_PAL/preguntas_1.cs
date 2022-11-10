@@ -160,6 +160,7 @@ namespace PIA_PAL
 
                         Examen_preguntas principal = Owner as Examen_preguntas;
                         principal.section_1.Enabled = false;
+                        principal.section_2.Visible = true;
                         principal.currentChildForm.Close();
 
 

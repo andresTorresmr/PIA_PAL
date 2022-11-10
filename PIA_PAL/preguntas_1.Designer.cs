@@ -69,44 +69,48 @@
             // rbLa
             // 
             this.rbLa.AutoSize = true;
-            this.rbLa.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLa.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLa.Location = new System.Drawing.Point(37, 58);
             this.rbLa.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLa.Name = "rbLa";
             this.rbLa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLa.Size = new System.Drawing.Size(319, 21);
+            this.rbLa.Size = new System.Drawing.Size(356, 21);
             this.rbLa.TabIndex = 0;
             this.rbLa.TabStop = true;
             this.rbLa.Text = "Me considero un buen líder en mis equipos de trabajo";
-            this.rbLa.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLa.UnCheckedColor = System.Drawing.Color.White;
             this.rbLa.UseVisualStyleBackColor = true;
             // 
             // rbLni
             // 
             this.rbLni.AutoSize = true;
-            this.rbLni.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLni.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLni.Location = new System.Drawing.Point(37, 85);
             this.rbLni.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLni.Name = "rbLni";
             this.rbLni.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLni.Size = new System.Drawing.Size(255, 21);
+            this.rbLni.Size = new System.Drawing.Size(284, 21);
             this.rbLni.TabIndex = 0;
             this.rbLni.TabStop = true;
             this.rbLni.Text = "Me agrada convivir y socializar con todos ";
-            this.rbLni.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLni.UnCheckedColor = System.Drawing.Color.White;
             this.rbLni.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.groupBox1.Controls.Add(this.rbCp);
             this.groupBox1.Controls.Add(this.rbLti);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rbLa);
             this.groupBox1.Controls.Add(this.rbLni);
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(12, 65);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 166);
+            this.groupBox1.Size = new System.Drawing.Size(742, 166);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pregunta 1";
@@ -114,31 +118,31 @@
             // rbCp
             // 
             this.rbCp.AutoSize = true;
-            this.rbCp.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbCp.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbCp.Location = new System.Drawing.Point(37, 112);
             this.rbCp.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbCp.Name = "rbCp";
             this.rbCp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbCp.Size = new System.Drawing.Size(452, 21);
+            this.rbCp.Size = new System.Drawing.Size(508, 21);
             this.rbCp.TabIndex = 2;
             this.rbCp.TabStop = true;
             this.rbCp.Text = "Me considero una persona responsable y con capacidad para tomar decisiones ";
-            this.rbCp.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbCp.UnCheckedColor = System.Drawing.Color.White;
             this.rbCp.UseVisualStyleBackColor = true;
             // 
             // rbLti
             // 
             this.rbLti.AutoSize = true;
-            this.rbLti.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLti.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLti.Location = new System.Drawing.Point(37, 139);
             this.rbLti.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLti.Name = "rbLti";
             this.rbLti.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLti.Size = new System.Drawing.Size(390, 21);
+            this.rbLti.Size = new System.Drawing.Size(433, 21);
             this.rbLti.TabIndex = 3;
             this.rbLti.TabStop = true;
             this.rbLti.Text = " Soy una persona que analiza mucho las situaciones antes de actuar";
-            this.rbLti.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLti.UnCheckedColor = System.Drawing.Color.White;
             this.rbLti.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -153,15 +157,16 @@
             // 
             // btn_siguiente_1
             // 
-            this.btn_siguiente_1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_siguiente_1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_siguiente_1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_siguiente_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_siguiente_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btn_siguiente_1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(28)))), ((int)(((byte)(30)))));
+            this.btn_siguiente_1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(25)))), ((int)(((byte)(27)))));
             this.btn_siguiente_1.BorderRadius = 20;
             this.btn_siguiente_1.BorderSize = 2;
             this.btn_siguiente_1.FlatAppearance.BorderSize = 0;
             this.btn_siguiente_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente_1.ForeColor = System.Drawing.Color.White;
-            this.btn_siguiente_1.Location = new System.Drawing.Point(638, 1009);
+            this.btn_siguiente_1.Location = new System.Drawing.Point(604, 970);
             this.btn_siguiente_1.Name = "btn_siguiente_1";
             this.btn_siguiente_1.Size = new System.Drawing.Size(150, 40);
             this.btn_siguiente_1.TabIndex = 4;
@@ -172,15 +177,19 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.groupBox2.Controls.Add(this.rbCp_1);
             this.groupBox2.Controls.Add(this.rbLti_1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.rbLa_1);
             this.groupBox2.Controls.Add(this.rbLni_1);
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(12, 254);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(12, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(776, 166);
+            this.groupBox2.Size = new System.Drawing.Size(742, 166);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pregunta 2";
@@ -188,31 +197,31 @@
             // rbCp_1
             // 
             this.rbCp_1.AutoSize = true;
-            this.rbCp_1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbCp_1.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbCp_1.Location = new System.Drawing.Point(37, 112);
             this.rbCp_1.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbCp_1.Name = "rbCp_1";
             this.rbCp_1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbCp_1.Size = new System.Drawing.Size(452, 21);
+            this.rbCp_1.Size = new System.Drawing.Size(295, 21);
             this.rbCp_1.TabIndex = 2;
             this.rbCp_1.TabStop = true;
-            this.rbCp_1.Text = "Me considero una persona responsable y con capacidad para tomar decisiones ";
-            this.rbCp_1.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbCp_1.Text = "No tengo dificultad trabajando bajo presión";
+            this.rbCp_1.UnCheckedColor = System.Drawing.Color.White;
             this.rbCp_1.UseVisualStyleBackColor = true;
             // 
             // rbLti_1
             // 
             this.rbLti_1.AutoSize = true;
-            this.rbLti_1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLti_1.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLti_1.Location = new System.Drawing.Point(37, 139);
             this.rbLti_1.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLti_1.Name = "rbLti_1";
             this.rbLti_1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLti_1.Size = new System.Drawing.Size(390, 21);
+            this.rbLti_1.Size = new System.Drawing.Size(195, 21);
             this.rbLti_1.TabIndex = 3;
             this.rbLti_1.TabStop = true;
-            this.rbLti_1.Text = " Soy una persona que analiza mucho las situaciones antes de actuar";
-            this.rbLti_1.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLti_1.Text = "Tengo buen sentido común";
+            this.rbLti_1.UnCheckedColor = System.Drawing.Color.White;
             this.rbLti_1.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -228,22 +237,22 @@
             // rbLa_1
             // 
             this.rbLa_1.AutoSize = true;
-            this.rbLa_1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLa_1.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLa_1.Location = new System.Drawing.Point(37, 58);
             this.rbLa_1.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLa_1.Name = "rbLa_1";
             this.rbLa_1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLa_1.Size = new System.Drawing.Size(319, 21);
+            this.rbLa_1.Size = new System.Drawing.Size(317, 21);
             this.rbLa_1.TabIndex = 0;
             this.rbLa_1.TabStop = true;
-            this.rbLa_1.Text = "Me considero un buen líder en mis equipos de trabajo";
-            this.rbLa_1.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLa_1.Text = "Tengo facilidad para que las personas me sigan";
+            this.rbLa_1.UnCheckedColor = System.Drawing.Color.White;
             this.rbLa_1.UseVisualStyleBackColor = true;
             // 
             // rbLni_1
             // 
             this.rbLni_1.AutoSize = true;
-            this.rbLni_1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLni_1.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLni_1.Location = new System.Drawing.Point(37, 85);
             this.rbLni_1.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLni_1.Name = "rbLni_1";
@@ -251,53 +260,57 @@
             this.rbLni_1.Size = new System.Drawing.Size(255, 21);
             this.rbLni_1.TabIndex = 0;
             this.rbLni_1.TabStop = true;
-            this.rbLni_1.Text = "Me agrada convivir y socializar con todos ";
-            this.rbLni_1.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLni_1.Text = "Tengo más iniciativa sobre los demás";
+            this.rbLni_1.UnCheckedColor = System.Drawing.Color.White;
             this.rbLni_1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.groupBox3.Controls.Add(this.rbCp_2);
             this.groupBox3.Controls.Add(this.rbLti_2);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.rbLa_2);
             this.groupBox3.Controls.Add(this.rbLni_2);
-            this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(12, 449);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(12, 394);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(776, 166);
+            this.groupBox3.Size = new System.Drawing.Size(742, 166);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pregunta 1";
+            this.groupBox3.Text = "Pregunta 3";
             // 
             // rbCp_2
             // 
             this.rbCp_2.AutoSize = true;
-            this.rbCp_2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbCp_2.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbCp_2.Location = new System.Drawing.Point(37, 112);
             this.rbCp_2.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbCp_2.Name = "rbCp_2";
             this.rbCp_2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbCp_2.Size = new System.Drawing.Size(452, 21);
+            this.rbCp_2.Size = new System.Drawing.Size(348, 21);
             this.rbCp_2.TabIndex = 2;
             this.rbCp_2.TabStop = true;
-            this.rbCp_2.Text = "Me considero una persona responsable y con capacidad para tomar decisiones ";
-            this.rbCp_2.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbCp_2.Text = "Me siento cómodo manejando y analizando números";
+            this.rbCp_2.UnCheckedColor = System.Drawing.Color.White;
             this.rbCp_2.UseVisualStyleBackColor = true;
             // 
             // rbLti_2
             // 
             this.rbLti_2.AutoSize = true;
-            this.rbLti_2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLti_2.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLti_2.Location = new System.Drawing.Point(37, 139);
             this.rbLti_2.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLti_2.Name = "rbLti_2";
             this.rbLti_2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLti_2.Size = new System.Drawing.Size(390, 21);
+            this.rbLti_2.Size = new System.Drawing.Size(388, 21);
             this.rbLti_2.TabIndex = 3;
             this.rbLti_2.TabStop = true;
-            this.rbLti_2.Text = " Soy una persona que analiza mucho las situaciones antes de actuar";
-            this.rbLti_2.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLti_2.Text = "Disfruto pasar tiempo navegando y aprendiendo en internet";
+            this.rbLti_2.UnCheckedColor = System.Drawing.Color.White;
             this.rbLti_2.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -313,76 +326,80 @@
             // rbLa_2
             // 
             this.rbLa_2.AutoSize = true;
-            this.rbLa_2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLa_2.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLa_2.Location = new System.Drawing.Point(37, 58);
             this.rbLa_2.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLa_2.Name = "rbLa_2";
             this.rbLa_2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLa_2.Size = new System.Drawing.Size(319, 21);
+            this.rbLa_2.Size = new System.Drawing.Size(295, 21);
             this.rbLa_2.TabIndex = 0;
             this.rbLa_2.TabStop = true;
-            this.rbLa_2.Text = "Me considero un buen líder en mis equipos de trabajo";
-            this.rbLa_2.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLa_2.Text = "Puedo organizar tareas y delegar en equipo";
+            this.rbLa_2.UnCheckedColor = System.Drawing.Color.White;
             this.rbLa_2.UseVisualStyleBackColor = true;
             // 
             // rbLni_2
             // 
             this.rbLni_2.AutoSize = true;
-            this.rbLni_2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLni_2.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLni_2.Location = new System.Drawing.Point(37, 85);
             this.rbLni_2.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLni_2.Name = "rbLni_2";
             this.rbLni_2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLni_2.Size = new System.Drawing.Size(255, 21);
+            this.rbLni_2.Size = new System.Drawing.Size(400, 21);
             this.rbLni_2.TabIndex = 0;
             this.rbLni_2.TabStop = true;
-            this.rbLni_2.Text = "Me agrada convivir y socializar con todos ";
-            this.rbLni_2.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLni_2.Text = "Me es sencillo adquirir conocimientos en un idioma extranjero";
+            this.rbLni_2.UnCheckedColor = System.Drawing.Color.White;
             this.rbLni_2.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.groupBox4.Controls.Add(this.rbCp_3);
             this.groupBox4.Controls.Add(this.rbLti_3);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.rbLa_3);
             this.groupBox4.Controls.Add(this.rbLni_3);
-            this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(12, 644);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.Location = new System.Drawing.Point(12, 589);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(776, 166);
+            this.groupBox4.Size = new System.Drawing.Size(742, 166);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Pregunta 1";
+            this.groupBox4.Text = "Pregunta 4";
             // 
             // rbCp_3
             // 
             this.rbCp_3.AutoSize = true;
-            this.rbCp_3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbCp_3.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbCp_3.Location = new System.Drawing.Point(37, 112);
             this.rbCp_3.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbCp_3.Name = "rbCp_3";
             this.rbCp_3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbCp_3.Size = new System.Drawing.Size(452, 21);
+            this.rbCp_3.Size = new System.Drawing.Size(156, 21);
             this.rbCp_3.TabIndex = 2;
             this.rbCp_3.TabStop = true;
-            this.rbCp_3.Text = "Me considero una persona responsable y con capacidad para tomar decisiones ";
-            this.rbCp_3.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbCp_3.Text = "Finanzas y economía";
+            this.rbCp_3.UnCheckedColor = System.Drawing.Color.White;
             this.rbCp_3.UseVisualStyleBackColor = true;
             // 
             // rbLti_3
             // 
             this.rbLti_3.AutoSize = true;
-            this.rbLti_3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLti_3.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLti_3.Location = new System.Drawing.Point(37, 139);
             this.rbLti_3.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLti_3.Name = "rbLti_3";
             this.rbLti_3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLti_3.Size = new System.Drawing.Size(390, 21);
+            this.rbLti_3.Size = new System.Drawing.Size(191, 21);
             this.rbLti_3.TabIndex = 3;
             this.rbLti_3.TabStop = true;
-            this.rbLti_3.Text = " Soy una persona que analiza mucho las situaciones antes de actuar";
-            this.rbLti_3.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLti_3.Text = "Desarrollo de aplicaciones";
+            this.rbLti_3.UnCheckedColor = System.Drawing.Color.White;
             this.rbLti_3.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -391,83 +408,87 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(37, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(438, 21);
+            this.label4.Size = new System.Drawing.Size(417, 21);
             this.label4.TabIndex = 1;
-            this.label4.Text = "¿Con cuál de las siguientes frases te sientes más identificado? ";
+            this.label4.Text = "¿Cuál de las siguientes actividades te parece más atractiva?";
             // 
             // rbLa_3
             // 
             this.rbLa_3.AutoSize = true;
-            this.rbLa_3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLa_3.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLa_3.Location = new System.Drawing.Point(37, 58);
             this.rbLa_3.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLa_3.Name = "rbLa_3";
             this.rbLa_3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLa_3.Size = new System.Drawing.Size(319, 21);
+            this.rbLa_3.Size = new System.Drawing.Size(147, 21);
             this.rbLa_3.TabIndex = 0;
             this.rbLa_3.TabStop = true;
-            this.rbLa_3.Text = "Me considero un buen líder en mis equipos de trabajo";
-            this.rbLa_3.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLa_3.Text = "Dirección y Control";
+            this.rbLa_3.UnCheckedColor = System.Drawing.Color.White;
             this.rbLa_3.UseVisualStyleBackColor = true;
             // 
             // rbLni_3
             // 
             this.rbLni_3.AutoSize = true;
-            this.rbLni_3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLni_3.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLni_3.Location = new System.Drawing.Point(37, 85);
             this.rbLni_3.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLni_3.Name = "rbLni_3";
             this.rbLni_3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLni_3.Size = new System.Drawing.Size(255, 21);
+            this.rbLni_3.Size = new System.Drawing.Size(158, 21);
             this.rbLni_3.TabIndex = 0;
             this.rbLni_3.TabStop = true;
-            this.rbLni_3.Text = "Me agrada convivir y socializar con todos ";
-            this.rbLni_3.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLni_3.Text = "Logística en aduanas";
+            this.rbLni_3.UnCheckedColor = System.Drawing.Color.White;
             this.rbLni_3.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.groupBox5.Controls.Add(this.rbCp_4);
             this.groupBox5.Controls.Add(this.rbLti_4);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.rbLa_4);
             this.groupBox5.Controls.Add(this.rbLni_4);
-            this.groupBox5.ForeColor = System.Drawing.Color.Black;
-            this.groupBox5.Location = new System.Drawing.Point(12, 837);
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
+            this.groupBox5.Location = new System.Drawing.Point(12, 782);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(776, 166);
+            this.groupBox5.Size = new System.Drawing.Size(742, 166);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Pregunta 1";
+            this.groupBox5.Text = "Pregunta 5";
             // 
             // rbCp_4
             // 
             this.rbCp_4.AutoSize = true;
-            this.rbCp_4.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbCp_4.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbCp_4.Location = new System.Drawing.Point(37, 112);
             this.rbCp_4.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbCp_4.Name = "rbCp_4";
             this.rbCp_4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbCp_4.Size = new System.Drawing.Size(452, 21);
+            this.rbCp_4.Size = new System.Drawing.Size(381, 21);
             this.rbCp_4.TabIndex = 2;
             this.rbCp_4.TabStop = true;
-            this.rbCp_4.Text = "Me considero una persona responsable y con capacidad para tomar decisiones ";
-            this.rbCp_4.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbCp_4.Text = "Alguien con capacidad de resolver problemas con eficacia ";
+            this.rbCp_4.UnCheckedColor = System.Drawing.Color.White;
             this.rbCp_4.UseVisualStyleBackColor = true;
             // 
             // rbLti_4
             // 
             this.rbLti_4.AutoSize = true;
-            this.rbLti_4.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLti_4.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLti_4.Location = new System.Drawing.Point(37, 139);
             this.rbLti_4.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLti_4.Name = "rbLti_4";
             this.rbLti_4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLti_4.Size = new System.Drawing.Size(390, 21);
+            this.rbLti_4.Size = new System.Drawing.Size(419, 21);
             this.rbLti_4.TabIndex = 3;
             this.rbLti_4.TabStop = true;
-            this.rbLti_4.Text = " Soy una persona que analiza mucho las situaciones antes de actuar";
-            this.rbLti_4.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLti_4.Text = "Una persona mayormente introvertida y muy enfocada en lo suyo";
+            this.rbLti_4.UnCheckedColor = System.Drawing.Color.White;
             this.rbLti_4.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -476,38 +497,38 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(37, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(438, 21);
+            this.label5.Size = new System.Drawing.Size(332, 21);
             this.label5.TabIndex = 1;
-            this.label5.Text = "¿Con cuál de las siguientes frases te sientes más identificado? ";
+            this.label5.Text = "Las demás personas me suelen percibir como: ";
             // 
             // rbLa_4
             // 
             this.rbLa_4.AutoSize = true;
-            this.rbLa_4.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLa_4.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLa_4.Location = new System.Drawing.Point(37, 58);
             this.rbLa_4.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLa_4.Name = "rbLa_4";
             this.rbLa_4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLa_4.Size = new System.Drawing.Size(319, 21);
+            this.rbLa_4.Size = new System.Drawing.Size(324, 21);
             this.rbLa_4.TabIndex = 0;
             this.rbLa_4.TabStop = true;
-            this.rbLa_4.Text = "Me considero un buen líder en mis equipos de trabajo";
-            this.rbLa_4.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLa_4.Text = "Alguien extrovertido y con facilidad de la palabra";
+            this.rbLa_4.UnCheckedColor = System.Drawing.Color.White;
             this.rbLa_4.UseVisualStyleBackColor = true;
             // 
             // rbLni_4
             // 
             this.rbLni_4.AutoSize = true;
-            this.rbLni_4.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbLni_4.CheckedColor = System.Drawing.Color.WhiteSmoke;
             this.rbLni_4.Location = new System.Drawing.Point(37, 85);
             this.rbLni_4.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbLni_4.Name = "rbLni_4";
             this.rbLni_4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbLni_4.Size = new System.Drawing.Size(255, 21);
+            this.rbLni_4.Size = new System.Drawing.Size(244, 21);
             this.rbLni_4.TabIndex = 0;
             this.rbLni_4.TabStop = true;
-            this.rbLni_4.Text = "Me agrada convivir y socializar con todos ";
-            this.rbLni_4.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbLni_4.Text = "Alguien muy organizado y detallista";
+            this.rbLni_4.UnCheckedColor = System.Drawing.Color.White;
             this.rbLni_4.UseVisualStyleBackColor = true;
             // 
             // preguntas_1
@@ -515,6 +536,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(819, 449);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -524,7 +546,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "preguntas_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "preguntas_1";
+            this.Text = "Sección 1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

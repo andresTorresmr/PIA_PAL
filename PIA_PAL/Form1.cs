@@ -18,14 +18,15 @@ namespace PIA_PAL
         private void btnPrimeraVez_Click(object sender, EventArgs e)
         {
 
-            registro registro = new registro();
-            registro.Show();
-            this.Hide();
-
-
-            //preguntas_1 formulario = new preguntas_1();
-            //formulario.Show();
+            //registro registro = new registro();
+            //registro.Show();
             //this.Hide();
+
+
+
+            Examen_preguntas formulario = new Examen_preguntas();
+            formulario.Show();
+            this.Hide();
 
 
             //Formulario formulario = new Formulario();
