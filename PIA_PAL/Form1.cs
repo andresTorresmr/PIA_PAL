@@ -36,12 +36,16 @@ namespace PIA_PAL
 
         private void btnYa_Click(object sender, EventArgs e)
         {
-            Resultados resultados = new Resultados();
-            resultados.Show();
-            this.Hide();
+            //Resultados resultados = new Resultados();
+            //resultados.Show();
+            //this.Hide();
             //Datos resultados = new Datos();
             //resultados.Show();
             //this.Hide();
+
+            Datos datos = new Datos();
+            datos.Show();
+            this.Hide();
         }
     }
 }

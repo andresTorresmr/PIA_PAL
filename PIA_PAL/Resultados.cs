@@ -10,11 +10,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using MySqlConnector;
 
 namespace PIA_PAL
 {
     public partial class Resultados : Form
     {
+
+        class DB
+        {
+            MySqlConnection connection = new
+            //MySqlConnection("server = 127.0.0.1;port=3306;username=root;password=;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            MySqlConnection("server = 162.241.62.140;port=3306;username=ansystec_roman;password=Roman2022..;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            public void openConnection()
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+            }
+
+            public void closeConnection()
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            public MySqlConnection getConnection()
+            {
+                return connection;
+            }
+        }
+
         public Resultados()
         {
             InitializeComponent();
@@ -46,86 +75,37 @@ namespace PIA_PAL
         {
 
         }
-        public class SearchResult
-        {
-            public string Nombre1 { get; set; }
-            public string Nombre2 { get; set; }
-            public string ApellidoP { get; set; }
-            public string ApellidoM { get; set; }
-        }
-
-        public class Evaluaciones
-        {
-            public string LTI { get; set; }
-            public string LNI { get; set; }
-            public string LA { get; set; }
-            public string CP { get; set; }
-
-
-        }
 
         private void Resultados_Load(object sender, EventArgs e)
         {
-            Nombre_usuario.Text = Variables.ID;
-            string json = File.ReadAllText(@"C:\Users\andre\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json");
-
-            JObject jObj = JObject.Parse(File.ReadAllText(@"C:\Users\andre\source\repos\PIA_PAL\PIA_PAL\Resources\datos.json"));
-            JObject EVdata = JObject.Parse(json);
-            //get JSON result objects into a list
-            IList<JToken> results = EVdata[Variables.ID].Children().ToList();
-            IList<JToken> evaluacion = EVdata[Variables.ID][0]["resultados"][0]["0"].Children().ToList();
-            IList<JToken> histexamen = EVdata[Variables.ID][0]["resultados"][0].Children().ToList();
-            Variables.counteval = histexamen.Count;
-
-            // serialize JSON results into .NET objects
-            IList<SearchResult> searchResults = new List<SearchResult>();
-            IList<Evaluaciones> Evaluaciones = new List<Evaluaciones>();
-            foreach (JToken result in results)
-            {
-                SearchResult searchResult = JsonConvert.DeserializeObject<SearchResult>(result.ToString());
-                searchResults.Add(searchResult);
-            }
-
-            foreach (JToken eval in evaluacion)
-            {
-                MessageBox.Show(Convert.ToString(eval));
-                Evaluaciones examen = JsonConvert.DeserializeObject<Evaluaciones>(eval.ToString());
-                Evaluaciones.Add(examen);
-            }
-
-            // List the properties of the searchResults IList
-            foreach (SearchResult item in searchResults)
-            {
-                Nombre_usuario.Text = item.Nombre1 + " " + item.ApellidoP;
-                
-                foreach (Evaluaciones carrera in Evaluaciones)
-                {
-                    PBLTI.Value = Convert.ToInt16(carrera.LTI);
-                    PBLNI.Value = Convert.ToInt16(carrera.LNI);
-                    PBLA.Value = Convert.ToInt16(carrera.LA);
-                    PBCP.Value = Convert.ToInt16(carrera.CP);
-
-
-                    //MessageBox.Show("Funciona" + carrera.carrera + " " + carrera.total);
-                }
-
-            }
+           
         }
-
         private void botonPia1_Click(object sender, EventArgs e)
         {
 
-            if(Variables.counteval < 5)
+            DB db = new DB();
+            db.openConnection();
+            int conteo;
+            MySqlCommand select1 = new MySqlCommand("SELECT COUNT(idExamen) FROM resultado WHERE idEstudiante = 1", db.getConnection());
+            var dr = select1.ExecuteReader();
+            if (dr.HasRows)
             {
-                MessageBox.Show("RECUERDA que solo puedes hacer 3 examenes. Llevas: " + Variables.counteval);
-                Formulario forms = new Formulario();
-                forms.Show();
-                this.Close();
-            }
+                dr.Read();
+                conteo = (int)dr.GetInt64(0);
+                MessageBox.Show("Si funciona" + conteo);
 
-            else
-            {
-                MessageBox.Show("Llegaste a tu limite de 3 examenes. Elimina uno" );
+                if (conteo < 3)
+                {
+                    MessageBox.Show("RECUERDA que solo puedes hacer 3 examenes. Llevas: " +  conteo);
+                    Examen_preguntas forms = new Examen_preguntas();
+                    forms.Show();
+                    this.Close();
+                }
+
+                else
+                {
+                    MessageBox.Show("Llegaste a tu limite de 3 examenes. Elimina uno");
+                }
             }
         }
 
@@ -208,12 +188,142 @@ namespace PIA_PAL
 
         private void btnex1_Click(object sender, EventArgs e)
         {
+            //Aquí selecciona los resultado del examen correspondiente en este caso = 1
+            DB db = new DB();
+            db.openConnection();
+            int lti;
+            int lni;
+            int la;
+            int cp;
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 1", db.getConnection());
+            var dr = select1.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                lti = (int)dr.GetInt64(0);
+                lni = (int)dr.GetInt64(1);
+                la = (int)dr.GetInt64(2);
+                cp = (int)dr.GetInt64(3);
+                MessageBox.Show("Si funca" + lti);
+                MessageBox.Show("Si funca" + lni);
+                MessageBox.Show("Si funca" + la);
+                MessageBox.Show("Si funca" + cp);
 
+                Variables.lti = Convert.ToInt16(lti);
+                Variables.lni = Convert.ToInt16(lni);
+                Variables.la = Convert.ToInt16(la);
+                Variables.cp = Convert.ToInt16(cp);
+
+
+                PBCP.Value = Variables.cp;
+                PBLA.Value = Variables.la;
+                PBLNI.Value = Variables.lni;
+                PBLTI.Value = Variables.lti;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro examen alguno", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DB dbEx1 = new DB();
+                dbEx1.openConnection();
+                int conteo;
+                MySqlCommand selectEx1 = new MySqlCommand("SELECT COUNT(idExamen) FROM resultado WHERE idEstudiante = 1", db.getConnection());
+                var drEx1 = selectEx1.ExecuteReader();
+                if (drEx1.HasRows)
+                {
+                    drEx1.Read();
+                    conteo = (int)drEx1.GetInt64(0);
+                    MessageBox.Show("Si funciona" + conteo);
+
+                    if (conteo < 3)
+                    {
+                        MessageBox.Show("RECUERDA que solo puedes hacer 3 examenes. Llevas: " + conteo);
+                        string message = "¿Quieres hacer otro examen?";
+                        string titutlo = "Examen";
+                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                        DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            Examen_preguntas forms = new Examen_preguntas();
+                            forms.Show();
+                            this.Close();
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Llegaste a tu limite de 3 examenes. Elimina uno");
+                    }
+                }
+            }
         }
-
         private void btnex2_Click(object sender, EventArgs e)
         {
+            //Aquí selecciona los resultado del examen correspondiente en este caso = 2
+            DB db = new DB();
+            db.openConnection();
+            int lti;
+            int lni;
+            int la;
+            int cp;
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 2", db.getConnection());
+            var dr = select1.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                lti = (int)dr.GetInt64(0);
+                lni = (int)dr.GetInt64(1);
+                la = (int)dr.GetInt64(2);
+                cp = (int)dr.GetInt64(3);
+                MessageBox.Show("Si funciona" + lti);
+                MessageBox.Show("Si funciona" + lni);
+                MessageBox.Show("Si funciona" + la);
+                MessageBox.Show("Si funciona" + cp);
 
+
+                PBCP.Value = cp;
+                PBLA.Value = la;
+                PBLNI.Value = lni;
+                PBLTI.Value = lti;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro tu segundo examen. Intenta hacer otro.", "Warning", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnex3_Click(object sender, EventArgs e)
+        {
+            //Aquí selecciona los resultado del examen correspondiente en este caso = 3
+            DB db = new DB();
+            db.openConnection();
+            int lti;
+            int lni;
+            int la;
+            int cp;
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 3", db.getConnection());
+            var dr = select1.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                lti = (int)dr.GetInt64(0);
+                lni = (int)dr.GetInt64(1);
+                la = (int)dr.GetInt64(2);
+                cp = (int)dr.GetInt64(3);
+                MessageBox.Show("Si funciona" + lti);
+                MessageBox.Show("Si funciona" + lni);
+                MessageBox.Show("Si funciona" + la);
+                MessageBox.Show("Si funciona" + cp);
+
+
+                PBCP.Value = cp;
+                PBLA.Value = la;
+                PBLNI.Value = lni;
+                PBLTI.Value = lti;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro tu segundo examen. Intenta hacer otro.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

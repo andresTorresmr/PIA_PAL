@@ -221,6 +221,7 @@
             this.btnex3.Text = "Examen 3";
             this.btnex3.TextColor = System.Drawing.Color.White;
             this.btnex3.UseVisualStyleBackColor = false;
+            this.btnex3.Click += new System.EventHandler(this.btnex3_Click);
             this.btnex3.MouseHover += new System.EventHandler(this.btnex3_MouseHover);
             // 
             // botonPia1

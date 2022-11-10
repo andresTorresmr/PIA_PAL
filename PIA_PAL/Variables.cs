@@ -14,6 +14,7 @@ namespace PIA_PAL
         static public int lni = 0;
         static public int la = 0 ;
         static public int cp = 0 ;
+        static public int conteo1 = 0 ;
 
     }
 }

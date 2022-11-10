@@ -65,10 +65,19 @@ namespace PIA_PAL
 
             if (!checkTextBoxesValues())
             {
-
                 if (checkUsername())
                 {
-                    MessageBox.Show("Este estudiante ya esta registrado", "Estudiante duplicado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("Tus datos ya están registrados", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    string message = "¿Quieres ver tus resultados?";
+                    string titutlo = "Resultados";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        Resultados registro = new Resultados();
+                        registro.Show();
+                        this.Hide();
+                    }
                     MySqlCommand commandSe = new MySqlCommand("SELECT * FROM usuario", db.getConnection());
                     //Aquí se asigna un select a una variable
                     string nombre;
@@ -103,17 +112,25 @@ namespace PIA_PAL
         {
             DB db = new DB();
             string nombre = Nombre1.Texts;
+            string nombre2 = Nombre2.Texts;
+            string apellido1 = ApellidoP.Texts;
+            string apellido2 = ApellidoM.Texts;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             //creo que aqui está el error pero estoy muy cansado así que solo quiero acabar las preguntas y ya pls, mañana veo esto en clases :D
-            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
+            command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
+            command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
+            command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
             adapter.SelectCommand = command;
 
             adapter.Fill(table);
 
             if (table.Rows.Count > 0)
             {
+                int count1 = table.Rows.Count;
+                MessageBox.Show("Hola" + count1);
                 return true;
             }
             else
@@ -148,6 +165,11 @@ namespace PIA_PAL
         private void Nombre1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

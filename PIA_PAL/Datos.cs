@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using MySqlConnector;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PIA_PAL.herramientas;
@@ -27,75 +28,148 @@ namespace PIA_PAL
             inicio.Show();
             this.Close();
         }
-        public class SearchResult
+
+        class DB
         {
-            public string Nombre1 { get; set; }
-            public string Nombre2 { get; set; }
-            public string ApellidoP { get; set; }
-            public string ApellidoM { get; set; }
-        }
-
-        private void botonPia1_Click(object sender, EventArgs e)
-        {
-            bool registrado = false;
-            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json");
-
-            //JObject jObj = (JObject)JsonConvert.DeserializeObject(json);
-            JObject jObj = JObject.Parse(json);
-            int count = jObj.Count;
-            JObject EVdata = JObject.Parse(json);
-            MessageBox.Show(Convert.ToString(EVdata.Count));
-
-            for (int i = 1; i <= count; i++)
+            MySqlConnection connection = new
+            //MySqlConnection("server = 127.0.0.1;port=3306;username=root;password=;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            MySqlConnection("server = 162.241.62.140;port=3306;username=ansystec_roman;password=Roman2022..;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            public void openConnection()
             {
-                IList<JToken> datos = EVdata[Convert.ToString(i)].Children().ToList();
-                IList<SearchResult> Resultados = new List<SearchResult>();
-
-                foreach (JToken registro in datos)
+                if (connection.State == System.Data.ConnectionState.Closed)
                 {
-                    SearchResult searchResult = JsonConvert.DeserializeObject<SearchResult>(registro.ToString());
-                    Resultados.Add(searchResult);
-                }
-
-                // List the properties of the searchResults IList
-                foreach (SearchResult item in Resultados)
-                {
-                    if(item.Nombre1 == Nombre1.Texts & item.Nombre2 == Nombre2.Texts & item.ApellidoP == ApellidoP.Texts && item.ApellidoM == ApellidoM.Texts)
-                    {
-                        registrado = true;
-                        Variables.ID = Convert.ToString(i);
-                        MessageBox.Show("Bienvenido: " + item.Nombre1 + " " + item.Nombre2 + " " + item.ApellidoP + " " + item.ApellidoM + ".");
-                    }
+                    connection.Open();
                 }
             }
-            if(registrado == true)
+
+            public void closeConnection()
             {
-                Resultados forms = new Resultados();
-                forms.Show();
-                this.Close();
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            public MySqlConnection getConnection()
+            {
+                return connection;
+            }
+        }
+
+        public void botonPia1_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            string nombre = Nombre1.Texts;
+            string nombre2 = Nombre2.Texts;
+            string apellido1 = ApellidoP.Texts;
+            string apellido2 = ApellidoM.Texts;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
+            command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
+            command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
+            command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+            adapter.SelectCommand = command;
+
+            adapter.Fill(table);
+
+            if (table.Rows.Count == 0)
+            {
+                int count1 = table.Rows.Count;
+                MessageBox.Show("Hola" + count1);
+                MessageBox.Show("Tus datos no se encuentran en nuestra base de datos", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string message = "¿Quieres registrarte?";
+                string titutlo = "Registro";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    registro registro = new registro();
+                    registro.Show();
+                    this.Hide();
+                }
+
             }
             else
             {
-                string message = "No se encontró tu registro. ¿Quieres registrarte?";
-                string titulo = "WARNING";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, titulo, buttons);
-                if (result == DialogResult.Yes)
+            }
+
+            db.openConnection();
+
+            if (!checkTextBoxesValues())
+            {
+                if (checkUsername())
                 {
-                    registro register = new registro();
-                    register.Show();
-                    this.Close();
+                    string message = "¿Quieres ver tu resultados?";
+                    string titutlo = "Resultados";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, titutlo, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        Resultados registro = new Resultados();
+                        registro.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
-                    Form1 inicio = new Form1();
-                    inicio.Show();
-                    this.Close();
                 }
+            }
+        }
 
+        public bool checkUsername()
+        {
+            DB db = new DB();
+            string nombre = Nombre1.Texts;
+            string nombre2 = Nombre2.Texts;
+            string apellido1 = ApellidoP.Texts;
+            string apellido2 = ApellidoM.Texts;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            //creo que aqui está el error pero estoy muy cansado así que solo quiero acabar las preguntas y ya pls, mañana veo esto en clases :D
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
+            command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
+            command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
+            command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+            adapter.SelectCommand = command;
+
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                int count1 = table.Rows.Count;
+                MessageBox.Show("Hola" + count1);
+                return true;
+            }
+            else
+            {
+                return false;
             }
 
         }
+
+        public bool checkTextBoxesValues()
+        {
+            string fnombre = Nombre1.Texts;
+            string fnombre2 = Nombre2.Texts;
+            string apellidom = ApellidoM.Texts;
+            string apellidop = ApellidoP.Texts;
+
+            if (fnombre.Equals("nombre_1") && fnombre2.Equals("nombre_2") && apellidop.Equals("apellido_p") && apellidom.Equals("apellido_m"))
+            {
+
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
 
         private void piaTextBox1_Load(object sender, EventArgs e)
         {

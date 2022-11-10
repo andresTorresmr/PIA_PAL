@@ -40,7 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nacimiento = new PIA_PAL.herramientas.DateTimePia();
             this.Nombre1 = new PIA_PAL.herramientas.PiaTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // botonPia1
@@ -225,6 +227,18 @@
             this.Nombre1.UnderlinedStyle = false;
             this.Nombre1.Load += new System.EventHandler(this.Nombre1_Load);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(758, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 28);
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -232,6 +246,7 @@
             this.BackgroundImage = global::PIA_PAL.Properties.Resources.fondo_rojo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ApellidoP);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ApellidoM);
@@ -248,6 +263,7 @@
             this.Name = "registro";
             this.Text = "registro";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +283,6 @@
         private Label label1;
         private herramientas.DateTimePia nacimiento;
         private herramientas.PiaTextBox Nombre1;
+        private PictureBox pictureBox1;
     }
 }
