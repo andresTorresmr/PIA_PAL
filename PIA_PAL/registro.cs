@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MySqlConnector;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PIA_PAL;
 using System;
@@ -20,137 +21,128 @@ namespace PIA_PAL
             InitializeComponent();
         }
 
-        public class SearchRegister
+        class DB
         {
-            public string nombre1 { get; set; }
-            public string nombre2 { get; set; }
-            public string apellidop { get; set; }
-            public string apellidom { get; set; }
-            public string fecha_nac { get; set; }
-            public string lti { get; set; }
-            public string lni { get; set; }
-            public string cp { get; set; }
-            public string la { get; set; }
-        }
+            MySqlConnection connection = new
+            MySqlConnection("server = 127.0.0.1;port=3306;username=root;password=;database=ansystec_pal; pooling = false; convert zero datetime=true");
 
-        public class ResultadosEx
-        {
-            public int cp { get; set; }
-            public int la { get; set; }
-            public int lti { get; set; }
-            public int lni { get; set; }
-        }
-
-        public class Registro
-        {
-            public string nombre1 { get; set; }
-            public string nombre2 { get; set; }
-            public string apellidop { get; set; }
-            public string apellidom { get; set; }
-            public string fecha_nac { get; set; }
-            public List<Resultado> resultados { get; set; }
-            public int cp { get; set; }
-            public int la { get; set; }
-            public int lti { get; set; }
-            public int lni { get; set; }
+            public void openConnection()
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
             }
 
-        public class Resultado
-        {
-            public List<ResultadosEx> _0 { get; set; }
-            public List<Registro> _1 { get; set; }
-        }
-
-        public class Root
-        {
-            public List<Registro> _1 { get; set; }
-        }
-
-private void botonPia1_Click(object sender, EventArgs e)
-        {
-            //CONTEO DE REGISTRO DENTRO DEL JSON
-            bool registrado = false;
-            string json = File.ReadAllText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json");
-            JObject jObj = JObject.Parse(json);
-            int count = jObj.Count;
-            JObject EVdata = JObject.Parse(json);
-            MessageBox.Show(Convert.ToString(EVdata.Count));
-            //CONTEO DE REGISTRO DENTRO DEL JSON
-
-            for (int i = 1; i < count; i++)
+            public void closeConnection()
             {
-                IList<JToken> registro = EVdata[Convert.ToString(i)].Children().ToList();
-                IList<SearchRegister> Busqueda = new List<SearchRegister>();
-
-                foreach (JToken dato_registro in registro)
+                if (connection.State == System.Data.ConnectionState.Open)
                 {
-                    SearchRegister Register = JsonConvert.DeserializeObject<SearchRegister>(dato_registro.ToString());
-                    Busqueda.Add(Register);
+                    connection.Close();
                 }
+            }
 
-                foreach (SearchRegister item in Busqueda)
+            public MySqlConnection getConnection()
+            {
+                return connection;
+            }
+        }
+
+
+        private void botonPia1_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac)", db.getConnection());
+
+
+            command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = Nombre1.Texts;
+            command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = Nombre2.Texts;
+            command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
+            command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
+            command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value;
+
+            db.openConnection();
+
+            if (!checkTextBoxesValues())
+            {
+
+                if (checkUsername())
                 {
-                    if (item.nombre1 == Nombre1.Texts & item.nombre2 == Nombre2.Texts & item.apellidop == ApellidoP.Texts && item.apellidom == ApellidoM.Texts)
+                    MessageBox.Show("Este estudiante ya esta registrado", "Estudiante duplicado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MySqlCommand commandSe = new MySqlCommand("SELECT * FROM usuario", db.getConnection());
+                    //Aquí se asigna un select a una variable
+                    string nombre;
+                    MySqlCommand select1 = new MySqlCommand("SELECT nombre_1 FROM usuario WHERE idUsuario=1", db.getConnection());
+                    var dr = select1.ExecuteReader();
+                    if (dr.HasRows)
                     {
-                        registrado = true;
-                        Variables.ID = Convert.ToString(i);
+                        dr.Read();
+                        nombre = dr.GetString(0);
+                        MessageBox.Show("Si funciona" + nombre);
                     }
-                }
-            }
-            if (registrado == true)
-            {
-                string message = "Ya te encuentras registrado ¿Deseas consultar tus resultados?";
-                string title = "WARNING";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, title, buttons);
-                if (result == DialogResult.Yes)
-                {
-                    Resultados forms = new Resultados();
-                    forms.Show();
-                    this.Close();
+                    //Aquí se asigna un select a una variable
                 }
                 else
                 {
-                    string messageElse = "¿Quieres realizar el examen de nuevo?";
-                    string titleElse = "WARNING";
-                    MessageBoxButtons buttonsElse = MessageBoxButtons.YesNo;
-                    DialogResult resultElse = MessageBox.Show(messageElse, titleElse, buttonsElse);
-                    if (resultElse == DialogResult.Yes)
+                    if(command.ExecuteNonQuery() == 1)
                     {
-                        Formulario form1Button = new Formulario();
-                        form1Button.Show();
-                        this.Close();
+                        MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+ 
+
                     }
                     else
                     {
-                        Form1 form1ButtonNo = new Form1();
-                        form1ButtonNo.Show();
-                        this.Close();
+                        MessageBox.Show("ERROR");
                     }
                 }
             }
+
+        }
+
+        public bool checkUsername()
+        {
+            DB db = new DB();
+            string nombre = Nombre1.Texts;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1", db.getConnection());
+            command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
+            adapter.SelectCommand = command;
+
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
             else
             {
-
-                Registro registrobtn = new Registro();
-                registrobtn.nombre1 = Nombre1.Texts;
-                registrobtn.nombre2 = Nombre2.Texts;
-                registrobtn.apellidop = ApellidoP.Texts;
-                registrobtn.apellidom = ApellidoM.Texts;
-                registrobtn.fecha_nac = nacimiento.Text;
-
-
-
-
-                var jsonToWrite = JsonConvert.SerializeObject(registrobtn, Formatting.Indented);
-                var _path = @"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json";
-
-                using (StreamWriter file = File.AppendText(@"C:\Users\Román\source\repos\PIA_PAL\PIA_PAL\Resources\datos - Copia.json"))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(file, registrobtn);
-                }
+                return false;
             }
+
+        }
+
+        public bool checkTextBoxesValues()
+        {
+            string fnombre = Nombre1.Texts;
+            string fnombre2 = Nombre2.Texts;
+            string apellidom = ApellidoM.Texts;
+            string apellidop = ApellidoP.Texts;
+
+            if (fnombre.Equals("nombre_1") || fnombre2.Equals("nombre_2") || apellidop.Equals("apellido_p") || apellidom.Equals("apellido_m"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+    
+        private void Nombre1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

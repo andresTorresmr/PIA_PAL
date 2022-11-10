@@ -223,6 +223,7 @@
             this.Nombre1.Tag = "Nombre1";
             this.Nombre1.Texts = "";
             this.Nombre1.UnderlinedStyle = false;
+            this.Nombre1.Load += new System.EventHandler(this.Nombre1_Load);
             // 
             // registro
             // 
