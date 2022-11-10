@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 using static System.Windows.Forms.DataFormats;
+using Color = System.Drawing.Color;
 
 namespace PIA_PAL
 {
@@ -159,6 +162,7 @@ namespace PIA_PAL
                         MessageBox.Show("CP: " + Variables.cp);
 
                         Examen_preguntas principal = Owner as Examen_preguntas;
+                        principal.section_1.IconChar = IconChar.CheckCircle;
                         principal.section_1.Enabled = false;
                         principal.section_2.Visible = true;
                         principal.currentChildForm.Close();

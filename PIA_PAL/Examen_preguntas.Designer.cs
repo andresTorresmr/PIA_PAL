@@ -207,7 +207,7 @@
             this.section_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_10.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_10.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_10.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_10.IconColor = System.Drawing.Color.Gainsboro;
             this.section_10.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_10.IconSize = 32;
@@ -231,7 +231,7 @@
             this.section_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_9.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_9.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_9.IconColor = System.Drawing.Color.Gainsboro;
             this.section_9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_9.IconSize = 32;
@@ -255,7 +255,7 @@
             this.section_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_8.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_8.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_8.IconColor = System.Drawing.Color.Gainsboro;
             this.section_8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_8.IconSize = 32;
@@ -279,7 +279,7 @@
             this.section_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_7.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_7.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_7.IconColor = System.Drawing.Color.Gainsboro;
             this.section_7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_7.IconSize = 32;
@@ -303,7 +303,7 @@
             this.section_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_6.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_6.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_6.IconColor = System.Drawing.Color.Gainsboro;
             this.section_6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_6.IconSize = 32;
@@ -327,7 +327,7 @@
             this.section_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_5.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_5.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_5.IconColor = System.Drawing.Color.Gainsboro;
             this.section_5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_5.IconSize = 32;
@@ -351,7 +351,7 @@
             this.section_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_4.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_4.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_4.IconColor = System.Drawing.Color.Gainsboro;
             this.section_4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_4.IconSize = 32;
@@ -375,7 +375,7 @@
             this.section_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_3.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_3.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_3.IconColor = System.Drawing.Color.Gainsboro;
             this.section_3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_3.IconSize = 32;
@@ -399,7 +399,7 @@
             this.section_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_2.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_2.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_2.IconColor = System.Drawing.Color.Gainsboro;
             this.section_2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_2.IconSize = 32;
@@ -423,7 +423,7 @@
             this.section_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.section_1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.section_1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.section_1.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.section_1.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.section_1.IconColor = System.Drawing.Color.Gainsboro;
             this.section_1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.section_1.IconSize = 32;
@@ -475,6 +475,7 @@
         private Label lblPestanaActual;
         private FontAwesome.Sharp.IconPictureBox iconPestanaActual;
         private Panel panelMenu;
+        public FontAwesome.Sharp.IconButton section_1;
         public FontAwesome.Sharp.IconButton section_10;
         public FontAwesome.Sharp.IconButton section_9;
         public FontAwesome.Sharp.IconButton section_8;
@@ -484,6 +485,5 @@
         public FontAwesome.Sharp.IconButton section_4;
         public FontAwesome.Sharp.IconButton section_3;
         public FontAwesome.Sharp.IconButton section_2;
-        public FontAwesome.Sharp.IconButton section_1;
     }
 }

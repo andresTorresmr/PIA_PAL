@@ -41,7 +41,7 @@ namespace PIA_PAL
         }
 
         //Métodos
-        private void ActivateButton(object senderBtn, Color color)
+        public void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
             {
@@ -117,6 +117,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_1;
             preg_1.BringToFront();
             preg_1.Show();
+            lblPestanaActual.Text = preg_1.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
             //OpenChildForm(new preguntas_1());
@@ -136,6 +137,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_2;
             preg_2.BringToFront();
             preg_2.Show();
+            lblPestanaActual.Text = preg_2.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -153,6 +155,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_3;
             preg_3.BringToFront();
             preg_3.Show();
+            lblPestanaActual.Text = preg_3.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -170,6 +173,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_4;
             preg_4.BringToFront();
             preg_4.Show();
+            lblPestanaActual.Text = preg_4.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -187,6 +191,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_5;
             preg_5.BringToFront();
             preg_5.Show();
+            lblPestanaActual.Text = preg_5.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -204,6 +209,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_6;
             preg_6.BringToFront();
             preg_6.Show();
+            lblPestanaActual.Text = preg_6.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -221,6 +227,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_7;
             preg_7.BringToFront();
             preg_7.Show();
+            lblPestanaActual.Text = preg_7.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -238,6 +245,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_8;
             preg_8.BringToFront();
             preg_8.Show();
+            lblPestanaActual.Text = preg_8.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -255,6 +263,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_9;
             preg_9.BringToFront();
             preg_9.Show();
+            lblPestanaActual.Text = preg_9.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -272,6 +281,7 @@ namespace PIA_PAL
             panelDesktop.Tag = preg_10;
             preg_10.BringToFront();
             preg_10.Show();
+            lblPestanaActual.Text = preg_10.Text;
             //Color del texto cuando se selecciona
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
         }
@@ -320,5 +330,7 @@ namespace PIA_PAL
             }
                 
         }
+
+       
     }
 }
