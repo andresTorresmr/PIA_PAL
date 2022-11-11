@@ -77,10 +77,6 @@ namespace PIA_PAL
 
         }
 
-        private void Resultados_Load(object sender, EventArgs e)
-        {
-           
-        }
         private void botonPia1_Click(object sender, EventArgs e)
         {
             DB db = new DB();
@@ -118,8 +114,12 @@ namespace PIA_PAL
                     MessageBox.Show("Llegaste a tu limite de 3 examenes.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+ 
+            
         }
 
+    #region Hovers
         private void btnex1_MouseHover(object sender, EventArgs e)
         {
             btnCerrarEx1.Visible = true;
@@ -151,6 +151,18 @@ namespace PIA_PAL
             btnCerrarEx3.Visible = false;
         }
 
+        private void btnex2_MouseHover(object sender, EventArgs e)
+        {
+            btnCerrarEx2.Visible = true;
+        }
+
+        private void btnex3_MouseHover(object sender, EventArgs e)
+        {
+            btnCerrarEx3.Visible = true;
+        }
+
+
+        #endregion
         private void btnCerrarEx1_Click(object sender, EventArgs e)
         {
             string message = "¿Seguro que quieres borrar el examen?";
@@ -163,16 +175,7 @@ namespace PIA_PAL
             }
         }
 
-        private void btnex2_MouseHover(object sender, EventArgs e)
-        {
-            btnCerrarEx2.Visible = true;
-        }
-
-        private void btnex3_MouseHover(object sender, EventArgs e)
-        {
-            btnCerrarEx3.Visible = true;
-        }
-
+       
         private void btnCerrarEx2_Click(object sender, EventArgs e)
         {
             string message = "¿Seguro que quieres borrar el examen?";
