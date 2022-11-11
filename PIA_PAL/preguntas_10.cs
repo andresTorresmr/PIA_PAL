@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,41 @@ namespace PIA_PAL
 {
     public partial class preguntas_10 : Form
     {
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 inicio = new Form1();
+            inicio.Show();
+            this.Close();
+        }
+
+        class DB
+        {
+            MySqlConnection connection = new
+            //MySqlConnection("server = 127.0.0.1;port=3306;username=root;password=;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            MySqlConnection("server = 162.241.62.140;port=3306;username=ansystec_roman;password=Roman2022..;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            public void openConnection()
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+            }
+
+            public void closeConnection()
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            public MySqlConnection getConnection()
+            {
+                return connection;
+            }
+        }
         public preguntas_10()
         {
             InitializeComponent();
@@ -84,20 +120,30 @@ namespace PIA_PAL
                         principal.section_10.IconChar = IconChar.CheckCircle;
                         principal.section_10.Enabled = false;
                         MessageBox.Show("Terminaste tu examen :D");
-                        //principal.currentChildForm.Close();
 
+                        DB db = new DB();
+                        db.openConnection();
+                        MySqlCommand command = new MySqlCommand("INSERT INTO resultado (idEstudiante, num_Examen, lti, lni, la, cp) VALUES ( 1, 3, @lti,@lni,@la,@cp) ", db.getConnection());
+                        command.Parameters.Add("@lti", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.lti);
+                        command.Parameters.Add("@lni", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.lni);
+                        command.Parameters.Add("@la", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.la);
+                        command.Parameters.Add("@cp", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.cp);
 
-                        //preguntas_2 Segunda_pagina = new preguntas_2();
-                        //this.Hide();
-                        //Segunda_pagina.Show();
+                        if (command.ExecuteNonQuery() == 1)
+                        {
+                            MessageBox.Show("Si se inserto :D");
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERROR");
+                        }
+
                     }
                 }
             }
             else
             {
-                preguntas_2 Segunda_pagina = new preguntas_2();
-                this.Hide();
-                Segunda_pagina.Show();
+                MessageBox.Show("Finalizaste tu examen", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

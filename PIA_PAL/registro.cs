@@ -52,14 +52,13 @@ namespace PIA_PAL
         private void botonPia1_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2)", db.getConnection());
 
 
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = Nombre1.Texts;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = Nombre2.Texts;
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
-            command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value;
 
             db.openConnection();
 
@@ -78,26 +77,16 @@ namespace PIA_PAL
                         registro.Show();
                         this.Hide();
                     }
-                    MySqlCommand commandSe = new MySqlCommand("SELECT * FROM usuario", db.getConnection());
-                    //Aquí se asigna un select a una variable
-                    string nombre;
-                    MySqlCommand select1 = new MySqlCommand("SELECT nombre_1 FROM usuario WHERE idUsuario=1", db.getConnection());
-                    var dr = select1.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        dr.Read();
-                        nombre = dr.GetString(0);
-                        MessageBox.Show("Si funciona" + nombre);
-                    }
-                    //Aquí se asigna un select a una variable
+
                 }
                 else
                 {
                     if(command.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
- 
-
+                        Examen_preguntas vocación = new Examen_preguntas();
+                        vocación.Show();
+                        this.Close();
                     }
                     else
                     {
@@ -146,14 +135,13 @@ namespace PIA_PAL
             string fnombre2 = Nombre2.Texts;
             string apellidom = ApellidoM.Texts;
             string apellidop = ApellidoP.Texts;
+            string fechaNac = nacimiento.Text;
 
            
 
             if (fnombre.Equals("nombre_1") && fnombre2.Equals("nombre_2") && apellidop.Equals("apellido_p") && apellidom.Equals("apellido_m"))
             {
-                
                 return true;
-
             }
             else
             {

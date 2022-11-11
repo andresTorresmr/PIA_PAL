@@ -91,12 +91,7 @@ namespace PIA_PAL
                 }
 
             }
-            else
-            {
-            }
-
             db.openConnection();
-
             if (!checkTextBoxesValues())
             {
                 if (checkUsername())
@@ -125,9 +120,9 @@ namespace PIA_PAL
             string nombre2 = Nombre2.Texts;
             string apellido1 = ApellidoP.Texts;
             string apellido2 = ApellidoM.Texts;
+            string fechaNac = nacimiento.Text;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            //creo que aqui está el error pero estoy muy cansado así que solo quiero acabar las preguntas y ya pls, mañana veo esto en clases :D
             MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
@@ -156,6 +151,7 @@ namespace PIA_PAL
             string fnombre2 = Nombre2.Texts;
             string apellidom = ApellidoM.Texts;
             string apellidop = ApellidoP.Texts;
+            string fechaNac = nacimiento.Text;
 
             if (fnombre.Equals("nombre_1") && fnombre2.Equals("nombre_2") && apellidop.Equals("apellido_p") && apellidom.Equals("apellido_m"))
             {

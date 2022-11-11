@@ -82,7 +82,6 @@ namespace PIA_PAL
         }
         private void botonPia1_Click(object sender, EventArgs e)
         {
-
             DB db = new DB();
             db.openConnection();
             int conteo;
@@ -191,34 +190,49 @@ namespace PIA_PAL
             //Aquí selecciona los resultado del examen correspondiente en este caso = 1
             DB db = new DB();
             db.openConnection();
-            int lti;
-            int lni;
-            int la;
-            int cp;
+            int lti1;
+            int lni1;
+            int la1;
+            int cp1;
             MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 1", db.getConnection());
             var dr = select1.ExecuteReader();
+
+            if (PBCP.Value <= 100)
+            {
+                PBCP.Value = 0;
+            }
+
+            if (PBLA.Value <= 100)
+            {
+                PBLA.Value = 0;
+            }
+
+            if (PBLNI.Value <= 100)
+            {
+                PBLNI.Value = 0;
+            }
+
+            if (PBLTI.Value <= 100)
+            {
+                PBLTI.Value = 0;
+            }
+
             if (dr.HasRows)
             {
                 dr.Read();
-                lti = (int)dr.GetInt64(0);
-                lni = (int)dr.GetInt64(1);
-                la = (int)dr.GetInt64(2);
-                cp = (int)dr.GetInt64(3);
-                MessageBox.Show("Si funca" + lti);
-                MessageBox.Show("Si funca" + lni);
-                MessageBox.Show("Si funca" + la);
-                MessageBox.Show("Si funca" + cp);
+                lti1 = (int)dr.GetInt64(0);
+                lni1 = (int)dr.GetInt64(1);
+                la1 = (int)dr.GetInt64(2);
+                cp1 = (int)dr.GetInt64(3);
+                MessageBox.Show("Si funca" + lti1);
+                MessageBox.Show("Si funca" + lni1);
+                MessageBox.Show("Si funca" + la1);
+                MessageBox.Show("Si funca" + cp1);
 
-                Variables.lti = Convert.ToInt16(lti);
-                Variables.lni = Convert.ToInt16(lni);
-                Variables.la = Convert.ToInt16(la);
-                Variables.cp = Convert.ToInt16(cp);
-
-
-                PBCP.Value = Variables.cp;
-                PBLA.Value = Variables.la;
-                PBLNI.Value = Variables.lni;
-                PBLTI.Value = Variables.lti;
+                PBCP.Value = cp1;
+                PBLA.Value = la1;
+                PBLNI.Value = lni1;
+                PBLTI.Value = lti1;
             }
             else
             {
@@ -261,29 +275,50 @@ namespace PIA_PAL
             //Aquí selecciona los resultado del examen correspondiente en este caso = 2
             DB db = new DB();
             db.openConnection();
-            int lti;
-            int lni;
-            int la;
-            int cp;
+            int lti2;
+            int lni2;
+            int la2;
+            int cp2;
+
+            if (PBCP.Value <= 100)
+            {
+                PBCP.Value = 0;
+            }
+
+            if (PBLA.Value <= 100)
+            {
+                PBLA.Value = 0;
+            }
+
+            if (PBLNI.Value <= 100)
+            {
+                PBLNI.Value = 0;
+            }
+
+            if (PBLTI.Value <= 100)
+            {
+                PBLTI.Value = 0;
+            }
+
             MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 2", db.getConnection());
             var dr = select1.ExecuteReader();
             if (dr.HasRows)
             {
                 dr.Read();
-                lti = (int)dr.GetInt64(0);
-                lni = (int)dr.GetInt64(1);
-                la = (int)dr.GetInt64(2);
-                cp = (int)dr.GetInt64(3);
-                MessageBox.Show("Si funciona" + lti);
-                MessageBox.Show("Si funciona" + lni);
-                MessageBox.Show("Si funciona" + la);
-                MessageBox.Show("Si funciona" + cp);
+                lti2 = (int)dr.GetInt64(0);
+                lni2 = (int)dr.GetInt64(1);
+                la2 = (int)dr.GetInt64(2);
+                cp2 = (int)dr.GetInt64(3);
+                MessageBox.Show("Si funciona" + lti2);
+                MessageBox.Show("Si funciona" + lni2);
+                MessageBox.Show("Si funciona" + la2);
+                MessageBox.Show("Si funciona" + cp2);
 
 
-                PBCP.Value = cp;
-                PBLA.Value = la;
-                PBLNI.Value = lni;
-                PBLTI.Value = lti;
+                PBCP.Value = cp2;
+                PBLA.Value = la2;
+                PBLNI.Value = lni2;
+                PBLTI.Value = lti2;
             }
             else
             {
@@ -296,29 +331,50 @@ namespace PIA_PAL
             //Aquí selecciona los resultado del examen correspondiente en este caso = 3
             DB db = new DB();
             db.openConnection();
-            int lti;
-            int lni;
-            int la;
-            int cp;
+            int lti3;
+            int lni3;
+            int la3;
+            int cp3;
+
+            if (PBCP.Value <= 100)
+            {
+                PBCP.Value = 0;
+            }
+
+            if (PBLA.Value <= 100)
+            {
+                PBLA.Value = 0;
+            }
+
+            if (PBLNI.Value <= 100)
+            {
+                PBLNI.Value = 0;
+            }
+
+            if (PBLTI.Value <= 100)
+            {
+                PBLTI.Value = 0;
+            }
+
             MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 3", db.getConnection());
             var dr = select1.ExecuteReader();
             if (dr.HasRows)
             {
                 dr.Read();
-                lti = (int)dr.GetInt64(0);
-                lni = (int)dr.GetInt64(1);
-                la = (int)dr.GetInt64(2);
-                cp = (int)dr.GetInt64(3);
-                MessageBox.Show("Si funciona" + lti);
-                MessageBox.Show("Si funciona" + lni);
-                MessageBox.Show("Si funciona" + la);
-                MessageBox.Show("Si funciona" + cp);
+                lti3 = (int)dr.GetInt64(0);
+                lni3 = (int)dr.GetInt64(1);
+                la3 = (int)dr.GetInt64(2);
+                cp3 = (int)dr.GetInt64(3);
+                MessageBox.Show("Si funciona" + lti3);
+                MessageBox.Show("Si funciona" + lni3);
+                MessageBox.Show("Si funciona" + la3);
+                MessageBox.Show("Si funciona" + cp3);
 
 
-                PBCP.Value = cp;
-                PBLA.Value = la;
-                PBLNI.Value = lni;
-                PBLTI.Value = lti;
+                PBCP.Value = cp3;
+                PBLA.Value = la3;
+                PBLNI.Value = lni3;
+                PBLTI.Value = lti3;
             }
             else
             {

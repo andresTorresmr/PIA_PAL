@@ -322,7 +322,6 @@
             this.PBLNI.SymbolAfter = "";
             this.PBLNI.SymbolBefore = "";
             this.PBLNI.TabIndex = 6;
-            this.PBLNI.Value = 50;
             // 
             // label6
             // 
@@ -354,7 +353,6 @@
             this.PBLTI.SymbolAfter = "";
             this.PBLTI.SymbolBefore = "";
             this.PBLTI.TabIndex = 4;
-            this.PBLTI.Value = 50;
             // 
             // label4
             // 
@@ -386,7 +384,6 @@
             this.PBLA.SymbolAfter = "";
             this.PBLA.SymbolBefore = "";
             this.PBLA.TabIndex = 2;
-            this.PBLA.Value = 50;
             // 
             // label3
             // 
@@ -418,7 +415,6 @@
             this.PBCP.SymbolAfter = "";
             this.PBCP.SymbolBefore = "";
             this.PBCP.TabIndex = 0;
-            this.PBCP.Value = 50;
             // 
             // Resultados
             // 
