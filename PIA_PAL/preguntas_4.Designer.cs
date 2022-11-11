@@ -86,7 +86,7 @@
             this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(12, 782);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(622, 182);
+            this.groupBox5.Size = new System.Drawing.Size(605, 182);
             this.groupBox5.TabIndex = 19;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Pregunta 20";
@@ -186,7 +186,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(12, 589);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(622, 187);
+            this.groupBox4.Size = new System.Drawing.Size(605, 187);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pregunta 19";
@@ -287,7 +287,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 394);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(622, 189);
+            this.groupBox3.Size = new System.Drawing.Size(605, 189);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pregunta 18";
@@ -388,7 +388,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(622, 189);
+            this.groupBox2.Size = new System.Drawing.Size(605, 189);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pregunta 17";
@@ -484,7 +484,7 @@
             this.btn_siguiente_1.FlatAppearance.BorderSize = 0;
             this.btn_siguiente_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente_1.ForeColor = System.Drawing.Color.White;
-            this.btn_siguiente_1.Location = new System.Drawing.Point(485, 970);
+            this.btn_siguiente_1.Location = new System.Drawing.Point(468, 970);
             this.btn_siguiente_1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btn_siguiente_1.Name = "btn_siguiente_1";
             this.btn_siguiente_1.Size = new System.Drawing.Size(149, 40);
@@ -509,7 +509,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(622, 183);
+            this.groupBox1.Size = new System.Drawing.Size(605, 183);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pregunta 16";
@@ -608,7 +608,7 @@
             this.Controls.Add(this.btn_siguiente_1);
             this.Controls.Add(this.groupBox1);
             this.Name = "preguntas_4";
-            this.Text = "preguntas_4";
+            this.Text = "Sección 4";
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
