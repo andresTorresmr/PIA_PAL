@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -65,17 +66,19 @@ namespace PIA_PAL
             string apellido2 = ApellidoM.Texts;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
-            MySqlCommand commandId = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", db.getConnection());
+            MySqlCommand commandId = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", db.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+            command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
             //id
             commandId.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             commandId.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
             commandId.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
             commandId.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+            commandId.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
             adapter.SelectCommand = command;
 
             adapter.Fill(table);
@@ -139,11 +142,12 @@ namespace PIA_PAL
             string fechaNac = nacimiento.Text;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", db.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+            command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
             adapter.SelectCommand = command;
 
             adapter.Fill(table);

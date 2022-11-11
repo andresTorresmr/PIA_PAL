@@ -53,24 +53,26 @@ namespace PIA_PAL
         private void botonPia1_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac)", db.getConnection());
 
 
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = Nombre1.Texts;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = Nombre2.Texts;
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
+            command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
 
             //ID
             string nombre = Nombre1.Texts;
             string nombre2 = Nombre2.Texts;
             string apellido1 = ApellidoP.Texts;
             string apellido2 = ApellidoM.Texts;
-            MySqlCommand commandId = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            MySqlCommand commandId = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", db.getConnection());
             commandId.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             commandId.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
             commandId.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
             commandId.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+            commandId.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
 
             db.openConnection();
 
@@ -101,7 +103,7 @@ namespace PIA_PAL
                 }
                 else
                 {
-                    if(command.ExecuteNonQuery() == 1)
+                    if (command.ExecuteNonQuery() == 1)
                     {
                         Int64 id;
                         var dr = commandId.ExecuteReader();
@@ -109,20 +111,20 @@ namespace PIA_PAL
                         {
                             dr.Read();
                             id = dr.GetInt64(0);
-                            MessageBox.Show("ID: " + id);
+                            //MessageBox.Show("ID: " + id);
                         }
                         MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Examen_preguntas vocación = new Examen_preguntas();
-                        vocación.Show();
+                        Examen_preguntas vocacion = new Examen_preguntas();
+                        vocacion.Show();
                         this.Close();
                     }
                     else
                     {
                         MessageBox.Show("ERROR");
+
                     }
                 }
             }
-
         }
 
         public bool checkUsername()
@@ -135,11 +137,12 @@ namespace PIA_PAL
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             //creo que aqui está el error pero estoy muy cansado así que solo quiero acabar las preguntas y ya pls, mañana veo esto en clases :D
-            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", db.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+            command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
             adapter.SelectCommand = command;
 
             adapter.Fill(table);

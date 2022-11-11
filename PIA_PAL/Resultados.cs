@@ -55,6 +55,11 @@ namespace PIA_PAL
 
         }
 
+        public void Resultados_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -355,6 +360,14 @@ namespace PIA_PAL
             {
                 MessageBox.Show("No se encontro tu tercer examen. Intenta hacer otro.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void DatosEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Edicion_Datos edit = new Edicion_Datos();
+            edit.Show();
+            
+
         }
     }
 }

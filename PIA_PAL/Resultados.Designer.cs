@@ -49,6 +49,7 @@
             this.PBLA = new PIA_PAL.herramientas.ProgressBarPia();
             this.label3 = new System.Windows.Forms.Label();
             this.PBCP = new PIA_PAL.herramientas.ProgressBarPia();
+            this.DatosEdit = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBoxPia1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -87,6 +88,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.DarkRed;
+            this.splitContainer1.Panel1.Controls.Add(this.DatosEdit);
             this.splitContainer1.Panel1.Controls.Add(this.btnCerrarEx3);
             this.splitContainer1.Panel1.Controls.Add(this.btnCerrarEx2);
             this.splitContainer1.Panel1.Controls.Add(this.btnCerrarEx1);
@@ -416,6 +418,18 @@
             this.PBCP.SymbolBefore = "";
             this.PBCP.TabIndex = 0;
             // 
+            // DatosEdit
+            // 
+            this.DatosEdit.AutoSize = true;
+            this.DatosEdit.LinkColor = System.Drawing.Color.White;
+            this.DatosEdit.Location = new System.Drawing.Point(94, 73);
+            this.DatosEdit.Name = "DatosEdit";
+            this.DatosEdit.Size = new System.Drawing.Size(69, 15);
+            this.DatosEdit.TabIndex = 10;
+            this.DatosEdit.TabStop = true;
+            this.DatosEdit.Text = "Editar datos";
+            this.DatosEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DatosEdit_LinkClicked);
+            // 
             // Resultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -466,5 +480,6 @@
         private herramientas.BotonPia btnex3;
         private PictureBox btnCerrarEx3;
         private PictureBox btnCerrarEx2;
+        private LinkLabel DatosEdit;
     }
 }
