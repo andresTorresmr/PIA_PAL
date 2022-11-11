@@ -5,6 +5,7 @@ using PIA_PAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -60,6 +61,17 @@ namespace PIA_PAL
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
 
+            //ID
+            string nombre = Nombre1.Texts;
+            string nombre2 = Nombre2.Texts;
+            string apellido1 = ApellidoP.Texts;
+            string apellido2 = ApellidoM.Texts;
+            MySqlCommand commandId = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            commandId.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
+            commandId.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
+            commandId.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
+            commandId.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+
             db.openConnection();
 
             if (!checkTextBoxesValues())
@@ -73,6 +85,14 @@ namespace PIA_PAL
                     DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
+                        Int64 id;
+                        var dr = commandId.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            dr.Read();
+                            id = dr.GetInt64(0);
+                            MessageBox.Show("ID: " + id);
+                        }
                         Resultados registro = new Resultados();
                         registro.Show();
                         this.Hide();
@@ -83,6 +103,14 @@ namespace PIA_PAL
                 {
                     if(command.ExecuteNonQuery() == 1)
                     {
+                        Int64 id;
+                        var dr = commandId.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            dr.Read();
+                            id = dr.GetInt64(0);
+                            MessageBox.Show("ID: " + id);
+                        }
                         MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Examen_preguntas vocación = new Examen_preguntas();
                         vocación.Show();

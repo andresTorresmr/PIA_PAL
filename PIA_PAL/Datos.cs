@@ -65,14 +65,22 @@ namespace PIA_PAL
             string apellido2 = ApellidoM.Texts;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
+            MySqlCommand commandId = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2", db.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+            //id
+            commandId.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
+            commandId.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
+            commandId.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
+            commandId.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
             adapter.SelectCommand = command;
 
             adapter.Fill(table);
+
+            //Aquí se asigna un select a una variable
 
             if (table.Rows.Count == 0)
             {
@@ -102,6 +110,14 @@ namespace PIA_PAL
                     DialogResult result = MessageBox.Show(message, titutlo, buttons);
                     if (result == DialogResult.Yes)
                     {
+                        Int64 id;
+                        var dr = commandId.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            dr.Read();
+                            id = dr.GetInt64(0);
+                            Variables.id = (int)id;
+                        }
                         Resultados registro = new Resultados();
                         registro.Show();
                         this.Hide();

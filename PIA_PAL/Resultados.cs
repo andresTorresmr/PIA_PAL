@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using MySqlConnector;
+using System.ComponentModel.Design;
 
 namespace PIA_PAL
 {
@@ -85,25 +86,36 @@ namespace PIA_PAL
             DB db = new DB();
             db.openConnection();
             int conteo;
-            MySqlCommand select1 = new MySqlCommand("SELECT COUNT(idExamen) FROM resultado WHERE idEstudiante = 1", db.getConnection());
+            MySqlCommand select1 = new MySqlCommand("SELECT COUNT(idExamen) FROM resultado WHERE idEstudiante = @id", db.getConnection());
+            select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
             var dr = select1.ExecuteReader();
             if (dr.HasRows)
             {
                 dr.Read();
                 conteo = (int)dr.GetInt64(0);
-                MessageBox.Show("Si funciona" + conteo);
-
                 if (conteo < 3)
                 {
                     MessageBox.Show("RECUERDA que solo puedes hacer 3 examenes. Llevas: " +  conteo);
-                    Examen_preguntas forms = new Examen_preguntas();
-                    forms.Show();
-                    this.Close();
+                    string message = "¿Quieres realizar otro examen?";
+                    string titutlo = "Examen";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        Examen_preguntas forms = new Examen_preguntas();
+                        forms.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                      
+                    }
+ 
                 }
 
                 else
                 {
-                    MessageBox.Show("Llegaste a tu limite de 3 examenes. Elimina uno");
+                    MessageBox.Show("Llegaste a tu limite de 3 examenes.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -194,7 +206,9 @@ namespace PIA_PAL
             int lni1;
             int la1;
             int cp1;
-            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 1", db.getConnection());
+            int id;
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante = @id AND idExamen = 1", db.getConnection());
+            select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
             var dr = select1.ExecuteReader();
 
             if (PBCP.Value <= 100)
@@ -224,10 +238,6 @@ namespace PIA_PAL
                 lni1 = (int)dr.GetInt64(1);
                 la1 = (int)dr.GetInt64(2);
                 cp1 = (int)dr.GetInt64(3);
-                MessageBox.Show("Si funca" + lti1);
-                MessageBox.Show("Si funca" + lni1);
-                MessageBox.Show("Si funca" + la1);
-                MessageBox.Show("Si funca" + cp1);
 
                 PBCP.Value = cp1;
                 PBLA.Value = la1;
@@ -236,40 +246,10 @@ namespace PIA_PAL
             }
             else
             {
-                MessageBox.Show("No se encontro examen alguno", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DB dbEx1 = new DB();
-                dbEx1.openConnection();
-                int conteo;
-                MySqlCommand selectEx1 = new MySqlCommand("SELECT COUNT(idExamen) FROM resultado WHERE idEstudiante = 1", db.getConnection());
-                var drEx1 = selectEx1.ExecuteReader();
-                if (drEx1.HasRows)
-                {
-                    drEx1.Read();
-                    conteo = (int)drEx1.GetInt64(0);
-                    MessageBox.Show("Si funciona" + conteo);
-
-                    if (conteo < 3)
-                    {
-                        MessageBox.Show("RECUERDA que solo puedes hacer 3 examenes. Llevas: " + conteo);
-                        string message = "¿Quieres hacer otro examen?";
-                        string titutlo = "Examen";
-                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                        DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
-                        {
-                            Examen_preguntas forms = new Examen_preguntas();
-                            forms.Show();
-                            this.Close();
-                        }
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("Llegaste a tu limite de 3 examenes. Elimina uno");
-                    }
-                }
+                MessageBox.Show("No se encontro tu primer examen. Intenta hacer otro.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnex2_Click(object sender, EventArgs e)
         {
             //Aquí selecciona los resultado del examen correspondiente en este caso = 2
@@ -300,7 +280,8 @@ namespace PIA_PAL
                 PBLTI.Value = 0;
             }
 
-            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 2", db.getConnection());
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante= @id AND idExamen = 2", db.getConnection());
+            select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
             var dr = select1.ExecuteReader();
             if (dr.HasRows)
             {
@@ -309,11 +290,6 @@ namespace PIA_PAL
                 lni2 = (int)dr.GetInt64(1);
                 la2 = (int)dr.GetInt64(2);
                 cp2 = (int)dr.GetInt64(3);
-                MessageBox.Show("Si funciona" + lti2);
-                MessageBox.Show("Si funciona" + lni2);
-                MessageBox.Show("Si funciona" + la2);
-                MessageBox.Show("Si funciona" + cp2);
-
 
                 PBCP.Value = cp2;
                 PBLA.Value = la2;
@@ -356,7 +332,8 @@ namespace PIA_PAL
                 PBLTI.Value = 0;
             }
 
-            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante=1 AND idExamen = 3", db.getConnection());
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante = @id AND idExamen = 3", db.getConnection());
+            select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
             var dr = select1.ExecuteReader();
             if (dr.HasRows)
             {
@@ -365,11 +342,6 @@ namespace PIA_PAL
                 lni3 = (int)dr.GetInt64(1);
                 la3 = (int)dr.GetInt64(2);
                 cp3 = (int)dr.GetInt64(3);
-                MessageBox.Show("Si funciona" + lti3);
-                MessageBox.Show("Si funciona" + lni3);
-                MessageBox.Show("Si funciona" + la3);
-                MessageBox.Show("Si funciona" + cp3);
-
 
                 PBCP.Value = cp3;
                 PBLA.Value = la3;
@@ -378,7 +350,7 @@ namespace PIA_PAL
             }
             else
             {
-                MessageBox.Show("No se encontro tu segundo examen. Intenta hacer otro.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se encontro tu tercer examen. Intenta hacer otro.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

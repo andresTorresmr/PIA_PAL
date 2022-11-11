@@ -8,7 +8,7 @@ namespace PIA_PAL
 {
     public class Variables
     {
-        static public string ID = "1";
+        static public int id = 0;
         static public int counteval;
         static public int lti = 0;
         static public int lni = 0;
