@@ -127,6 +127,7 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1026, 591);
             this.panelDesktop.TabIndex = 5;
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // panelTitleBar
             // 
@@ -139,6 +140,7 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1026, 50);
             this.panelTitleBar.TabIndex = 4;
+            this.panelTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
             // 
             // iconPictureBox1
             // 
@@ -166,6 +168,7 @@
             this.lblPestanaActual.Size = new System.Drawing.Size(47, 21);
             this.lblPestanaActual.TabIndex = 1;
             this.lblPestanaActual.Text = "Inicio";
+            this.lblPestanaActual.Click += new System.EventHandler(this.lblPestanaActual_Click);
             // 
             // iconPestanaActual
             // 
@@ -180,6 +183,7 @@
             this.iconPestanaActual.Size = new System.Drawing.Size(34, 35);
             this.iconPestanaActual.TabIndex = 0;
             this.iconPestanaActual.TabStop = false;
+            this.iconPestanaActual.Click += new System.EventHandler(this.iconPestanaActual_Click);
             // 
             // panelMenu
             // 
@@ -200,6 +204,7 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 641);
             this.panelMenu.TabIndex = 3;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // section_10
             // 

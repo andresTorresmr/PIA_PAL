@@ -121,8 +121,11 @@ namespace PIA_PAL
                             id = dr.GetInt64(0);
                             Variables.id = (int)id;
                         }
-                        Resultados registro = new Resultados();
-                        registro.Show();
+                        //Resultados registro = new Resultados();
+                        //registro.Show();
+                        //this.Hide();
+                        Res resultados = new Res();
+                        resultados.Show();
                         this.Hide();
                     }
                 }

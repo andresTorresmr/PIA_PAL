@@ -345,5 +345,30 @@ namespace PIA_PAL
             section_10.Visible = false;
 
         }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconPestanaActual_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPestanaActual_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

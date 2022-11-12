@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿using FontAwesome.Sharp;
+using MySqlConnector;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PIA_PAL;
@@ -17,10 +18,13 @@ namespace PIA_PAL
 {
     public partial class registro : Form
     {
+
         public registro()
         {
             InitializeComponent();
+            
         }
+    }
 
         class DB
         {

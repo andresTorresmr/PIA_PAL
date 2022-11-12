@@ -196,6 +196,7 @@
             this.Controls.Add(this.PBCP);
             this.Name = "Examen2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Examen2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
