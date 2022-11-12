@@ -52,8 +52,13 @@ namespace PIA_PAL
 
         private void botonPia1_Click(object sender, EventArgs e)
         {
+            byte[] images = null;
+            FileStream Streem = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(Streem);
+            images = brs.ReadBytes((int)Streem.Length);
+
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac, foto) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac, @images)", db.getConnection());
 
 
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = Nombre1.Texts;
@@ -61,6 +66,7 @@ namespace PIA_PAL
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
             command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
+            command.Parameters.Add("@images", MySqlDbType.VarChar).Value = images;
 
             //ID
             string nombre = Nombre1.Texts;
@@ -189,6 +195,19 @@ namespace PIA_PAL
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        string imgLocation = "";
+        private void Browsebtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd2 = new OpenFileDialog();
+            fd2.Filter = "image files |*.jpg;*.png;*.gif;*.icon;.*;";
+            DialogResult dres1 = fd2.ShowDialog();
+            if (dres1 == DialogResult.OK)
+            {
+                imgLocation = fd2.FileName.ToString();
+                ImgPf.ImageLocation = imgLocation;
+            }
         }
     }
 }

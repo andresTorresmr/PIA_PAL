@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.botonPia1 = new PIA_PAL.herramientas.BotonPia();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ApellidoP = new PIA_PAL.herramientas.PiaTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ApellidoM = new PIA_PAL.herramientas.PiaTextBox();
@@ -41,8 +40,10 @@
             this.nacimiento = new PIA_PAL.herramientas.DateTimePia();
             this.Nombre1 = new PIA_PAL.herramientas.PiaTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.ImgPf = new PIA_PAL.herramientas.RoundedPictureBoxPia();
+            this.Browsebtn = new PIA_PAL.herramientas.BotonPia();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgPf)).BeginInit();
             this.SuspendLayout();
             // 
             // botonPia1
@@ -64,18 +65,6 @@
             this.botonPia1.TextColor = System.Drawing.Color.White;
             this.botonPia1.UseVisualStyleBackColor = false;
             this.botonPia1.Click += new System.EventHandler(this.botonPia1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::PIA_PAL.Properties.Resources.elefante;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Location = new System.Drawing.Point(473, 56);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(391, 336);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
             // 
             // ApellidoP
             // 
@@ -239,6 +228,43 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // ImgPf
+            // 
+            this.ImgPf.BackColor = System.Drawing.Color.Transparent;
+            this.ImgPf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ImgPf.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Round;
+            this.ImgPf.BorderColor = System.Drawing.Color.LightCoral;
+            this.ImgPf.BorderColor2 = System.Drawing.Color.LightCoral;
+            this.ImgPf.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.ImgPf.BorderSize = 5;
+            this.ImgPf.GradientAngle = 50F;
+            this.ImgPf.Location = new System.Drawing.Point(432, 42);
+            this.ImgPf.Name = "ImgPf";
+            this.ImgPf.Size = new System.Drawing.Size(292, 292);
+            this.ImgPf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImgPf.TabIndex = 26;
+            this.ImgPf.TabStop = false;
+            // 
+            // Browsebtn
+            // 
+            this.Browsebtn.BackColor = System.Drawing.Color.DarkRed;
+            this.Browsebtn.BackgroundColor = System.Drawing.Color.DarkRed;
+            this.Browsebtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Browsebtn.BorderRadius = 20;
+            this.Browsebtn.BorderSize = 0;
+            this.Browsebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Browsebtn.FlatAppearance.BorderSize = 0;
+            this.Browsebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Browsebtn.ForeColor = System.Drawing.Color.White;
+            this.Browsebtn.Location = new System.Drawing.Point(507, 340);
+            this.Browsebtn.Name = "Browsebtn";
+            this.Browsebtn.Size = new System.Drawing.Size(150, 40);
+            this.Browsebtn.TabIndex = 27;
+            this.Browsebtn.Text = "Browse";
+            this.Browsebtn.TextColor = System.Drawing.Color.White;
+            this.Browsebtn.UseVisualStyleBackColor = false;
+            this.Browsebtn.Click += new System.EventHandler(this.Browsebtn_Click);
+            // 
             // registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -246,6 +272,8 @@
             this.BackgroundImage = global::PIA_PAL.Properties.Resources.fondo_rojo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Browsebtn);
+            this.Controls.Add(this.ImgPf);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ApellidoP);
             this.Controls.Add(this.label5);
@@ -257,13 +285,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nacimiento);
             this.Controls.Add(this.Nombre1);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.botonPia1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "registro";
             this.Text = "registro";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgPf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,7 +299,6 @@
         #endregion
 
         private herramientas.BotonPia botonPia1;
-        private PictureBox pictureBox2;
         private herramientas.PiaTextBox ApellidoP;
         private Label label5;
         private herramientas.PiaTextBox ApellidoM;
@@ -284,5 +310,7 @@
         private herramientas.DateTimePia nacimiento;
         private herramientas.PiaTextBox Nombre1;
         private PictureBox pictureBox1;
+        private herramientas.RoundedPictureBoxPia ImgPf;
+        private herramientas.BotonPia Browsebtn;
     }
 }

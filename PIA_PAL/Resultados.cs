@@ -215,7 +215,7 @@ namespace PIA_PAL
             int la1;
             int cp1;
             int id;
-            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante = @id AND idExamen = 1", db.getConnection());
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante = @id AND num_Examen = 1", db.getConnection());
             select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
             var dr = select1.ExecuteReader();
 
@@ -288,7 +288,7 @@ namespace PIA_PAL
                 PBLTI.Value = 0;
             }
 
-            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante= @id AND idExamen = 2", db.getConnection());
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante= @id AND num_Examen = 2", db.getConnection());
             select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
             var dr = select1.ExecuteReader();
             if (dr.HasRows)
@@ -340,7 +340,7 @@ namespace PIA_PAL
                 PBLTI.Value = 0;
             }
 
-            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante = @id AND idExamen = 3", db.getConnection());
+            MySqlCommand select1 = new MySqlCommand("SELECT lti,lni,cp,la FROM resultado WHERE idEstudiante = @id AND num_Examen = 3", db.getConnection());
             select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
             var dr = select1.ExecuteReader();
             if (dr.HasRows)

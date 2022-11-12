@@ -143,7 +143,7 @@
             this.botonPia1.Name = "botonPia1";
             this.botonPia1.Size = new System.Drawing.Size(150, 40);
             this.botonPia1.TabIndex = 22;
-            this.botonPia1.Text = "Ingresar";
+            this.botonPia1.Text = "Actualizar datos";
             this.botonPia1.TextColor = System.Drawing.Color.White;
             this.botonPia1.UseVisualStyleBackColor = false;
             this.botonPia1.Click += new System.EventHandler(this.botonPia1_Click);
