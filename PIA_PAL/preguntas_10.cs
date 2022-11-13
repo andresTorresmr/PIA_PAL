@@ -119,19 +119,37 @@ namespace PIA_PAL
                         Examen_preguntas principal = Owner as Examen_preguntas;
                         principal.section_10.IconChar = IconChar.CheckCircle;
                         principal.section_10.Enabled = false;
-                        MessageBox.Show("Terminaste tu examen :D");
 
+                        DB dbconteo = new DB();
+                        dbconteo.openConnection();
+                        int conteo = 0;
+                        MySqlCommand select1 = new MySqlCommand("SELECT COUNT(idExamen) FROM resultado WHERE idEstudiante = @id", dbconteo.getConnection());
+                        select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
+                        var dr = select1.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            dr.Read();
+                            conteo = (int)dr.GetInt64(0);
+
+
+                        }
+                        conteo = conteo + 1;
                         DB db = new DB();
                         db.openConnection();
-                        MySqlCommand command = new MySqlCommand("INSERT INTO resultado (idEstudiante, num_Examen, lti, lni, la, cp) VALUES ( 1, 3, @lti,@lni,@la,@cp) ", db.getConnection());
-                        command.Parameters.Add("@lti", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.lti);
-                        command.Parameters.Add("@lni", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.lni);
-                        command.Parameters.Add("@la", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.la);
-                        command.Parameters.Add("@cp", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.cp);
+                        MySqlCommand commandExamen = new MySqlCommand("INSERT INTO resultado (idEstudiante, num_Examen, lti, lni, la, cp) VALUES ( @id, @nExamen, @lti,@lni,@la,@cp) ", db.getConnection());
+                        commandExamen.Parameters.Add("@id", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.id);
+                        commandExamen.Parameters.Add("@nExamen", MySqlDbType.Int16).Value = Convert.ToInt16(conteo);
+                        commandExamen.Parameters.Add("@lti", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.lti);
+                        commandExamen.Parameters.Add("@lni", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.lni);
+                        commandExamen.Parameters.Add("@la", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.la);
+                        commandExamen.Parameters.Add("@cp", MySqlDbType.Int16).Value = Convert.ToInt16(Variables.cp);
 
-                        if (command.ExecuteNonQuery() == 1)
+                        if (commandExamen.ExecuteNonQuery() == 1)
                         {
-                            MessageBox.Show("Si se inserto :D");
+                            MessageBox.Show("Finalizaste tu examen, te llevaremos a tu perfil para que veas el resultado.");
+                            this.Hide();
+                            Res resultados = new Res();
+                            resultados.Show();
                         }
                         else
                         {

@@ -34,16 +34,16 @@
             this.lblPestanaActual = new System.Windows.Forms.Label();
             this.iconPestanaActual = new FontAwesome.Sharp.IconPictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnex3 = new FontAwesome.Sharp.IconButton();
             this.btnex2 = new FontAwesome.Sharp.IconButton();
             this.btnex1 = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.DatosEdit = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.img_perfil = new PIA_PAL.herramientas.RoundedPictureBoxPia();
-            this.btnex3 = new FontAwesome.Sharp.IconButton();
-            this.DatosEdit = new FontAwesome.Sharp.IconButton();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPestanaActual)).BeginInit();
@@ -87,6 +87,7 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(19, 18);
             this.iconPictureBox1.TabIndex = 2;
             this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // lblPestanaActual
             // 
@@ -126,6 +127,29 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 641);
             this.panelMenu.TabIndex = 6;
+            // 
+            // btnex3
+            // 
+            this.btnex3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnex3.FlatAppearance.BorderSize = 0;
+            this.btnex3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnex3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnex3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnex3.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.btnex3.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnex3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnex3.IconSize = 32;
+            this.btnex3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnex3.Location = new System.Drawing.Point(0, 260);
+            this.btnex3.Name = "btnex3";
+            this.btnex3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnex3.Size = new System.Drawing.Size(220, 40);
+            this.btnex3.TabIndex = 4;
+            this.btnex3.Text = "Examen 3";
+            this.btnex3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnex3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnex3.UseVisualStyleBackColor = true;
+            this.btnex3.Click += new System.EventHandler(this.btnex3_Click);
             // 
             // btnex2
             // 
@@ -194,6 +218,7 @@
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // panelLogo
             // 
@@ -207,6 +232,21 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(220, 140);
             this.panelLogo.TabIndex = 0;
+            // 
+            // DatosEdit
+            // 
+            this.DatosEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DatosEdit.FlatAppearance.BorderSize = 0;
+            this.DatosEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DatosEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.DatosEdit.IconColor = System.Drawing.Color.Gainsboro;
+            this.DatosEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DatosEdit.IconSize = 20;
+            this.DatosEdit.Location = new System.Drawing.Point(189, 3);
+            this.DatosEdit.Name = "DatosEdit";
+            this.DatosEdit.Size = new System.Drawing.Size(25, 24);
+            this.DatosEdit.TabIndex = 6;
+            this.DatosEdit.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -258,44 +298,6 @@
             this.img_perfil.TabIndex = 0;
             this.img_perfil.TabStop = false;
             // 
-            // btnex3
-            // 
-            this.btnex3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnex3.FlatAppearance.BorderSize = 0;
-            this.btnex3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnex3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnex3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnex3.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnex3.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnex3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnex3.IconSize = 32;
-            this.btnex3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnex3.Location = new System.Drawing.Point(0, 260);
-            this.btnex3.Name = "btnex3";
-            this.btnex3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnex3.Size = new System.Drawing.Size(220, 40);
-            this.btnex3.TabIndex = 4;
-            this.btnex3.Text = "Examen 3";
-            this.btnex3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnex3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnex3.UseVisualStyleBackColor = true;
-            this.btnex3.Click += new System.EventHandler(this.btnex3_Click);
-            // 
-            // DatosEdit
-            // 
-            this.DatosEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DatosEdit.FlatAppearance.BorderSize = 0;
-            this.DatosEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DatosEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
-            this.DatosEdit.IconColor = System.Drawing.Color.Gainsboro;
-            this.DatosEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DatosEdit.IconSize = 20;
-            this.DatosEdit.Location = new System.Drawing.Point(189, 3);
-            this.DatosEdit.Name = "DatosEdit";
-            this.DatosEdit.Size = new System.Drawing.Size(25, 24);
-            this.DatosEdit.TabIndex = 6;
-            this.DatosEdit.UseVisualStyleBackColor = true;
-            // 
             // Res
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -304,8 +306,10 @@
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Res";
             this.Text = "Res";
+            this.Load += new System.EventHandler(this.Res_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

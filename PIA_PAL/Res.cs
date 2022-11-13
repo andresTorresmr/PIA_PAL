@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,35 @@ namespace PIA_PAL
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         public Form currentChildForm;
+
+        class DB
+        {
+            MySqlConnection connection = new
+            //MySqlConnection("server = 127.0.0.1;port=3306;username=root;password=;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            MySqlConnection("server = 162.241.62.140;port=3306;username=ansystec_roman;password=Roman2022..;database=ansystec_pal; pooling = false; convert zero datetime=true");
+            public void openConnection()
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+            }
+
+            public void closeConnection()
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            public MySqlConnection getConnection()
+            {
+                return connection;
+            }
+        }
+
+
         public Res()
         {
             InitializeComponent();
@@ -30,6 +60,41 @@ namespace PIA_PAL
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         //Métodos
+
+        private void Res_Load(object sender, EventArgs e)
+        {
+            btnex1.Visible = false;
+            btnex2.Visible = false;
+            btnex3.Visible = false;
+            DB db = new DB();
+            db.openConnection();
+            int conteo;
+            MySqlCommand select1 = new MySqlCommand("SELECT COUNT(idExamen) FROM resultado WHERE idEstudiante = @id", db.getConnection());
+            select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
+            var dr = select1.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                conteo = (int)dr.GetInt64(0);
+                if (conteo == 1)
+                {
+                    btnex1.Visible=true;
+                }
+                if (conteo == 2)
+                {
+                    btnex1.Visible = true;
+                    btnex2.Visible = true;
+                }
+                if (conteo == 3)
+                {
+                    btnex1.Visible = true;
+                    btnex2.Visible = true;
+                    btnex3.Visible = true;
+                }
+            }
+        }
+
+
         public void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -163,5 +228,51 @@ namespace PIA_PAL
             ActivateButton(sender, Color.FromArgb(246, 202, 204));
             //OpenChildForm(new preguntas_1());
         }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            int conteo;
+            MySqlCommand select1 = new MySqlCommand("SELECT COUNT(idExamen) FROM resultado WHERE idEstudiante = @id", db.getConnection());
+            select1.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
+            var dr = select1.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                conteo = (int)dr.GetInt64(0);
+                if (conteo < 3)
+                {
+                    MessageBox.Show("RECUERDA que solo puedes hacer 3 examenes. Llevas: " + conteo);
+                    string message = "¿Quieres realizar otro examen?";
+                    string titutlo = "Examen";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        Examen_preguntas forms = new Examen_preguntas();
+                        forms.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+
+                    }
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Llegaste a tu limite de 3 examenes.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        
     }
 }

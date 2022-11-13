@@ -18,14 +18,6 @@ namespace PIA_PAL
 {
     public partial class registro : Form
     {
-
-        public registro()
-        {
-            InitializeComponent();
-            
-        }
-    }
-
         class DB
         {
             MySqlConnection connection = new
@@ -52,17 +44,17 @@ namespace PIA_PAL
                 return connection;
             }
         }
-
-
-        private void botonPia1_Click(object sender, EventArgs e)
+        public registro()
         {
-            byte[] images = null;
-            FileStream Streem = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader brs = new BinaryReader(Streem);
-            images = brs.ReadBytes((int)Streem.Length);
+            InitializeComponent();
 
+        }
+
+
+        private void registrarse_Click(object sender, EventArgs e)
+        {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac, foto) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac, @images)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac)", db.getConnection());
 
 
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = Nombre1.Texts;
@@ -70,7 +62,7 @@ namespace PIA_PAL
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
             command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
-            command.Parameters.Add("@images", MySqlDbType.VarChar).Value = images;
+            //command.Parameters.Add("@images", MySqlDbType.VarChar).Value = images;
 
             //ID
             string nombre = Nombre1.Texts;
@@ -83,7 +75,14 @@ namespace PIA_PAL
             commandId.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
             commandId.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
             commandId.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
-
+            Int64 id;
+            var dr = commandId.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                id = dr.GetInt64(0);
+                Variables.id = (int)id;
+            }
             db.openConnection();
 
             if (!checkTextBoxesValues())
@@ -97,13 +96,13 @@ namespace PIA_PAL
                     DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
-                        Int64 id;
-                        var dr = commandId.ExecuteReader();
-                        if (dr.HasRows)
+                        Int64 idUsuario;
+                        var drUser = commandId.ExecuteReader();
+                        if (drUser.HasRows)
                         {
-                            dr.Read();
-                            id = dr.GetInt64(0);
-                            MessageBox.Show("ID: " + id);
+                            drUser.Read();
+                            idUsuario = drUser.GetInt64(0);
+                            MessageBox.Show("ID: " + idUsuario);
                         }
                         Resultados registro = new Resultados();
                         registro.Show();
@@ -115,14 +114,14 @@ namespace PIA_PAL
                 {
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        Int64 id;
-                        var dr = commandId.ExecuteReader();
-                        if (dr.HasRows)
-                        {
-                            dr.Read();
-                            id = dr.GetInt64(0);
-                            //MessageBox.Show("ID: " + id);
-                        }
+                        //Int64 id;
+                        //var dr = commandId.ExecuteReader();
+                        //if (dr.HasRows)
+                        //{
+                        //    dr.Read();
+                        //    id = dr.GetInt64(0);
+                        //    //MessageBox.Show("ID: " + id);
+                        //}
                         MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Examen_preguntas vocacion = new Examen_preguntas();
                         vocacion.Show();
@@ -169,7 +168,6 @@ namespace PIA_PAL
             }
 
         }
-
         public bool checkTextBoxesValues()
         {
             string fnombre = Nombre1.Texts;
@@ -178,7 +176,7 @@ namespace PIA_PAL
             string apellidop = ApellidoP.Texts;
             string fechaNac = nacimiento.Text;
 
-           
+
 
             if (fnombre.Equals("nombre_1") && fnombre2.Equals("nombre_2") && apellidop.Equals("apellido_p") && apellidom.Equals("apellido_m"))
             {
@@ -190,29 +188,19 @@ namespace PIA_PAL
             }
 
         }
-    
-        private void Nombre1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
-        string imgLocation = "";
-        private void Browsebtn_Click(object sender, EventArgs e)
+        private void btn_regresar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fd2 = new OpenFileDialog();
-            fd2.Filter = "image files |*.jpg;*.png;*.gif;*.icon;.*;";
-            DialogResult dres1 = fd2.ShowDialog();
-            if (dres1 == DialogResult.OK)
-            {
-                imgLocation = fd2.FileName.ToString();
-                ImgPf.ImageLocation = imgLocation;
-            }
+            this.Hide();
+            Form1 menu = new Form1();
+            menu.Show();
         }
     }
-}
 
+
+}
