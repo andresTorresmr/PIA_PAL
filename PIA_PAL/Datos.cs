@@ -90,7 +90,7 @@ namespace PIA_PAL
                 if (table.Rows.Count == 0)
                 {
                     int count1 = table.Rows.Count;
-                    MessageBox.Show("Hola" + count1);
+                    //MessageBox.Show("Hola" + count1);
                     MessageBox.Show("Tus datos no se encuentran en nuestra base de datos", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     string message = "¿Quieres registrarte?";
                     string titutlo = "Registro";
