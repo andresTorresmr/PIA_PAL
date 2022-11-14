@@ -111,10 +111,10 @@ namespace PIA_PAL
                         groupBox5.Enabled = false;
 
 
-                        MessageBox.Show("LTI: " + Variables.lti);
-                        MessageBox.Show("LNI: " + Variables.lni);
-                        MessageBox.Show("LA: " + Variables.la);
-                        MessageBox.Show("CP: " + Variables.cp);
+                        //MessageBox.Show("LTI: " + Variables.lti);
+                        //MessageBox.Show("LNI: " + Variables.lni);
+                        //MessageBox.Show("LA: " + Variables.la);
+                        //MessageBox.Show("CP: " + Variables.cp);
 
                         Examen_preguntas principal = Owner as Examen_preguntas;
                         principal.section_10.IconChar = IconChar.CheckCircle;

@@ -106,7 +106,7 @@ namespace PIA_PAL
                                 drUser.Read();
                                 idUsuario = drUser.GetInt64(0);
                                 idUsuario = Variables.id;
-                                MessageBox.Show("ID: " + idUsuario);
+                                //MessageBox.Show("ID: " + idUsuario);
                             }
                             Res registro = new Res();
                             registro.Show();
@@ -120,12 +120,12 @@ namespace PIA_PAL
                         if (command.ExecuteNonQuery() == 1)
                         {
                             long idUserLong = command.LastInsertedId;
-                            MessageBox.Show("ID: " + idUserLong);
+                            //MessageBox.Show("ID: " + idUserLong);
                             int idUser = unchecked((int)idUserLong);
-                            MessageBox.Show("ID: " + idUser);
+                            //MessageBox.Show("ID: " + idUser);
                             Variables.id = idUser;
-                            MessageBox.Show("ID: " + Variables.id);
-                            //Variables.id = (int)command.LastInsertedId;
+                            //MessageBox.Show("ID: " + Variables.id);
+                            Variables.id = (int)command.LastInsertedId;
                             MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Variables.nombre1 = Nombre1.Texts;
                             Variables.apellidop = ApellidoP.Texts;
