@@ -65,7 +65,11 @@ namespace PIA_PAL
                 commandUP.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
                 commandUP.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
 
-                db.openConnection();
+                Nombre1.Texts = Variables.nombre1;
+                ApellidoP.Texts = Variables.apellidop;
+                ApellidoM.Texts = Variables.apellidom;
+
+                    db.openConnection();
 
 
                 if (commandUP.ExecuteNonQuery() == 1)
@@ -85,7 +89,7 @@ namespace PIA_PAL
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void Nombre1_KeyPress(object sender, KeyPressEventArgs e)

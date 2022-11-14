@@ -280,7 +280,6 @@ namespace PIA_PAL
         {
             Edicion_Datos edit = new Edicion_Datos();
             edit.Show();
-            this.Close();
         }
     }
 }
