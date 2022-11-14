@@ -66,6 +66,9 @@ namespace PIA_PAL
             btnex1.Visible = false;
             btnex2.Visible = false;
             btnex3.Visible = false;
+            lblNombre.Text = Variables.nombre1;
+            lblApellidoP.Text = Variables.apellidop;
+            lblApellidoM.Text = Variables.apellidom;
             DB db = new DB();
             db.openConnection();
             int conteo;
@@ -273,6 +276,11 @@ namespace PIA_PAL
             }
         }
 
-        
+        private void DatosEdit_Click(object sender, EventArgs e)
+        {
+            Edicion_Datos edit = new Edicion_Datos();
+            edit.Show();
+            this.Close();
+        }
     }
 }

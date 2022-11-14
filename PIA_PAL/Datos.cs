@@ -121,6 +121,9 @@ namespace PIA_PAL
                             id = dr.GetInt64(0);
                             Variables.id = (int)id;
                         }
+                        Variables.nombre1 = Nombre1.Texts;
+                        Variables.apellidop = ApellidoP.Texts;
+                        Variables.apellidom = ApellidoM.Texts;
                         //Resultados registro = new Resultados();
                         //registro.Show();
                         //this.Hide();

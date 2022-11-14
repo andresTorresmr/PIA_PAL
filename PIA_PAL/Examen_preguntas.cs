@@ -343,6 +343,9 @@ namespace PIA_PAL
             section_8.Visible = false;
             section_9.Visible = false;
             section_10.Visible = false;
+            lblNombre.Text = Variables.nombre1;
+            lblApellidoP.Text = Variables.apellidop;
+            lblApellidoM.Text = Variables.apellidom;
 
         }
 

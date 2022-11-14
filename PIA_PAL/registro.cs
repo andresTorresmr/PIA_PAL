@@ -125,6 +125,9 @@ namespace PIA_PAL
                         MessageBox.Show("ID: " + Variables.id);
                         //Variables.id = (int)command.LastInsertedId;
                         MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Variables.nombre1 = Nombre1.Texts;
+                        Variables.apellidop = ApellidoP.Texts;
+                        Variables.apellidom = ApellidoM.Texts;
                         Examen_preguntas vocacion = new Examen_preguntas();
                         vocacion.Show();
                         this.Close();
