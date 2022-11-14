@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace PIA_PAL
@@ -54,16 +55,15 @@ namespace PIA_PAL
         private void registrarse_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac)", db.getConnection());
-
-
+            DB dbInsert = new DB();
+            DB dbCheck = new DB();
+            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac); ", dbInsert.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = Nombre1.Texts;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = Nombre2.Texts;
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
             command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
             command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
             //command.Parameters.Add("@images", MySqlDbType.VarChar).Value = images;
-
             //ID
             string nombre = Nombre1.Texts;
             string nombre2 = Nombre2.Texts;
@@ -76,6 +76,7 @@ namespace PIA_PAL
             commandId.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
             commandId.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
             Int64 id;
+            db.openConnection();
             var dr = commandId.ExecuteReader();
             if (dr.HasRows)
             {
@@ -83,8 +84,8 @@ namespace PIA_PAL
                 id = dr.GetInt64(0);
                 Variables.id = (int)id;
             }
+            db.closeConnection();
             db.openConnection();
-
             if (!checkTextBoxesValues())
             {
                 if (checkUsername())
@@ -102,9 +103,10 @@ namespace PIA_PAL
                         {
                             drUser.Read();
                             idUsuario = drUser.GetInt64(0);
+                            idUsuario = Variables.id;
                             MessageBox.Show("ID: " + idUsuario);
                         }
-                        Resultados registro = new Resultados();
+                        Res registro = new Res();
                         registro.Show();
                         this.Hide();
                     }
@@ -112,16 +114,16 @@ namespace PIA_PAL
                 }
                 else
                 {
+                    dbInsert.openConnection();
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        //Int64 id;
-                        //var dr = commandId.ExecuteReader();
-                        //if (dr.HasRows)
-                        //{
-                        //    dr.Read();
-                        //    id = dr.GetInt64(0);
-                        //    //MessageBox.Show("ID: " + id);
-                        //}
+                        long idUserLong = command.LastInsertedId;
+                        MessageBox.Show("ID: " + idUserLong);
+                        int idUser = unchecked((int)idUserLong);
+                        MessageBox.Show("ID: " + idUser);
+                        Variables.id = idUser;
+                        MessageBox.Show("ID: " + Variables.id);
+                        //Variables.id = (int)command.LastInsertedId;
                         MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Examen_preguntas vocacion = new Examen_preguntas();
                         vocacion.Show();
@@ -138,7 +140,7 @@ namespace PIA_PAL
 
         public bool checkUsername()
         {
-            DB db = new DB();
+            DB dbCheck = new DB();
             string nombre = Nombre1.Texts;
             string nombre2 = Nombre2.Texts;
             string apellido1 = ApellidoP.Texts;
@@ -146,7 +148,7 @@ namespace PIA_PAL
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             //creo que aqui está el error pero estoy muy cansado así que solo quiero acabar las preguntas y ya pls, mañana veo esto en clases :D
-            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", dbCheck.getConnection());
             command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
             command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
             command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
