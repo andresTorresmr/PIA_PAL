@@ -64,6 +64,7 @@
             this.ApellidoP.TabIndex = 18;
             this.ApellidoP.Texts = "";
             this.ApellidoP.UnderlinedStyle = false;
+            this.ApellidoP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoP_KeyPress);
             // 
             // label5
             // 
@@ -107,6 +108,7 @@
             this.ApellidoM.TabIndex = 19;
             this.ApellidoM.Texts = "";
             this.ApellidoM.UnderlinedStyle = false;
+            this.ApellidoM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoM_KeyPress);
             // 
             // Nombre2
             // 
@@ -127,6 +129,7 @@
             this.Nombre2.TabIndex = 17;
             this.Nombre2.Texts = "";
             this.Nombre2.UnderlinedStyle = false;
+            this.Nombre2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre2_KeyPress);
             // 
             // botonPia1
             // 
@@ -201,6 +204,7 @@
             this.Nombre1.Tag = "Nombre1";
             this.Nombre1.Texts = "";
             this.Nombre1.UnderlinedStyle = false;
+            this.Nombre1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre1_KeyPress);
             // 
             // pictureBox1
             // 
@@ -208,9 +212,9 @@
             this.pictureBox1.BackgroundImage = global::PIA_PAL.Properties.Resources.Close_icon;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(747, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(773, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(15, 14);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -243,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PIA_PAL.Properties.Resources.fondo_rojo;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ApellidoP);

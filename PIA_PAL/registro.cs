@@ -54,90 +54,97 @@ namespace PIA_PAL
 
         private void registrarse_Click(object sender, EventArgs e)
         {
-            DB db = new DB();
-            DB dbInsert = new DB();
-            DB dbCheck = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac); ", dbInsert.getConnection());
-            command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = Nombre1.Texts;
-            command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = Nombre2.Texts;
-            command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
-            command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
-            command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
-            //command.Parameters.Add("@images", MySqlDbType.VarChar).Value = images;
-            //ID
-            string nombre = Nombre1.Texts;
-            string nombre2 = Nombre2.Texts;
-            string apellido1 = ApellidoP.Texts;
-            string apellido2 = ApellidoM.Texts;
-            MySqlCommand commandId = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", db.getConnection());
-            commandId.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
-            commandId.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
-            commandId.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
-            commandId.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
-            commandId.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
-            Int64 id;
-            db.openConnection();
-            var dr = commandId.ExecuteReader();
-            if (dr.HasRows)
+            if (!string.IsNullOrEmpty(Nombre1.Texts) || !string.IsNullOrEmpty(ApellidoP.Texts) || !string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date <= DateTime.Now.Date)
             {
-                dr.Read();
-                id = dr.GetInt64(0);
-                Variables.id = (int)id;
-            }
-            db.closeConnection();
-            db.openConnection();
-            if (!checkTextBoxesValues())
-            {
-                if (checkUsername())
+                DB db = new DB();
+                DB dbInsert = new DB();
+                DB dbCheck = new DB();
+                MySqlCommand command = new MySqlCommand("INSERT INTO usuario(nombre_1, nombre_2, apellido_P, apellido_M, fecha_Nac) VALUES (@nombre1, @nombre2, @apellido1, @apellido2, @fechaNac); ", dbInsert.getConnection());
+                command.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = Nombre1.Texts;
+                command.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = Nombre2.Texts;
+                command.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = ApellidoP.Texts;
+                command.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = ApellidoM.Texts;
+                command.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
+                //command.Parameters.Add("@images", MySqlDbType.VarChar).Value = images;
+                //ID
+                string nombre = Nombre1.Texts;
+                string nombre2 = Nombre2.Texts;
+                string apellido1 = ApellidoP.Texts;
+                string apellido2 = ApellidoM.Texts;
+                MySqlCommand commandId = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nombre_1 = @nombre1 AND nombre_2 = @nombre2 AND apellido_P = @apellido1 AND apellido_M = @apellido2 AND fecha_Nac = @fechaNac", db.getConnection());
+                commandId.Parameters.Add("@nombre1", MySqlDbType.VarChar).Value = nombre;
+                commandId.Parameters.Add("@nombre2", MySqlDbType.VarChar).Value = nombre2;
+                commandId.Parameters.Add("@apellido1", MySqlDbType.VarChar).Value = apellido1;
+                commandId.Parameters.Add("@apellido2", MySqlDbType.VarChar).Value = apellido2;
+                commandId.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
+                Int64 id;
+                db.openConnection();
+                var dr = commandId.ExecuteReader();
+                if (dr.HasRows)
                 {
-                    MessageBox.Show("Tus datos ya están registrados", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    string message = "¿Quieres ver tus resultados?";
-                    string titutlo = "Resultados";
-                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                    DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Information);
-                    if (result == DialogResult.Yes)
-                    {
-                        Int64 idUsuario;
-                        var drUser = commandId.ExecuteReader();
-                        if (drUser.HasRows)
-                        {
-                            drUser.Read();
-                            idUsuario = drUser.GetInt64(0);
-                            idUsuario = Variables.id;
-                            MessageBox.Show("ID: " + idUsuario);
-                        }
-                        Res registro = new Res();
-                        registro.Show();
-                        this.Hide();
-                    }
-
+                    dr.Read();
+                    id = dr.GetInt64(0);
+                    Variables.id = (int)id;
                 }
-                else
+                db.closeConnection();
+                db.openConnection();
+                if (!checkTextBoxesValues())
                 {
-                    dbInsert.openConnection();
-                    if (command.ExecuteNonQuery() == 1)
+                    if (checkUsername())
                     {
-                        long idUserLong = command.LastInsertedId;
-                        MessageBox.Show("ID: " + idUserLong);
-                        int idUser = unchecked((int)idUserLong);
-                        MessageBox.Show("ID: " + idUser);
-                        Variables.id = idUser;
-                        MessageBox.Show("ID: " + Variables.id);
-                        //Variables.id = (int)command.LastInsertedId;
-                        MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Variables.nombre1 = Nombre1.Texts;
-                        Variables.apellidop = ApellidoP.Texts;
-                        Variables.apellidom = ApellidoM.Texts;
-                        Examen_preguntas vocacion = new Examen_preguntas();
-                        vocacion.Show();
-                        this.Close();
+                        MessageBox.Show("Tus datos ya están registrados", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        string message = "¿Quieres ver tus resultados?";
+                        string titutlo = "Resultados";
+                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                        DialogResult result = MessageBox.Show(message, titutlo, buttons, MessageBoxIcon.Information);
+                        if (result == DialogResult.Yes)
+                        {
+                            Int64 idUsuario;
+                            var drUser = commandId.ExecuteReader();
+                            if (drUser.HasRows)
+                            {
+                                drUser.Read();
+                                idUsuario = drUser.GetInt64(0);
+                                idUsuario = Variables.id;
+                                MessageBox.Show("ID: " + idUsuario);
+                            }
+                            Res registro = new Res();
+                            registro.Show();
+                            this.Hide();
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("ERROR");
+                        dbInsert.openConnection();
+                        if (command.ExecuteNonQuery() == 1)
+                        {
+                            long idUserLong = command.LastInsertedId;
+                            MessageBox.Show("ID: " + idUserLong);
+                            int idUser = unchecked((int)idUserLong);
+                            MessageBox.Show("ID: " + idUser);
+                            Variables.id = idUser;
+                            MessageBox.Show("ID: " + Variables.id);
+                            //Variables.id = (int)command.LastInsertedId;
+                            MessageBox.Show("Tus datos han sido registrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Variables.nombre1 = Nombre1.Texts;
+                            Variables.apellidop = ApellidoP.Texts;
+                            Variables.apellidom = ApellidoM.Texts;
+                            Examen_preguntas vocacion = new Examen_preguntas();
+                            vocacion.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERROR");
 
+                        }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("El primer nombre, apellido paterno y apellido materno deben contener información y no puedes escoger la fechad de hoy.");
             }
         }
 
@@ -204,6 +211,56 @@ namespace PIA_PAL
             this.Hide();
             Form1 menu = new Form1();
             menu.Show();
+        }
+
+        private void Nombre1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void Nombre2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ApellidoP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ApellidoM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 

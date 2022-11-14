@@ -86,7 +86,7 @@
             this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(12, 788);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(588, 182);
+            this.groupBox5.Size = new System.Drawing.Size(571, 182);
             this.groupBox5.TabIndex = 37;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Pregunta 40";
@@ -124,10 +124,10 @@
             this.rbMal_16.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbMal_16.Name = "rbMal_16";
             this.rbMal_16.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbMal_16.Size = new System.Drawing.Size(192, 21);
+            this.rbMal_16.Size = new System.Drawing.Size(199, 21);
             this.rbMal_16.TabIndex = 3;
             this.rbMal_16.TabStop = true;
-            this.rbMal_16.Text = "rogramación estructurada ";
+            this.rbMal_16.Text = "Programación estructurada ";
             this.rbMal_16.UnCheckedColor = System.Drawing.Color.White;
             this.rbMal_16.UseVisualStyleBackColor = true;
             // 
@@ -187,7 +187,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(12, 591);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(588, 187);
+            this.groupBox4.Size = new System.Drawing.Size(571, 187);
             this.groupBox4.TabIndex = 36;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pregunta 39";
@@ -288,7 +288,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 396);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(588, 189);
+            this.groupBox3.Size = new System.Drawing.Size(571, 189);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pregunta 38";
@@ -390,7 +390,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 201);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(588, 189);
+            this.groupBox2.Size = new System.Drawing.Size(571, 189);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pregunta 37";
@@ -486,7 +486,7 @@
             this.btn_siguiente_1.FlatAppearance.BorderSize = 0;
             this.btn_siguiente_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente_1.ForeColor = System.Drawing.Color.White;
-            this.btn_siguiente_1.Location = new System.Drawing.Point(451, 976);
+            this.btn_siguiente_1.Location = new System.Drawing.Point(434, 976);
             this.btn_siguiente_1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btn_siguiente_1.Name = "btn_siguiente_1";
             this.btn_siguiente_1.Size = new System.Drawing.Size(149, 40);
@@ -511,7 +511,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(588, 183);
+            this.groupBox1.Size = new System.Drawing.Size(571, 183);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pregunta 36";

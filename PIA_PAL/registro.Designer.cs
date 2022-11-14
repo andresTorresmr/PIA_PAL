@@ -67,6 +67,7 @@
             this.Nombre1.TabIndex = 0;
             this.Nombre1.Texts = "";
             this.Nombre1.UnderlinedStyle = false;
+            this.Nombre1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre1_KeyPress);
             // 
             // Nombre2
             // 
@@ -87,6 +88,7 @@
             this.Nombre2.TabIndex = 1;
             this.Nombre2.Texts = "";
             this.Nombre2.UnderlinedStyle = false;
+            this.Nombre2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre2_KeyPress);
             // 
             // ApellidoP
             // 
@@ -107,6 +109,7 @@
             this.ApellidoP.TabIndex = 2;
             this.ApellidoP.Texts = "";
             this.ApellidoP.UnderlinedStyle = false;
+            this.ApellidoP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoP_KeyPress);
             // 
             // ApellidoM
             // 
@@ -127,6 +130,7 @@
             this.ApellidoM.TabIndex = 3;
             this.ApellidoM.Texts = "";
             this.ApellidoM.UnderlinedStyle = false;
+            this.ApellidoM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoM_KeyPress);
             // 
             // nacimiento
             // 

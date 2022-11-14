@@ -251,7 +251,7 @@
             this.lblApellidoM.AutoSize = true;
             this.lblApellidoM.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblApellidoM.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblApellidoM.Location = new System.Drawing.Point(12, 80);
+            this.lblApellidoM.Location = new System.Drawing.Point(12, 95);
             this.lblApellidoM.Name = "lblApellidoM";
             this.lblApellidoM.Size = new System.Drawing.Size(85, 21);
             this.lblApellidoM.TabIndex = 3;
@@ -262,7 +262,7 @@
             this.lblApellidoP.AutoSize = true;
             this.lblApellidoP.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblApellidoP.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblApellidoP.Location = new System.Drawing.Point(12, 50);
+            this.lblApellidoP.Location = new System.Drawing.Point(12, 65);
             this.lblApellidoP.Name = "lblApellidoP";
             this.lblApellidoP.Size = new System.Drawing.Size(82, 21);
             this.lblApellidoP.TabIndex = 2;
@@ -273,7 +273,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNombre.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNombre.Location = new System.Drawing.Point(12, 20);
+            this.lblNombre.Location = new System.Drawing.Point(12, 35);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(71, 21);
             this.lblNombre.TabIndex = 1;

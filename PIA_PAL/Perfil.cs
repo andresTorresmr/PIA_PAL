@@ -154,5 +154,12 @@ namespace PIA_PAL
         {
             Application.Exit();
         }
+
+        private void Perfil_Load(object sender, EventArgs e)
+        {
+            lblNombre.Text = Variables.nombre1;
+            lblApellidoP.Text = Variables.apellidop;
+            lblApellidoM.Text = Variables.apellidom;
+        }
     }
 }
