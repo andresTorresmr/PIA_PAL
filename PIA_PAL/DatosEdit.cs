@@ -50,6 +50,10 @@ namespace PIA_PAL
         {
             if (!string.IsNullOrEmpty(Nombre1.Texts) || !string.IsNullOrEmpty(ApellidoP.Texts) || !string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date <= DateTime.Now.Date)
             {
+                MessageBox.Show("Al menos el primer nombre, apellido paterno y apellido materno deben contener información y no puedes escoger la fecha de hoy.");
+            }
+            else {
+
                 DB db = new DB();
 
                 string nombre = Nombre1.Texts;
@@ -69,7 +73,7 @@ namespace PIA_PAL
                 ApellidoP.Texts = Variables.apellidop;
                 ApellidoM.Texts = Variables.apellidom;
 
-                    db.openConnection();
+                db.openConnection();
 
 
                 if (commandUP.ExecuteNonQuery() == 1)
@@ -78,11 +82,8 @@ namespace PIA_PAL
                 }
                 else
                 {
-                    MessageBox.Show("No se actualizo nada perro");
+                    MessageBox.Show("No se actualizaron tus datos.");
                 }
-            }
-            else {
-                MessageBox.Show("Al menos el primer nombre, apellido paterno y apellido materno deben contener información y no puedes escoger la fecha de hoy.");
             }
 
         }

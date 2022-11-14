@@ -61,6 +61,10 @@ namespace PIA_PAL
         {
             if (!string.IsNullOrEmpty(Nombre1.Texts) || !string.IsNullOrEmpty(ApellidoP.Texts) || !string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date <= DateTime.Now.Date)
             {
+                MessageBox.Show("Los campos de primer nombre, apellido paterno y apellido materno deben contener información y  no puedes escoger la fecha de hoy.");
+            } 
+            else
+            {
                 DB db = new DB();
                 string nombre = Nombre1.Texts;
                 string nombre2 = Nombre2.Texts;
@@ -138,9 +142,6 @@ namespace PIA_PAL
                     {
                     }
                 }
-            } else
-            {
-                MessageBox.Show("Los campos de primer nombre, apellido paterno y apellido materno deben contener información y  no puedes escoger la fecha de hoy.");
             }
         }
 
