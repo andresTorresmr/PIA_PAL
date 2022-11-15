@@ -147,10 +147,10 @@ namespace PIA_PAL
                         if (commandExamen.ExecuteNonQuery() == 1)
                         {
                             MessageBox.Show("Finalizaste tu examen, te llevaremos a tu perfil para que veas el resultado.");
-                            
+                            this.Close();
                             Res resultados = new Res();
                             resultados.Show();
-                            this.Hide();
+                            
                         }
                         else
                         {
