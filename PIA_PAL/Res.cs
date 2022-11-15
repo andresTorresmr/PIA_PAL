@@ -278,8 +278,10 @@ namespace PIA_PAL
 
         private void DatosEdit_Click(object sender, EventArgs e)
         {
+            
             Edicion_Datos edit = new Edicion_Datos();
             edit.Show();
+            this.Close();
         }
     }
 }

@@ -54,7 +54,7 @@ namespace PIA_PAL
 
         private void registrarse_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Nombre1.Texts) || !string.IsNullOrEmpty(ApellidoP.Texts) || !string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date <= DateTime.Now.Date)
+            if (string.IsNullOrEmpty(Nombre1.Texts) || string.IsNullOrEmpty(ApellidoP.Texts) || string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date >= DateTime.Now.Date)
             {
                 MessageBox.Show("El primer nombre, apellido paterno y apellido materno deben contener información y no puedes escoger la fechad de hoy.");
             }

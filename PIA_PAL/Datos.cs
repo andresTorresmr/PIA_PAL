@@ -25,9 +25,7 @@ namespace PIA_PAL
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Form1 inicio = new Form1();
-            inicio.Show();
-            this.Close();
+            Application.Exit();
         }
 
         class DB
@@ -59,7 +57,7 @@ namespace PIA_PAL
 
         public void botonPia1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Nombre1.Texts) || !string.IsNullOrEmpty(ApellidoP.Texts) || !string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date <= DateTime.Now.Date)
+            if (string.IsNullOrEmpty(Nombre1.Texts) || string.IsNullOrEmpty(ApellidoP.Texts) || string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date >= DateTime.Now.Date)
             {
                 MessageBox.Show("Los campos de primer nombre, apellido paterno y apellido materno deben contener información y  no puedes escoger la fecha de hoy.");
             } 
@@ -248,6 +246,13 @@ namespace PIA_PAL
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 menu = new Form1();
+            menu.Show();
         }
     }
 }

@@ -260,7 +260,7 @@
             this.btn_regresar.Image = global::PIA_PAL.Properties.Resources._return;
             this.btn_regresar.Location = new System.Drawing.Point(12, 9);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(14, 14);
+            this.btn_regresar.Size = new System.Drawing.Size(10, 14);
             this.btn_regresar.TabIndex = 16;
             this.btn_regresar.TabStop = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);

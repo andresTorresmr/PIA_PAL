@@ -41,8 +41,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ApellidoM = new PIA_PAL.herramientas.PiaTextBox();
             this.ApellidoP = new PIA_PAL.herramientas.PiaTextBox();
+            this.btn_regresar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -245,6 +247,19 @@
             this.ApellidoP.UnderlinedStyle = false;
             this.ApellidoP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoP_KeyPress);
             // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackgroundImage = global::PIA_PAL.Properties.Resources._return;
+            this.btn_regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_regresar.Image = global::PIA_PAL.Properties.Resources._return;
+            this.btn_regresar.Location = new System.Drawing.Point(12, 12);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(10, 15);
+            this.btn_regresar.TabIndex = 17;
+            this.btn_regresar.TabStop = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
             // Datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -252,6 +267,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.ApellidoP);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
@@ -271,6 +287,7 @@
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +308,6 @@
         private Label label5;
         private herramientas.PiaTextBox ApellidoM;
         private herramientas.PiaTextBox ApellidoP;
+        private PictureBox btn_regresar;
     }
 }

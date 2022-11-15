@@ -48,7 +48,7 @@ namespace PIA_PAL
 
         private void botonPia1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Nombre1.Texts) || !string.IsNullOrEmpty(ApellidoP.Texts) || !string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date <= DateTime.Now.Date)
+            if (string.IsNullOrEmpty(Nombre1.Texts) || string.IsNullOrEmpty(ApellidoP.Texts) || string.IsNullOrEmpty(ApellidoM.Texts) || nacimiento.Value.Date >= DateTime.Now.Date)
             {
                 MessageBox.Show("Al menos el primer nombre, apellido paterno y apellido materno deben contener información y no puedes escoger la fecha de hoy.");
             }
@@ -69,9 +69,13 @@ namespace PIA_PAL
                 commandUP.Parameters.Add("@fechaNac", MySqlDbType.Date).Value = nacimiento.Value.Date;
                 commandUP.Parameters.Add("@id", MySqlDbType.Int64).Value = Variables.id;
 
-                Nombre1.Texts = Variables.nombre1;
-                ApellidoP.Texts = Variables.apellidop;
-                ApellidoM.Texts = Variables.apellidom;
+                //Nombre1.Texts = Variables.nombre1;
+                //ApellidoP.Texts = Variables.apellidop;
+                //ApellidoM.Texts = Variables.apellidom;
+
+                Variables.nombre1 = Nombre1.Texts;
+                Variables.apellidop = ApellidoP.Texts;
+                Variables.apellidom = ApellidoM.Texts;
 
                 db.openConnection();
 
@@ -79,7 +83,11 @@ namespace PIA_PAL
                 if (commandUP.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Se actualizaron correctamente tus datos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    Res perfil = new Res();
+                    perfil.Show();
                 }
+                
                 else
                 {
                     MessageBox.Show("No se actualizaron tus datos.");
