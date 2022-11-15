@@ -171,7 +171,7 @@ namespace PIA_PAL
             if (table.Rows.Count > 0)
             {
                 int count1 = table.Rows.Count;
-                MessageBox.Show("Hola" + count1);
+                
                 return true;
             }
             else
