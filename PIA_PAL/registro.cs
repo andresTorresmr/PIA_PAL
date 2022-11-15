@@ -112,6 +112,9 @@ namespace PIA_PAL
                                 idUsuario = Variables.id;
                                 //MessageBox.Show("ID: " + idUsuario);
                             }
+                            Variables.nombre1 = Nombre1.Texts;
+                            Variables.apellidop = ApellidoP.Texts;
+                            Variables.apellidom = ApellidoM.Texts;
                             Res registro = new Res();
                             registro.Show();
                             this.Hide();
@@ -171,7 +174,7 @@ namespace PIA_PAL
             if (table.Rows.Count > 0)
             {
                 int count1 = table.Rows.Count;
-                MessageBox.Show("Hola" + count1);
+                //MessageBox.Show("Hola" + count1);
                 return true;
             }
             else
