@@ -320,13 +320,16 @@ namespace PIA_PAL
 
         private void iconPictureBox1_Click_1(object sender, EventArgs e)
         {
-            string message = "¿Seguro que deseas salir de la aplicación? Al no terminar el exámen se borrarán tus respuestas.";
+            string message = "¿Seguro que deseas salir de la ventana? Al no terminar el exámen se borrarán tus respuestas.";
             string titutlo = "WARNING";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, titutlo, buttons);
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                
+                Form1 menu = new Form1();
+                menu.Show();
+                this.Close();
             }
                 
         }

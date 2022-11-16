@@ -42,6 +42,7 @@
             this.ApellidoM = new PIA_PAL.herramientas.PiaTextBox();
             this.ApellidoP = new PIA_PAL.herramientas.PiaTextBox();
             this.btn_regresar = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
@@ -67,7 +68,7 @@
             this.Nombre1.BorderFocusColor = System.Drawing.Color.HotPink;
             this.Nombre1.BorderRadius = 0;
             this.Nombre1.BorderSize = 2;
-            this.Nombre1.Location = new System.Drawing.Point(106, 45);
+            this.Nombre1.Location = new System.Drawing.Point(99, 117);
             this.Nombre1.Margin = new System.Windows.Forms.Padding(4);
             this.Nombre1.Multiline = false;
             this.Nombre1.Name = "Nombre1";
@@ -88,7 +89,7 @@
             this.nacimiento.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.nacimiento.BorderSize = 0;
             this.nacimiento.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nacimiento.Location = new System.Drawing.Point(106, 301);
+            this.nacimiento.Location = new System.Drawing.Point(99, 373);
             this.nacimiento.MinimumSize = new System.Drawing.Size(0, 35);
             this.nacimiento.Name = "nacimiento";
             this.nacimiento.Size = new System.Drawing.Size(250, 35);
@@ -101,7 +102,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(106, 26);
+            this.label1.Location = new System.Drawing.Point(99, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 15);
             this.label1.TabIndex = 5;
@@ -112,7 +113,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(106, 91);
+            this.label2.Location = new System.Drawing.Point(99, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 15);
             this.label2.TabIndex = 6;
@@ -123,7 +124,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(106, 218);
+            this.label3.Location = new System.Drawing.Point(99, 290);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 15);
             this.label3.TabIndex = 7;
@@ -134,7 +135,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(106, 283);
+            this.label4.Location = new System.Drawing.Point(99, 355);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 15);
             this.label4.TabIndex = 8;
@@ -167,7 +168,7 @@
             this.Nombre2.BorderFocusColor = System.Drawing.Color.HotPink;
             this.Nombre2.BorderRadius = 0;
             this.Nombre2.BorderSize = 2;
-            this.Nombre2.Location = new System.Drawing.Point(106, 110);
+            this.Nombre2.Location = new System.Drawing.Point(99, 182);
             this.Nombre2.Margin = new System.Windows.Forms.Padding(4);
             this.Nombre2.Multiline = false;
             this.Nombre2.Name = "Nombre2";
@@ -198,7 +199,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(106, 156);
+            this.label5.Location = new System.Drawing.Point(99, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 15);
             this.label5.TabIndex = 14;
@@ -211,7 +212,7 @@
             this.ApellidoM.BorderFocusColor = System.Drawing.Color.HotPink;
             this.ApellidoM.BorderRadius = 0;
             this.ApellidoM.BorderSize = 2;
-            this.ApellidoM.Location = new System.Drawing.Point(106, 237);
+            this.ApellidoM.Location = new System.Drawing.Point(99, 309);
             this.ApellidoM.Margin = new System.Windows.Forms.Padding(4);
             this.ApellidoM.Multiline = false;
             this.ApellidoM.Name = "ApellidoM";
@@ -233,7 +234,7 @@
             this.ApellidoP.BorderFocusColor = System.Drawing.Color.HotPink;
             this.ApellidoP.BorderRadius = 0;
             this.ApellidoP.BorderSize = 2;
-            this.ApellidoP.Location = new System.Drawing.Point(106, 175);
+            this.ApellidoP.Location = new System.Drawing.Point(99, 247);
             this.ApellidoP.Margin = new System.Windows.Forms.Padding(4);
             this.ApellidoP.Multiline = false;
             this.ApellidoP.Name = "ApellidoP";
@@ -260,6 +261,17 @@
             this.btn_regresar.TabStop = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label6.Location = new System.Drawing.Point(99, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(249, 50);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Iniciar sesión";
+            // 
             // Datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -267,6 +279,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.ApellidoP);
             this.Controls.Add(this.label5);
@@ -309,5 +322,6 @@
         private herramientas.PiaTextBox ApellidoM;
         private herramientas.PiaTextBox ApellidoP;
         private PictureBox btn_regresar;
+        private Label label6;
     }
 }

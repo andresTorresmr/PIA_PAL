@@ -285,6 +285,7 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "Perfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil";
             this.Load += new System.EventHandler(this.Perfil_Load);
             this.panelMenu.ResumeLayout(false);

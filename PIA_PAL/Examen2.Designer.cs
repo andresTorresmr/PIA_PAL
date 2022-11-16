@@ -37,6 +37,10 @@
             this.PBLA = new PIA_PAL.herramientas.ProgressBarPia();
             this.label3 = new System.Windows.Forms.Label();
             this.PBCP = new PIA_PAL.herramientas.ProgressBarPia();
+            this.lblLniRes = new System.Windows.Forms.Label();
+            this.lblLtiRes = new System.Windows.Forms.Label();
+            this.lblLaRes = new System.Windows.Forms.Label();
+            this.lblCpRes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label7
@@ -180,12 +184,64 @@
             this.PBCP.TabIndex = 36;
             this.PBCP.Value = 50;
             // 
+            // lblLniRes
+            // 
+            this.lblLniRes.AutoSize = true;
+            this.lblLniRes.BackColor = System.Drawing.Color.Transparent;
+            this.lblLniRes.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLniRes.ForeColor = System.Drawing.Color.Azure;
+            this.lblLniRes.Location = new System.Drawing.Point(753, 309);
+            this.lblLniRes.Name = "lblLniRes";
+            this.lblLniRes.Size = new System.Drawing.Size(35, 25);
+            this.lblLniRes.TabIndex = 48;
+            this.lblLniRes.Text = "CP";
+            // 
+            // lblLtiRes
+            // 
+            this.lblLtiRes.AutoSize = true;
+            this.lblLtiRes.BackColor = System.Drawing.Color.Transparent;
+            this.lblLtiRes.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLtiRes.ForeColor = System.Drawing.Color.Azure;
+            this.lblLtiRes.Location = new System.Drawing.Point(753, 245);
+            this.lblLtiRes.Name = "lblLtiRes";
+            this.lblLtiRes.Size = new System.Drawing.Size(35, 25);
+            this.lblLtiRes.TabIndex = 47;
+            this.lblLtiRes.Text = "CP";
+            // 
+            // lblLaRes
+            // 
+            this.lblLaRes.AutoSize = true;
+            this.lblLaRes.BackColor = System.Drawing.Color.Transparent;
+            this.lblLaRes.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLaRes.ForeColor = System.Drawing.Color.Azure;
+            this.lblLaRes.Location = new System.Drawing.Point(753, 185);
+            this.lblLaRes.Name = "lblLaRes";
+            this.lblLaRes.Size = new System.Drawing.Size(35, 25);
+            this.lblLaRes.TabIndex = 46;
+            this.lblLaRes.Text = "CP";
+            // 
+            // lblCpRes
+            // 
+            this.lblCpRes.AutoSize = true;
+            this.lblCpRes.BackColor = System.Drawing.Color.Transparent;
+            this.lblCpRes.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCpRes.ForeColor = System.Drawing.Color.Azure;
+            this.lblCpRes.Location = new System.Drawing.Point(754, 132);
+            this.lblCpRes.Name = "lblCpRes";
+            this.lblCpRes.Size = new System.Drawing.Size(35, 25);
+            this.lblCpRes.TabIndex = 45;
+            this.lblCpRes.Text = "CP";
+            // 
             // Examen2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblLniRes);
+            this.Controls.Add(this.lblLtiRes);
+            this.Controls.Add(this.lblLaRes);
+            this.Controls.Add(this.lblCpRes);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.PBLNI);
@@ -214,5 +270,9 @@
         private herramientas.ProgressBarPia PBLA;
         private Label label3;
         private herramientas.ProgressBarPia PBCP;
+        private Label lblLniRes;
+        private Label lblLtiRes;
+        private Label lblLaRes;
+        private Label lblCpRes;
     }
 }

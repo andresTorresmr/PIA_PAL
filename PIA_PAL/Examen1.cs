@@ -91,6 +91,10 @@ namespace PIA_PAL
                 PBLA.Value = la1;
                 PBLNI.Value = lni1;
                 PBLTI.Value = lti1;
+                lblCpRes.Text = Convert.ToString(cp1);
+                lblLaRes.Text = Convert.ToString(la1);
+                lblLniRes.Text = Convert.ToString(lni1);
+                lblLtiRes.Text = Convert.ToString(lti1);
             }
             else
             {
